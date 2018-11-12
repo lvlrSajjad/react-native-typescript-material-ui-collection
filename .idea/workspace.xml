@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="299642c0-24f8-4af2-94d1-323ac055ce09" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Components/MaterialExtendedFab/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Components/MaterialExtendedFab/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/MaterialFab/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Components/MaterialFab/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -189,12 +187,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1542031130210</updated>
-      <workItem from="1542031131515" duration="18656000" />
+      <workItem from="1542031131515" duration="18857000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18656000" />
+    <option name="totallyTimeSpent" value="18857000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -367,7 +365,7 @@
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="20" />
         </state>
       </provider>
     </entry>

@@ -1,6 +1,6 @@
 {
   "name": "react-native-typescript-material-ui-collection",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "handpicked react-native material design ui components",
   "main": "index.ts",
   "scripts": {
