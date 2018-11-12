@@ -47,7 +47,6 @@ export interface TextFieldProps extends TextInputProps{
   containerStyle: StyleProp<ViewStyle>,
   inputContainerStyle: StyleProp<ViewStyle>,
 
-  isLoading?: boolean,
   isRtl?:boolean
 }
 

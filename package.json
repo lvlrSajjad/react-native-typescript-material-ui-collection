@@ -1,0 +1,19 @@
+{
+  "name": "react-native-typescript-material-ui-collection",
+  "version": "0.0.3",
+  "description": "handpicked react-native material design ui components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvlrSajjad/typescript-material-ui-collection.git"
+  },
+  "author": "Sajjad Asadi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lvlrSajjad/typescript-material-ui-collection/issues"
+  },
+  "homepage": "https://github.com/lvlrSajjad/typescript-material-ui-collection#readme"
+}
