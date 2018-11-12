@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="299642c0-24f8-4af2-94d1-323ac055ce09" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Components/MaterialContainedButton/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Components/MaterialOutlinedButton/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Components/MaterialTextButton/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Components/MaterialExtendedFab/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/MaterialButton/MaterialButton.ltr.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/MaterialButton/MaterialButton.rtl.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/MaterialButton/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/MaterialFab/MaterialFab.ltr.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Components/MaterialFab/MaterialFab.ltr.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/MaterialFab/MaterialFab.rtl.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Components/MaterialFab/MaterialFab.rtl.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Components/MaterialTextInput/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Components/MaterialTextInput/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/MaterialColors/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/MaterialColors/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/MaterialFab/MaterialFab.ltr.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/MaterialFab/MaterialFab.rtl.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/MaterialFab/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Components/MaterialFab/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -33,51 +27,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
               <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Components/MaterialContainedButton/index.tsx">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="index.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Utils/MaterialStyles/index.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor />
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Utils/MaterialColors/index.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="260" column="9" selection-start-line="260" selection-start-column="9" selection-end-line="260" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#54#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -124,7 +73,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -145,6 +94,18 @@
               <item name="typescript-material-ui-collection" type="b2602c69:ProjectViewProjectNode" />
               <item name="typescript-material-ui-collection" type="462c0819:PsiDirectoryNode" />
               <item name="Components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="typescript-material-ui-collection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="typescript-material-ui-collection" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+              <item name="MaterialExtendedFab" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="typescript-material-ui-collection" type="b2602c69:ProjectViewProjectNode" />
+              <item name="typescript-material-ui-collection" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+              <item name="MaterialFab" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="typescript-material-ui-collection" type="b2602c69:ProjectViewProjectNode" />
@@ -209,15 +170,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1542031130210</updated>
-      <workItem from="1542031131515" duration="17025000" />
+      <workItem from="1542031131515" duration="17690000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17025000" />
+    <option name="totallyTimeSpent" value="17690000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" />
@@ -340,13 +301,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Utils/MaterialStyles/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Components/MaterialContainedButton/index.tsx">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -360,13 +314,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Components/MaterialExtendedFab/index.tsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils/MaterialStyles/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="20" lean-forward="true" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
+        <state>
+          <caret line="9" column="65" selection-start-line="9" selection-start-column="65" selection-end-line="9" selection-end-column="65" />
         </state>
       </provider>
     </entry>
