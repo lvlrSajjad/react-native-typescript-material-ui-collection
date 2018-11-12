@@ -1,8 +1,8 @@
 {
   "name": "react-native-typescript-material-ui-collection",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "handpicked react-native material design ui components",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

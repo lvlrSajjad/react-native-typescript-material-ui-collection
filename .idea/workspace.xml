@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="299642c0-24f8-4af2-94d1-323ac055ce09" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Components/MaterialHorizontalLinear/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Components/MaterialVerticalLinear/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Utils/MaterialColors/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Utils/MaterialStyles/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Components/MaterialContainedButton/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Components/MaterialOutlinedButton/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Components/MaterialTextButton/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/MaterialButton/MaterialButton.ltr.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/MaterialButton/MaterialButton.rtl.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/MaterialButton/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/MaterialFab/MaterialFab.ltr.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Components/MaterialFab/MaterialFab.ltr.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/MaterialFab/MaterialFab.rtl.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Components/MaterialFab/MaterialFab.rtl.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Components/MaterialTextInput/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Components/MaterialTextInput/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utils/MaterialColors/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/MaterialColors/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,7 +28,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
@@ -31,43 +37,9 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MaterialButton.ltr.tsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Components/MaterialButton/MaterialButton.ltr.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="50" selection-start-column="28" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="125" selection-start-line="8" selection-start-column="119" selection-end-line="8" selection-end-column="133" />
-              <folding>
-                <element signature="e#0#57#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Components/MaterialContainer/index.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Utils/MaterialColors/index.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="55" column="21" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="21" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/Components/MaterialContainedButton/index.tsx">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="index.tsx" pinned="false" current-in-tab="false">
@@ -79,31 +51,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Components/MaterialVerticalLinear/index.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="7" column="89" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="89" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MaterialButton.rtl.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Components/MaterialButton/MaterialButton.rtl.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-207">
-              <caret column="35" selection-start-column="35" selection-end-column="35" />
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Components/MaterialTextInput/index.tsx">
+        <entry file="file://$PROJECT_DIR$/Utils/MaterialColors/index.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-398">
-              <caret line="49" column="7" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="7" />
+            <state relative-caret-position="230">
+              <caret line="260" column="9" selection-start-line="260" selection-start-column="9" selection-end-line="260" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
               <folding>
-                <element signature="e#0#60#0" expanded="true" />
+                <element signature="e#0#54#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -126,11 +99,16 @@
         <option value="$PROJECT_DIR$/Components/MaterialRow/index.tsx" />
         <option value="$PROJECT_DIR$/Components/MaterialVerticalLinear/index.tsx" />
         <option value="$PROJECT_DIR$/Components/MaterialHorizontalLinear/index.tsx" />
-        <option value="$PROJECT_DIR$/Components/MaterialTextInput/index.tsx" />
-        <option value="$PROJECT_DIR$/Utils/MaterialColors/index.tsx" />
-        <option value="$PROJECT_DIR$/index.ts" />
         <option value="$PROJECT_DIR$/Utils/MaterialMetrics/index.tsx" />
         <option value="$PROJECT_DIR$/Utils/MaterialStyles/index.tsx" />
+        <option value="$PROJECT_DIR$/Components/MaterialTextInput/index.tsx" />
+        <option value="$PROJECT_DIR$/Components/MaterialButton/index.tsx" />
+        <option value="$PROJECT_DIR$/Components/MaterialButton/MaterialButton.ltr.tsx" />
+        <option value="$PROJECT_DIR$/Components/MaterialButton/MaterialButton.rtl.tsx" />
+        <option value="$PROJECT_DIR$/Components/MaterialFab/MaterialFab.ltr.tsx" />
+        <option value="$PROJECT_DIR$/Components/MaterialFab/MaterialFab.rtl.tsx" />
+        <option value="$PROJECT_DIR$/Utils/MaterialColors/index.tsx" />
+        <option value="$PROJECT_DIR$/index.ts" />
         <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
@@ -146,7 +124,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -167,24 +145,6 @@
               <item name="typescript-material-ui-collection" type="b2602c69:ProjectViewProjectNode" />
               <item name="typescript-material-ui-collection" type="462c0819:PsiDirectoryNode" />
               <item name="Components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="typescript-material-ui-collection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="typescript-material-ui-collection" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="MaterialButton" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="typescript-material-ui-collection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="typescript-material-ui-collection" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="MaterialTextInput" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="typescript-material-ui-collection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="typescript-material-ui-collection" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="MaterialVerticalLinear" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="typescript-material-ui-collection" type="b2602c69:ProjectViewProjectNode" />
@@ -221,9 +181,9 @@
       <recent name="D:\CodingProjects\Github\typescript-material-ui-collection\Util" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CodingProjects\Github\typescript-material-ui-collection\Components" />
       <recent name="D:\CodingProjects\Github\typescript-material-ui-collection\Utils\MaterialMetrics" />
       <recent name="D:\CodingProjects\Github\typescript-material-ui-collection" />
-      <recent name="D:\CodingProjects\Github\typescript-material-ui-collection\Components" />
       <recent name="D:\CodingProjects\Github\typescript-material-ui-collection\Components\MaterialContainer" />
     </key>
   </component>
@@ -249,19 +209,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1542031130210</updated>
-      <workItem from="1542031131515" duration="10605000" />
+      <workItem from="1542031131515" duration="17025000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10605000" />
+    <option name="totallyTimeSpent" value="17025000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24925596" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24925596" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
@@ -269,7 +229,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32928944" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32928944" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -308,17 +268,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Components/MaterialButton/MaterialButton.rtl.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-207">
-          <caret column="35" selection-start-column="35" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Components/MaterialTextInput/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-398">
-          <caret line="49" column="7" selection-start-line="49" selection-start-column="2" selection-end-line="49" selection-end-column="7" />
+        <state relative-caret-position="177">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
           <folding>
             <element signature="e#0#60#0" expanded="true" />
           </folding>
@@ -327,25 +280,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Components/MaterialContainer/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
+        <state relative-caret-position="115">
           <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.ts">
+    <entry file="file://$PROJECT_DIR$/Components/MaterialFab/MaterialFab.ltr.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="125" selection-start-line="8" selection-start-column="119" selection-end-line="8" selection-end-column="133" />
+        <state relative-caret-position="414">
+          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
           <folding>
-            <element signature="e#0#57#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Components/MaterialFab/MaterialFab.rtl.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Components/MaterialButton/MaterialButton.rtl.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="32" column="7" lean-forward="true" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Components/MaterialButton/MaterialButton.ltr.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Utils/MaterialColors/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="55" column="21" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="21" />
+        <state relative-caret-position="230">
+          <caret line="260" column="9" selection-start-line="260" selection-start-column="9" selection-end-line="260" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -356,17 +347,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Components/MaterialContainedButton/index.tsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Components/MaterialButton/index.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Components/MaterialButton/MaterialButton.ltr.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="50" selection-start-column="28" selection-end-column="53" />
         </state>
       </provider>
     </entry>

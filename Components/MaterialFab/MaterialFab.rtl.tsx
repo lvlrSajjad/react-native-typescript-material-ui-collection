@@ -1,7 +1,6 @@
 import * as React from "react";
 import {MKButton,mdl} from 'react-native-material-kit';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import metrics from "../../../Themes/Metrics";
 import {MaterialFabProps} from "./index";
 
 export default (props : MaterialFabProps) => {
@@ -20,7 +19,7 @@ export default (props : MaterialFabProps) => {
         />
         :
         <MaterialCommunityIcons
-          name={props.icon} size={metrics.regularMaterialFab.iconSize} color= {props.iconColor}
+          name={props.icon} size={24} color= {props.iconColor}
         />
         }
 
