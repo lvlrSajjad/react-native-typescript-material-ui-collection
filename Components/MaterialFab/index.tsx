@@ -27,6 +27,7 @@ export default (props: MaterialFabProps) =>
       top:props.position === "topRight"|| props.position === "topLeft" ? 16:undefined,
       bottom:props.position === "bottomRight"|| props.position === "bottomLeft" ? 16:undefined,
       position:'absolute',
+      zIndex:900,
       alignItems: 'center',
       justifyContent: 'center'}}>
     {props.icon ? props.icon :

@@ -25,6 +25,7 @@ export default (props: MaterialExtendedFabProps) =>
       paddingLeft:16,
       paddingRight:16,
       flexDirection:'row',
+      zIndex:900,
       elevation:16,
       top:props.position === "top" ? 16:undefined,
       bottom:props.position === "bottom" ? 16:undefined,
