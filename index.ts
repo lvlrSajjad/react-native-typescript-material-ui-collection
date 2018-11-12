@@ -1,5 +1,6 @@
-import MaterialButton from './MaterialButton';
-import MaterialFab from './MaterialFab';
-import MaterialTextInput from './MaterialTextInput';
+import MaterialButton from './Components/MaterialButton';
+import MaterialFab from './Components/MaterialFab';
+import MaterialTextInput from './Components/MaterialTextInput';
+import MaterialContainer from './Components/MaterialContainer';
 
-export {MaterialButton,MaterialFab,MaterialTextInput};
+export {MaterialButton,MaterialFab,MaterialTextInput,MaterialContainer};
