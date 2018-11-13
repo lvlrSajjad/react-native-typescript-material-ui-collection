@@ -2,6 +2,7 @@ import * as React from "react";
 import {Text} from "react-native";
 import Ripple from 'react-native-material-ripple';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+import {MaterialProgress} from "..";
 
 export interface MaterialTextButtonProps {
   text: string,
@@ -10,7 +11,8 @@ export interface MaterialTextButtonProps {
   textColor?: string,
   textFont?: string,
   iconName?:string,
-  onPress?():void
+  onPress?():void,
+  progress?:boolean
 }
 
 export default (props: MaterialTextButtonProps) =>
@@ -28,10 +30,15 @@ export default (props: MaterialTextButtonProps) =>
       alignItems: 'center',
       justifyContent: 'center'}}>
     {props.icon ? props.icon :
-      props.iconName &&
+      (!props.progress && props.iconName) &&
       <MaterialCommunityIcons
         style={{margin:8}} name={props.iconName} size={14} color= {props.textColor}
       />
     }
-    <Text style={{fontFamily:props.textFont,color:props.textColor,fontSize:14}}>{props.text}</Text>
+    {!props.progress &&
+    <Text style={{fontFamily: props.textFont, color: props.textColor, fontSize: 14}}>{props.text}</Text>
+    }
+    {props.progress &&
+    <MaterialProgress color={props.textColor} small/>
+    }
   </Ripple>;

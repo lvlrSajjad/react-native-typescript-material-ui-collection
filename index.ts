@@ -8,6 +8,7 @@ import MaterialHorizontalLinear from './Components/MaterialHorizontalLinear';
 import MaterialVerticalLinear from './Components/MaterialHorizontalLinear';
 import MaterialColors from './Utils/MaterialColors';
 import MaterialExtendedFab from './Components/MaterialExtendedFab';
+import MaterialProgress from './Components/MaterialProgress';
 
 export {
     MaterialTextButton,
@@ -19,5 +20,6 @@ export {
     MaterialContainer,
     MaterialHorizontalLinear,
     MaterialVerticalLinear,
-    MaterialColors
+    MaterialColors,
+    MaterialProgress
 };
