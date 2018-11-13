@@ -11,7 +11,7 @@ Here you can see a Created by me and some hand picked collection of material com
 
 ## Installation
 
-The library is installed and linked by default inside my boilerplate <a href="https://github.com/lvlrSajjad/ignite-boilerplate-andross-typescript">ignite-boilerplate-andross-typescript</ad>
+The library is installed and linked by default inside my boilerplate <a href="https://github.com/lvlrSajjad/ignite-boilerplate-andross-typescript">ignite-boilerplate-andross-typescript</a>
 
 You can also install it standalone by below commands :
 
