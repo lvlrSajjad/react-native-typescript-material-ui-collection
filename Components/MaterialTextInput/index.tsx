@@ -1,7 +1,6 @@
 import { TextField } from 'react-native-material-textfield';
 import {connect} from "react-redux";
 import * as React from "react";
-import Fonts from "../../../Themes/Fonts";
 import {StyleProp, TextInputProps, TextStyle, ViewStyle} from 'react-native';
 
 export interface TextFieldProps extends TextInputProps{
