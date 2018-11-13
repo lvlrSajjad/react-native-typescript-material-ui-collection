@@ -435,7 +435,7 @@ The exact code of above gif
 import * as React from 'react'
 import {Component} from 'react';
 import {Image, Text, View} from 'react-native'
-import CollapsibleToolbarContainer from '../Components/CollapsibleToolbarContainer'
+import CollapsibleToolbarContainer from 'react-native-typescript-material-ui-collection'
 
 export default class LaunchScreen extends Component {
   componentWillMount() {
@@ -488,7 +488,7 @@ export default class LaunchScreen extends Component {
 }
 ``` 
 
-#### Usage :
+#### Props :
 
 ```typescript jsx
   collapsedNavBarBackgroundColor?: string,

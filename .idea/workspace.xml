@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="299642c0-24f8-4af2-94d1-323ac055ce09" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Components/MaterialCollapsibleToolbarContainer/helper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Components/MaterialCollapsibleToolbarContainer/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,11 +37,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="235">
-                <caret line="494" column="23" selection-start-line="494" selection-start-column="23" selection-end-line="494" selection-end-column="23" />
-                <folding>
-                  <element signature="e#0#30#0" expanded="true" />
-                </folding>
+              <first_editor relative-caret-position="212">
+                <caret line="437" column="87" selection-start-line="437" selection-start-column="87" selection-end-line="437" selection-end-column="87" />
               </first_editor>
               <second_editor />
             </state>
@@ -235,12 +228,12 @@
       <option name="presentableId" value="Default" />
       <updated>1542031130210</updated>
       <workItem from="1542031131515" duration="19155000" />
-      <workItem from="1542108506292" duration="8708000" />
+      <workItem from="1542108506292" duration="9252000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27863000" />
+    <option name="totallyTimeSpent" value="28407000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -251,9 +244,9 @@
       <window_info anchor="bottom" id="GitLabIntegration" order="11" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49925596" visible="true" weight="0.32928944" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49925596" visible="true" weight="0.32928944" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24925596" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24925596" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -445,11 +438,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="235">
-            <caret line="494" column="23" selection-start-line="494" selection-start-column="23" selection-end-line="494" selection-end-column="23" />
-            <folding>
-              <element signature="e#0#30#0" expanded="true" />
-            </folding>
+          <first_editor relative-caret-position="212">
+            <caret line="437" column="87" selection-start-line="437" selection-start-column="87" selection-end-line="437" selection-end-column="87" />
           </first_editor>
           <second_editor />
         </state>
