@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="299642c0-24f8-4af2-94d1-323ac055ce09" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,6 +16,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="helper.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Components/MaterialCollapsibleToolbarContainer/helper.js">
           <provider selected="true" editor-type-id="text-editor" />
@@ -33,12 +42,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="212">
-                <caret line="437" column="87" selection-start-line="437" selection-start-column="87" selection-end-line="437" selection-end-column="87" />
+              <first_editor relative-caret-position="189">
+                <caret line="436" column="46" lean-forward="true" selection-start-line="436" selection-start-column="46" selection-end-line="436" selection-end-column="46" />
               </first_editor>
               <second_editor />
             </state>
@@ -102,9 +111,9 @@
         <option value="$PROJECT_DIR$/Components/MaterialHorizontalLinear/index.tsx" />
         <option value="$PROJECT_DIR$/Components/MaterialCheckbox/index.tsx" />
         <option value="$PROJECT_DIR$/Components/MaterialVerticalLinear/index.tsx" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/index.ts" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -228,12 +237,12 @@
       <option name="presentableId" value="Default" />
       <updated>1542031130210</updated>
       <workItem from="1542031131515" duration="19155000" />
-      <workItem from="1542108506292" duration="9252000" />
+      <workItem from="1542108506292" duration="10252000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28407000" />
+    <option name="totallyTimeSpent" value="29407000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -244,9 +253,9 @@
       <window_info anchor="bottom" id="GitLabIntegration" order="11" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49925596" visible="true" weight="0.32928944" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49925596" visible="true" weight="0.32928944" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24925596" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24925596" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -395,13 +404,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Components/MaterialCheckbox/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -438,10 +440,17 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="212">
-            <caret line="437" column="87" selection-start-line="437" selection-start-column="87" selection-end-line="437" selection-end-column="87" />
+          <first_editor relative-caret-position="189">
+            <caret line="436" column="46" lean-forward="true" selection-start-line="436" selection-start-column="46" selection-end-line="436" selection-end-column="46" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
         </state>
       </provider>
     </entry>
