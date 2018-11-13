@@ -348,3 +348,75 @@ this is exactly the code of above gif
 
 ```
 
+
+### Material Checkbox
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/lvlrSajjad/ignite-boilerplate-andross-typescript/master/gifs/materialcheckbox.gif" width="30%">
+</p>
+
+I Made this checkbox component exactly based on material.io design guidelines
+
+#### Usage :
+this is exactly the code of above gif
+
+```typescript jsx
+import * as React from 'react'
+import {Component} from 'react';
+import {View} from 'react-native'
+import styles from './Styles/LaunchScreenStyles'
+import {MaterialCheckbox} from "react-native-typescript-material-ui-collection";
+
+export default class LaunchScreen extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <MaterialCheckbox
+          checkBoxColor="purple"
+          text="Material Checkbox"
+          onCheckedChange={(isChecked) => {
+            console.log(isChecked)
+          }}
+        />
+        <MaterialCheckbox
+          rtl
+          checkBoxColor="purple"
+          text="Material Checkbox"
+          onCheckedChange={(isChecked) => {
+            console.log(isChecked)
+          }}
+        />
+        <MaterialCheckbox
+          checkBoxColor="purple"
+          onCheckedChange={(isChecked) => {
+            console.log(isChecked)
+          }}
+        />
+        <MaterialCheckbox
+          checkBoxColor="purple"
+          text="Material Checkbox"
+          onCheckedChange={(isChecked) => {
+            console.log(isChecked)
+          }}
+          progress
+        />
+      </View>
+    )
+  }
+}
+```
+
+#### Props:
+```typescript jsx
+  text?: string,
+  isChecked?: boolean,
+  textFont?: string,
+
+  onCheckedChange?(isChecked: boolean): void,
+
+  checkBoxColor?: string,
+  textColor?: string,
+  rtl?: boolean,
+  progress?: boolean
+
+```

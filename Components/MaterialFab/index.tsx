@@ -1,7 +1,7 @@
 import * as React from "react";
 import Ripple from 'react-native-material-ripple';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import {MaterialProgress} from "..";
+import {MaterialProgress} from "../..";
 
 export interface MaterialFabProps {
   icon?: React.ReactNode,

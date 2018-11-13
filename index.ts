@@ -9,6 +9,7 @@ import MaterialVerticalLinear from './Components/MaterialHorizontalLinear';
 import MaterialColors from './Utils/MaterialColors';
 import MaterialExtendedFab from './Components/MaterialExtendedFab';
 import MaterialProgress from './Components/MaterialProgress';
+import MaterialCheckbox from './Components/MaterialCheckbox'
 
 export {
     MaterialTextButton,
@@ -21,5 +22,6 @@ export {
     MaterialHorizontalLinear,
     MaterialVerticalLinear,
     MaterialColors,
-    MaterialProgress
+    MaterialProgress,
+    MaterialCheckbox
 };
