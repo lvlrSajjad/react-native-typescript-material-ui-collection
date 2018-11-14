@@ -9,7 +9,23 @@
 
 Here you can see a Created by me and some hand picked collection of material components from various ui libraries. The goal is making ui development easy and seamless (Ui/ux itself with material design rules and Coding Experience) For now, components are in a limited number but i'm working on increasing their number to fulfill all ui/ux needed components
 
-## Installation
+<h2 align="center">Table of contents</h2>
+
+<!--ts-->
+   * [Components and Utils](#material-ui-collection)
+      * [Material Colors](#material-colors)    
+      * [Material Vertical Linear](#material-vertical-linear)
+      * [Material Horizontal Linear](#material-horizontal-linear)
+      * [Material Container](#material-container)
+      * [Material Collapsible Toolbar Container](#material-collapsible-toolbar-container)
+      * [Material Text Input](#material-text-input)   
+      * [Material Progress](#material-progress) 
+      * [Material Buttons](#material-buttons) 
+      * [Material FAB](#material-fab)
+      * [Material Checkbox](#material-checkbox)   
+<!--te-->
+
+<h2 align="center">Installation</h2>
 
 The library is installed and linked by default inside my boilerplate <a href="https://github.com/lvlrSajjad/ignite-boilerplate-andross-typescript">ignite-boilerplate-andross-typescript</a>
 
@@ -19,7 +35,8 @@ You can also install it standalone by below commands :
 npm install react-native-material-textfield react-native-vector-icons react-native-typescript-material-ui-collection react-native-material-ripple --save
 react-native link
 ```
-## Components and Utils
+
+<h2 align="center">Components and Utils</h2>
 
 ### Material Colors 
  <p align="center">
@@ -88,6 +105,91 @@ this component is a view with default column direction it can be used for better
             </MaterialContainer>
         </MaterialContainer>
    ```        
+### Material Collapsible Toolbar Container
+ <p align="center">
+ <img src="https://raw.githubusercontent.com/lvlrSajjad/ignite-boilerplate-andross-typescript/master/gifs/collapsibletoolbarcontainer.gif" width="30%">
+ </p>
+ 
+This is a pure js material collapsible toolbar container
+#### Usage :
+
+The exact code of above gif
+
+```typescript jsx
+import * as React from 'react'
+import {Component} from 'react';
+import {Image, Text, View} from 'react-native'
+import {MaterialCollapsibleToolbarContainer} from 'react-native-typescript-material-ui-collection'
+
+export default class LaunchScreen extends Component {
+  componentWillMount() {
+  }
+
+  renderContent = () => (
+    <View>
+      {new Array(40).fill().map((_, i) => (
+        <View
+          key={i}
+          style={{
+            backgroundColor: '#F5F5F5',
+            padding: 10,
+            borderBottomWidth: 1,
+            borderBottomColor: '#E5E5E5'
+          }}
+        >
+          <Text>{`Item ${i + 1}`}</Text>
+        </View>
+      ))}
+    </View>
+  );
+
+  renderCollapsedToolbarContent = () => <Image
+    source={{uri: 'https://facebook.github.io/react-native/img/header_logo.png'}}
+
+    style={{
+      width: 50,
+      height: 50,
+      borderRadius: 25,
+      overflow: 'hidden'
+    }}/>;
+
+  render() {
+    return (
+      <MaterialCollapsibleToolbarContainer
+        renderContent={this.renderContent}
+        imageSource='https://lorempixel.com/400/300/'
+        collapsedNavBarBackgroundColor='#009688'
+        translucentStatusBar
+        showsVerticalScrollIndicator={false}
+        textColor='white'
+        renderCollapsedToolbarContent={this.renderCollapsedToolbarContent}
+        leftButtonIcon='menu'
+        onLeftIconPress={() => console.log('onlefticonpress')}
+        title="Title"
+        // toolBarHeight={300}
+      />
+    );
+  }
+}
+``` 
+
+#### Usage :
+
+```typescript jsx
+  collapsedNavBarBackgroundColor?: string,
+  imageSource?: string,
+  onContentScroll?(): void,
+  renderContent?(): React.ReactNode,
+  renderCollapsedToolbarContent?():React.ReactNode, // this component will be rendered on the toolbar 
+  toolBarHeight?: number,
+  translucentStatusBar?: boolean,
+  textColor?: string,
+  leftButtonIcon?: string,
+  onLeftIconPress?(): void,
+  rightButtonIcon?: string,
+  onRightIconPress?(): void
+```
+
 ### Material Text Input 
  
  <p align="center">
@@ -348,7 +450,6 @@ this is exactly the code of above gif
 
 ```
 
-
 ### Material Checkbox
 
 <p align="center">
@@ -418,92 +519,5 @@ export default class LaunchScreen extends Component {
   textColor?: string,
   rtl?: boolean,
   progress?: boolean
-
-```
-
-### Material Collapsible Toolbar Container
- <p align="center">
- <img src="https://raw.githubusercontent.com/lvlrSajjad/ignite-boilerplate-andross-typescript/master/gifs/collapsibletoolbarcontainer.gif" width="30%">
- </p>
- 
-This is a pure js material collapsible toolbar container
-#### Usage :
-
-The exact code of above gif
-
-```typescript jsx
-import * as React from 'react'
-import {Component} from 'react';
-import {Image, Text, View} from 'react-native'
-import {MaterialCollapsibleToolbarContainer} from 'react-native-typescript-material-ui-collection'
-
-export default class LaunchScreen extends Component {
-  componentWillMount() {
-  }
-
-  renderContent = () => (
-    <View>
-      {new Array(40).fill().map((_, i) => (
-        <View
-          key={i}
-          style={{
-            backgroundColor: '#F5F5F5',
-            padding: 10,
-            borderBottomWidth: 1,
-            borderBottomColor: '#E5E5E5'
-          }}
-        >
-          <Text>{`Item ${i + 1}`}</Text>
-        </View>
-      ))}
-    </View>
-  );
-
-  renderCollapsedToolbarContent = () => <Image
-    source={{uri: 'https://facebook.github.io/react-native/img/header_logo.png'}}
-
-    style={{
-      width: 50,
-      height: 50,
-      borderRadius: 25,
-      overflow: 'hidden'
-    }}/>;
-
-  render() {
-    return (
-      <MaterialCollapsibleToolbarContainer
-        renderContent={this.renderContent}
-        imageSource='https://lorempixel.com/400/300/'
-        collapsedNavBarBackgroundColor='#009688'
-        translucentStatusBar
-        showsVerticalScrollIndicator={false}
-        textColor='white'
-        renderCollapsedToolbarContent={this.renderCollapsedToolbarContent}
-        leftButtonIcon='menu'
-        onLeftIconPress={() => console.log('onlefticonpress')}
-        title="Title"
-        // toolBarHeight={300}
-      />
-    );
-  }
-}
-``` 
-
-#### Props :
-
-```typescript jsx
-  collapsedNavBarBackgroundColor?: string,
-  imageSource?: string,
-  onContentScroll?(): void,
-  renderContent?(): React.ReactNode,
-  renderCollapsedToolbarContent?():React.ReactNode, // this component will be rendered on the toolbar 
-  toolBarHeight?: number,
-  translucentStatusBar?: boolean,
-  textColor?: string,
-  leftButtonIcon?: string,
-  onLeftIconPress?(): void,
-  rightButtonIcon?: string,
-  onRightIconPress?(): void,
-  title?:string
 
 ```
