@@ -435,7 +435,7 @@ The exact code of above gif
 import * as React from 'react'
 import {Component} from 'react';
 import {Image, Text, View} from 'react-native'
-import CollapsibleToolbarContainer from 'react-native-typescript-material-ui-collection'
+import {MaterialCollapsibleToolbarContainer} from 'react-native-typescript-material-ui-collection'
 
 export default class LaunchScreen extends Component {
   componentWillMount() {
@@ -471,7 +471,7 @@ export default class LaunchScreen extends Component {
 
   render() {
     return (
-      <CollapsibleToolbarContainer
+      <MaterialCollapsibleToolbarContainer
         renderContent={this.renderContent}
         imageSource='https://lorempixel.com/400/300/'
         collapsedNavBarBackgroundColor='#009688'
@@ -481,6 +481,7 @@ export default class LaunchScreen extends Component {
         renderCollapsedToolbarContent={this.renderCollapsedToolbarContent}
         leftButtonIcon='menu'
         onLeftIconPress={() => console.log('onlefticonpress')}
+        title="Title"
         // toolBarHeight={300}
       />
     );
@@ -502,6 +503,7 @@ export default class LaunchScreen extends Component {
   leftButtonIcon?: string,
   onLeftIconPress?(): void,
   rightButtonIcon?: string,
-  onRightIconPress?(): void
+  onRightIconPress?(): void,
+  title?:string
 
 ```

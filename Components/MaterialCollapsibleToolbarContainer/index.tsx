@@ -11,20 +11,16 @@ const DEFAULT_TOOLBAR_HEIGHT = 300;
 export interface MaterialCollapsibleToolbarContainerProps extends ScrollViewProps {
   collapsedNavBarBackgroundColor?: string,
   imageSource?: string,
-
+  title?:string,
   onContentScroll?(): void,
-
   renderContent?(): React.ReactNode,
   renderCollapsedToolbarContent?():React.ReactNode,
   toolBarHeight?: number,
   translucentStatusBar?: boolean,
   textColor?: string,
   leftButtonIcon?: string,
-
   onLeftIconPress?(): void,
-
   rightButtonIcon?: string,
-
   onRightIconPress?(): void
 }
 
@@ -142,7 +138,7 @@ export default class MaterialCollapsibleToolbarContainer extends Component<Mater
               bottom: 16,
               textAlign: 'center',
               color: '#FFF'
-            }}>Title</Animated.Text>
+            }}>{this.props.title}</Animated.Text>
 
           </Animated.View>
 
@@ -167,7 +163,7 @@ export default class MaterialCollapsibleToolbarContainer extends Component<Mater
                 bottom: 16,
                 textAlign: 'center',
                 color: '#FFF'
-              }}>Title</Animated.Text>
+              }}>{this.props.title}</Animated.Text>
 
             </View>
 
@@ -230,7 +226,7 @@ export default class MaterialCollapsibleToolbarContainer extends Component<Mater
             bottom: 16,
             textAlign: 'center',
             color: '#FFF'
-          }}>Title</Animated.Text>
+          }}>{this.props.title}</Animated.Text>
         </Animated.View>
         <Ripple
           rippleColor={this.props.textColor}
