@@ -12,7 +12,8 @@ Here you can see a Created by me and some hand picked collection of material com
 <h2 align="center">Table of contents</h2>
 
 <!--ts-->
-   * [Components and Utils](#material-ui-collection)
+   * [Installation](#installation)
+   * [Components and Utils](#components-and-utils)
       * [Material Colors](#material-colors)    
       * [Material Vertical Linear](#material-vertical-linear)
       * [Material Horizontal Linear](#material-horizontal-linear)
