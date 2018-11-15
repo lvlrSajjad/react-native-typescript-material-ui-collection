@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="299642c0-24f8-4af2-94d1-323ac055ce09" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Components/MaterialBackdrop/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -28,11 +32,12 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="69">
-                <caret line="15" selection-start-line="15" selection-end-line="15" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="139">
+                <caret line="276" column="3" lean-forward="true" selection-start-line="193" selection-end-line="276" selection-end-column="3" />
                 <folding>
                   <element signature="e#0#30#0" expanded="true" />
+                  <element signature="e#4#34#0" expanded="true" />
                   <element signature="e#0#30#0" expanded="true" />
                   <element signature="e#3#33#0" expanded="true" />
                   <element signature="e#5#35#0" expanded="true" />
@@ -52,6 +57,8 @@
       <find>C100</find>
       <find>mark</find>
       <find>title</find>
+      <find>collapsible</find>
+      <find>Material Backdrop</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -79,8 +86,8 @@
         <option value="$PROJECT_DIR$/Components/MaterialHorizontalLinear/index.tsx" />
         <option value="$PROJECT_DIR$/Components/MaterialCheckbox/index.tsx" />
         <option value="$PROJECT_DIR$/Components/MaterialVerticalLinear/index.tsx" />
-        <option value="$PROJECT_DIR$/index.ts" />
         <option value="$PROJECT_DIR$/Components/MaterialCollapsibleToolbarContainer/index.tsx" />
+        <option value="$PROJECT_DIR$/index.ts" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/package.json" />
       </list>
@@ -101,10 +108,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="y" value="2" />
+    <option name="x" value="676" />
     <option name="width" value="697" />
-    <option name="height" value="733" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -128,25 +134,7 @@
               <item name="typescript-material-ui-collection" type="b2602c69:ProjectViewProjectNode" />
               <item name="typescript-material-ui-collection" type="462c0819:PsiDirectoryNode" />
               <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="MaterialCheckbox" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="typescript-material-ui-collection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="typescript-material-ui-collection" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="MaterialCollapsibleToolbarContainer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="typescript-material-ui-collection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="typescript-material-ui-collection" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="MaterialHorizontalLinear" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="typescript-material-ui-collection" type="b2602c69:ProjectViewProjectNode" />
-              <item name="typescript-material-ui-collection" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="MaterialVerticalLinear" type="462c0819:PsiDirectoryNode" />
+              <item name="MaterialBackdrop" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="typescript-material-ui-collection" type="b2602c69:ProjectViewProjectNode" />
@@ -167,21 +155,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ReactNative/Tests/CollapsibleDrawerNew" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ReactNative/Tests/Test1" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CodingProjects\Github\typescript-material-ui-collection\Util" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CodingProjects\Github\typescript-material-ui-collection\Components\MaterialBackdrop" />
       <recent name="D:\CodingProjects\Github\typescript-material-ui-collection\Components" />
       <recent name="D:\CodingProjects\Github\typescript-material-ui-collection\Components\MaterialExtendedFab" />
       <recent name="D:\CodingProjects\Github\typescript-material-ui-collection\Utils\MaterialMetrics" />
       <recent name="D:\CodingProjects\Github\typescript-material-ui-collection" />
-      <recent name="D:\CodingProjects\Github\typescript-material-ui-collection\Components\MaterialContainer" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\CodingProjects\Github\typescript-material-ui-collection\Util" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -209,19 +197,19 @@
       <workItem from="1542031131515" duration="19155000" />
       <workItem from="1542108506292" duration="10857000" />
       <workItem from="1542164607970" duration="612000" />
-      <workItem from="1542192999129" duration="3224000" />
+      <workItem from="1542192999129" duration="7268000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33848000" />
+    <option name="totallyTimeSpent" value="37892000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="11" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24925596" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24925596" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50074404" side_tool="true" weight="0.32928944" />
@@ -229,7 +217,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49925596" visible="true" weight="0.3291815" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49925596" visible="true" weight="0.3291815" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -250,7 +238,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -278,6 +266,7 @@
             <caret line="436" column="46" selection-start-line="436" selection-start-column="46" selection-end-line="436" selection-end-column="46" />
             <folding>
               <element signature="e#0#30#0" expanded="true" />
+              <element signature="e#4#34#0" expanded="true" />
               <element signature="e#0#30#0" expanded="true" />
               <element signature="e#3#33#0" expanded="true" />
               <element signature="e#5#35#0" expanded="true" />
@@ -478,16 +467,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Components/MaterialCollapsibleToolbarContainer/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -501,13 +480,27 @@
     <entry file="file://$PROJECT_DIR$/Components/MaterialCollapsibleToolbarContainer/helper.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Components/MaterialBackdrop/index.tsx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="69">
-            <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="139">
+            <caret line="276" column="3" lean-forward="true" selection-start-line="193" selection-end-line="276" selection-end-column="3" />
             <folding>
               <element signature="e#0#30#0" expanded="true" />
+              <element signature="e#4#34#0" expanded="true" />
               <element signature="e#0#30#0" expanded="true" />
               <element signature="e#3#33#0" expanded="true" />
               <element signature="e#5#35#0" expanded="true" />

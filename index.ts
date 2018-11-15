@@ -11,6 +11,7 @@ import MaterialExtendedFab from './Components/MaterialExtendedFab';
 import MaterialProgress from './Components/MaterialProgress';
 import MaterialCheckbox from './Components/MaterialCheckbox'
 import MaterialCollapsibleToolbarContainer from './Components/MaterialCollapsibleToolbarContainer'
+import MaterialBackdrop from './Components/MaterialBackdrop'
 
 export {
     MaterialTextButton,
@@ -25,5 +26,6 @@ export {
     MaterialColors,
     MaterialProgress,
     MaterialCheckbox,
-    MaterialCollapsibleToolbarContainer
+    MaterialCollapsibleToolbarContainer,
+    MaterialBackdrop
 };
