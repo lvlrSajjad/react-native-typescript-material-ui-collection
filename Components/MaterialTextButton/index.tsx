@@ -12,7 +12,8 @@ export interface MaterialTextButtonProps {
   textFont?: string,
   iconName?:string,
   onPress?():void,
-  progress?:boolean
+  progress?:boolean,
+  style?:object
 }
 
 export default (props: MaterialTextButtonProps) =>
@@ -28,7 +29,9 @@ export default (props: MaterialTextButtonProps) =>
       paddingRight:16,
       flexDirection:'row',
       alignItems: 'center',
-      justifyContent: 'center'}}>
+      justifyContent: 'center',
+      ...props.style
+    }}>
     {props.icon ? props.icon :
       (!props.progress && props.iconName) &&
       <MaterialCommunityIcons

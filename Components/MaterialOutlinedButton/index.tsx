@@ -12,7 +12,8 @@ export interface MaterialOutlinedButtonProps {
   textFont?: string,
   onPress?():void,
   iconName?:string,
-  progress?:boolean
+  progress?:boolean,
+  style?:object
 }
 
 export default (props: MaterialOutlinedButtonProps) =>
@@ -30,7 +31,9 @@ export default (props: MaterialOutlinedButtonProps) =>
       paddingLeft:16,
       paddingRight:16,
       alignItems: 'center',
-      justifyContent: 'center'}}>
+      justifyContent: 'center',
+      ...props.style
+    }}>
     {props.icon ? props.icon :
       (!props.progress && props.iconName) &&
       <MaterialCommunityIcons

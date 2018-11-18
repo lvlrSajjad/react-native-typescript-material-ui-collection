@@ -15,7 +15,9 @@ export interface MaterialContainedButtonProps {
   onPress?(): void,
 
   iconName?: string,
-  progress?: boolean
+  progress?: boolean,
+
+  style?:object
 }
 
 export default (props: MaterialContainedButtonProps) =>
@@ -34,7 +36,8 @@ export default (props: MaterialContainedButtonProps) =>
       flexDirection: 'row',
       paddingRight: 16,
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      ...props.style
     }}>
     {props.icon ? props.icon :
       (!props.progress && props.iconName) &&
