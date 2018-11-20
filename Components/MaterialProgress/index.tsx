@@ -5,7 +5,8 @@ import {
 
 export interface MaterialProgressProps {
   color:string,
-  small?:boolean
+  small?:boolean,
+    style?:object
 }
 
 export default (props: MaterialProgressProps) =><MaterialIndicator size={props.small?24:48} color={props.color} />;

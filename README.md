@@ -31,6 +31,12 @@ Here you can see a Created by me and some hand picked collection of material com
 
 The library is installed and linked by default inside my boilerplate <a href="https://github.com/lvlrSajjad/ignite-boilerplate-andross-typescript">ignite-boilerplate-andross-typescript</a>
 
+If you have an ignite project you can add it by this command :
+
+```
+ignite add material-ui
+```
+
 You can also install it standalone by below commands :
 
 ```

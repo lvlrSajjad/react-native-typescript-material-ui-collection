@@ -1,5 +1,4 @@
 import { TextField } from 'react-native-material-textfield';
-import {connect} from "react-redux";
 import * as React from "react";
 import {StyleProp, TextInputProps, TextStyle, ViewStyle} from 'react-native';
 
@@ -49,7 +48,7 @@ export interface TextFieldProps extends TextInputProps{
   isRtl?:boolean
 }
 
-export const Direction = (props:TextFieldProps) => props.isRtl ?
+export default (props:TextFieldProps) => props.isRtl ?
   <TextField
     inputContainerStyle={{alignItems:'flex-end',justifyContent:'flex-end'}}
     {...props}
@@ -58,11 +57,3 @@ export const Direction = (props:TextFieldProps) => props.isRtl ?
   <TextField
   {...props}
 />;
-
-const mapStateToProps = state => {
-  return {
-    isRtl: state.appSettings.isRtl
-  };
-};
-
-export default connect(mapStateToProps)(Direction);
