@@ -12,6 +12,7 @@ import MaterialProgress from './Components/MaterialProgress';
 import MaterialCheckbox from './Components/MaterialCheckbox'
 import MaterialCollapsibleToolbarContainer from './Components/MaterialCollapsibleToolbarContainer'
 import MaterialBackdrop from './Components/MaterialBackdrop'
+import MaterialSwitch from './Components/MaterialSwitch'
 
 export {
     MaterialTextButton,
@@ -27,5 +28,6 @@ export {
     MaterialProgress,
     MaterialCheckbox,
     MaterialCollapsibleToolbarContainer,
-    MaterialBackdrop
+    MaterialBackdrop,
+    MaterialSwitch
 };
