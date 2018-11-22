@@ -25,6 +25,13 @@ export default (props: MaterialFabProps) =>
       overflow:'hidden',
       zIndex:900,
       elevation:16,
+      shadowColor: 'black',
+      shadowOpacity: 0.4,
+      shadowRadius: 0.4,
+      shadowOffset: {
+            width: 0.4,
+            height: 0.4
+      },
       left:props.position === "bottomLeft"|| props.position === "topLeft" ? 16:undefined,
       right:props.position === "bottomRight"|| props.position === "topRight" ? 16:undefined,
       top:props.position === "topRight"|| props.position === "topLeft" ? 16:undefined,

@@ -33,6 +33,13 @@ export default (props: MaterialContainedButtonProps) =>
       overflow: 'hidden',
       paddingLeft: 16,
       elevation: 4,
+      shadowColor: 'black',
+      shadowOpacity: 0.1,
+      shadowRadius: 0.1,
+      shadowOffset: {
+            width: 0.1,
+            height: 0.1
+      },
       flexDirection: 'row',
       paddingRight: 16,
       alignItems: 'center',

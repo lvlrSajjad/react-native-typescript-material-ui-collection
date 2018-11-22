@@ -135,7 +135,14 @@ export default class MaterialBackdrop extends Component<MaterialBackdropProps, M
           borderTopLeftRadius: 16,
           borderTopRightRadius: 16,
           minHeight: navBarHeight,
-          elevation: 4
+          elevation: 4,
+          shadowColor: 'black',
+          shadowOpacity: 0.1,
+          shadowRadius: 0.1,
+          shadowOffset: {
+                width: 0.1,
+                height: 0.1
+          },
         }}>
           {this.props.subHeaderText &&
           <TouchableWithoutFeedback

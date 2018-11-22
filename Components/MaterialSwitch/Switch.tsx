@@ -36,7 +36,14 @@ export default class Switch extends React.Component <SwitchProps, SwitchState> {
             height: 20,
             borderRadius: 10,
             backgroundColor: this.state.isActive ? this.props.color : 'white',
-            elevation: 2
+            elevation: 2,
+            shadowColor: 'black',
+            shadowOpacity: 0.1,
+            shadowRadius: 0.1,
+            shadowOffset: {
+                  width: 0.1,
+                  height: 0.1
+            },
           }}/>
         </Animated.View>
       </TouchableWithoutFeedback>

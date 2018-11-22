@@ -28,6 +28,13 @@ export default (props: MaterialExtendedFabProps) =>
       paddingRight:16,
       flexDirection:'row',
       elevation:16,
+      shadowColor: 'black',
+      shadowOpacity: 0.1,
+      shadowRadius: 0.4,
+      shadowOffset: {
+            width: 0.4,
+            height: 0.4
+      },
       top:props.position === "top" ? 16:undefined,
       bottom:props.position === "bottom" ? 16:undefined,
       position:'absolute',
