@@ -26,6 +26,7 @@ Here you can see a Created by me and some hand picked collection of material com
       * [Material FAB](#material-fab)
       * [Material Checkbox](#material-checkbox)   
       * [Material Switch](#material-switch)
+      * [Material Radio Group](#material-radio-group)
 <!--te-->
 
 <h2 align="center">Installation</h2>
@@ -663,4 +664,50 @@ export default class LaunchScreen extends React.Component <LaunchScreenComponent
   color?:string
   onValueChanged?(value:boolean):void
 
+```
+
+### Material Radio Group
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/lvlrSajjad/ignite-boilerplate-andross-typescript/master/gifs/material-radio-group.gif" width="30%">
+</p>
+
+I Made this radio group component exactly based on material.io design guidelines
+
+#### Usage
+
+this is exactly the code of above gif
+
+```typescript jsx
+import * as React from 'react'
+import { View } from 'react-native'
+import MaterialSwitch from "react-native-typescript-material-ui-collection";
+
+// Styles
+import styles from './Styles/LaunchScreenStyles'
+
+interface LaunchScreenComponentProps {}
+
+export default class LaunchScreen extends React.Component <LaunchScreenComponentProps> {
+  render () {
+    return (
+      <View style={styles.mainContainer}>
+        <MaterialRadioGroup data={[{text:'text1'},{text:'text2'},{text:'text3'},{text:'text4'}]} color='purple'/>
+        <MaterialRadioGroup isRtl={true} data={[{text:'text1'},{text:'text2'},{text:'text3'},{text:'text4'}]} color='purple'/>
+      </View>
+    )
+  }
+}
+
+```
+
+#### Props:
+
+```typescript jsx
+  data: any, // just be sure you have text:string field in datarows
+  color: string,
+  textFont?: string,
+  textColor?: string,
+  isRtl?:boolean,
+  onItemPress?(item, index): void
 ```

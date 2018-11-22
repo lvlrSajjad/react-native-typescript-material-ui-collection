@@ -13,6 +13,7 @@ import MaterialCheckbox from './Components/MaterialCheckbox'
 import MaterialCollapsibleToolbarContainer from './Components/MaterialCollapsibleToolbarContainer'
 import MaterialBackdrop from './Components/MaterialBackdrop'
 import MaterialSwitch from './Components/MaterialSwitch'
+import MaterialRadioGroup from './Components/MaterialRadioGroup'
 
 export {
     MaterialTextButton,
@@ -29,5 +30,6 @@ export {
     MaterialCheckbox,
     MaterialCollapsibleToolbarContainer,
     MaterialBackdrop,
-    MaterialSwitch
+    MaterialSwitch,
+    MaterialRadioGroup
 };
