@@ -18,6 +18,7 @@ Here you can see a Created by me and some hand picked collection of material com
       * [Material Vertical Linear](#material-vertical-linear)
       * [Material Horizontal Linear](#material-horizontal-linear)
       * [Material Card](#material-card)
+      * [Material Toolbar](#material-toolbar)
       * [Material Container](#material-container)
       * [Material Collapsible Toolbar Container](#material-collapsible-toolbar-container)
       * [Material Backdrop](#material-backdrop)  
@@ -164,7 +165,98 @@ this component is a view with default column direction it can be used for better
     margin:8,
     backgroundColor:'#eeeeee'
 ```          
+### Material Toolbar
 
+ <p align="center">
+ <img src="https://raw.githubusercontent.com/lvlrSajjad/ignite-boilerplate-andross-typescript/master/gifs/material-toolbar.png" width="30%">
+ </p>
+ 
+ A toolbar designed based on material.io guidelines
+ And
+ MaterialToolbarContent you can use it for some content on your toolbar , you can also use your custom component
+ #### Usage
+ 
+ Import :
+ 
+ ```typescript jsx
+import {MaterialToolbar, MaterialToolbarContent} from 'react-native-typescript-material-ui-collection';
+```
+
+Use:
+
+```typescript jsx
+ <MaterialToolbar
+    leftIcon='menu'
+    content={()=><MaterialToolbarContent haveTypeMode={true} text='title'/>}
+ />
+```
+
+```typescript jsx
+<MaterialToolbar
+  leftIcon='menu'
+  iconsColor='white'
+  color='purple'
+  content={()=><MaterialToolbarContent color='white' haveTypeMode={true} text='title'/>}
+/>
+```
+ 
+```typescript jsx
+ // Minimal
+<MaterialToolbar
+   leftIcon='menu'
+/>
+```
+
+```typescript jsx
+<MaterialToolbar
+  leftIcon='menu'
+  content={()=><MaterialToolbarContent haveTypeMode={false} text='title'/>}
+/>
+``` 
+#### Props
+
+```typescript jsx
+MaterialToolbarProps {
+  color?: string,
+  onLeftIconPress?():void,
+  onRightIconPress?():void,
+  content?():ReactNode
+  iconsColor?:string,
+  leftIcon?:string, // one of https://materialdesignicons.com/ icons
+  rightIcon?:string // one of https://materialdesignicons.com/ icons
+}
+MaterialToolbarContentProps {
+  color?: string,
+  font?: string,
+  text?: string,
+  haveTypeMode?: boolean,
+  typeModeIcon?:string, // one of https://materialdesignicons.com/ icons
+  onChangeText?(text:string),
+  onTypeModePress?(): void,
+}
+```
+
+#### Default Props
+
+```typescript jsx
+//Material Toolbar Content
+
+    color: '#212121',
+    typeModeIcon:'magnify', 
+    onTypeModePress: () => {
+    },
+    onChangeText:()=>{}
+  
+
+//Material Toolbar
+
+    color: '#eeeeee',
+    onLeftIconPress:()=>{},
+    onRightIconPress:()=>{},
+    iconsColor:'#212121'
+  
+```
+ 
 ### Material Container 
    
  <p align="center">

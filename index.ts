@@ -16,6 +16,8 @@ import MaterialSwitch from './Components/MaterialSwitch'
 import MaterialRadioGroup from './Components/MaterialRadioGroup'
 import MaterialCard from './Components/MaterialCard'
 import MaterialCardContent from './Components/MaterialCardContent'
+import MaterialToolbar from './Components/MaterialToolbar'
+import MaterialToolbarContent from './Components/MaterialToolbarContent'
 
 export {
     MaterialTextButton,
@@ -35,5 +37,7 @@ export {
     MaterialSwitch,
     MaterialRadioGroup,
     MaterialCard,
-    MaterialCardContent
+    MaterialCardContent,
+    MaterialToolbar,
+    MaterialToolbarContent
 };
