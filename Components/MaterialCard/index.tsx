@@ -21,7 +21,15 @@ export default class MaterialCard extends React.Component <MaterialCardProps> {
 
   render() {
     return (
-      <View style={{...this.props.style,backgroundColor:this.props.backgroundColor,overflow:'hidden',borderRadius: 4, elevation: this.props.elevation ,margin:this.props.margin,shadowOffset: {
+      <View
+          style={{...this.props.style,
+          backgroundColor:this.props.backgroundColor,
+          overflow:'hidden',
+          borderRadius: 4,
+          elevation: this.props.elevation,
+          margin:this.props.margin,
+          shadowColor:'black',
+          shadowOffset: {
           width: 0,
           height: this.props.elevation
         },

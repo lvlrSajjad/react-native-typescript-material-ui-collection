@@ -21,6 +21,7 @@ export default (props: MaterialExtendedFabProps) =>
     rippleColor={props.iconColor}
     onPress={()=>props.onPress()}
     style={{borderRadius: 28,
+      alignSelf:'center',
       height: 56,
       backgroundColor:props.color,
       overflow:'hidden',
@@ -28,13 +29,13 @@ export default (props: MaterialExtendedFabProps) =>
       paddingRight:16,
       flexDirection:'row',
       elevation:16,
-      shadowColor: 'black',
-      shadowOpacity: 0.1,
-      shadowRadius: 0.4,
+      shadowColor:'black',
       shadowOffset: {
-            width: 0.4,
-            height: 0.4
+         width: 0,
+         height: 16
       },
+      shadowRadius: 16,
+      shadowOpacity: 0.24,
       top:props.position === "top" ? 16:undefined,
       bottom:props.position === "bottom" ? 16:undefined,
       position:'absolute',
