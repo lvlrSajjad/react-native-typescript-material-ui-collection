@@ -48,6 +48,13 @@ npm install react-native-material-textfield react-native-vector-icons react-nati
 react-native link
 ```
 
+Recommended react-native version is >0.56
+
+But if you using older versions and not configured typescript on it use below link
+
+https://facebook.github.io/react-native/blog/2018/05/07/using-typescript-with-react-native
+
+
 <h2 align="center">Components and Utils</h2>
 
 ### Material Colors 
@@ -171,10 +178,13 @@ this component is a view with default column direction it can be used for better
  <img src="https://raw.githubusercontent.com/lvlrSajjad/ignite-boilerplate-andross-typescript/master/gifs/material-toolbar.gif" width="30%">
  </p>
  
- A toolbar designed based on material.io guidelines
- And
- MaterialToolbarContent you can use it for some content on your toolbar , you can also use your custom component
- #### Usage
+ A toolbar designed based on material.io guidelines <br>
+ And <br>
+ MaterialToolbarContent you can use it for some content on your toolbar , you can also use your custom component <br>
+ 
+ Can be used by [Material Container](#material-container)
+  
+#### Usage
  
  Import :
  

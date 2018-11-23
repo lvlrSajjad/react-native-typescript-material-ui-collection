@@ -11,7 +11,7 @@ export interface IndicatorProps {
     animating?: any,
     interaction?: boolean,
 
-    renderComponent?({ index, count, progress }): any,
+    renderComponent?(value:{ index:any, count:any, progress:any }): any,
     count?: number
     style?:object
 }

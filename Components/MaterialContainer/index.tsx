@@ -13,5 +13,6 @@ export default (props: MaterialContainer) => {
         {props.toolbar()}
       </View>
     }
+    {props.children}
   </View>;
 };
