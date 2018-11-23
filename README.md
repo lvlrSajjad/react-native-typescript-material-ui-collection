@@ -85,15 +85,26 @@ https://facebook.github.io/react-native/blog/2018/05/07/using-typescript-with-re
    ```typescript jsx
        import {MaterialContainer} from 'react-native-typescript-material-ui-collection';
         <MaterialContainer
-          isRoot: boolean // if you set this prop true , your component will have no padding and you can render a toolbar view at top of it the default padding is 16
-          toolbar:React.ReactNode // this view will render at top of the view if you set isRoot true
-        >
+          isRoot // if you set this prop true , your component will have no padding and you can render a toolbar view at top of it the default padding is 16
+          toolbar={() => <MaterialToolbar
+                              leftIcon='menu'
+                              iconsColor='white'
+                              color='purple'
+                              content={() => <MaterialToolbarContent color='white' haveTypeMode={true} text='title'/>}
+                          />}> // this view will render at top of the view if you set isRoot true
             <MaterialContainer
-             // if you want to use this inside a root it is still a full width/height view with 16 dp padding
+             // for using inside a root have 16 dp padding inside
             >
             </MaterialContainer>
         </MaterialContainer>
    ```        
+#### Props
+
+```typescript jsx
+          isRoot: boolean // if you set this prop true , your component will have no padding and you can render a toolbar view at top of it the default padding is 16
+          toolbar:React.ReactNode // this view will render at top of the view if you set isRoot true
+```   
+        
 ### Material Collapsible Toolbar Container
  <p align="center">
  <img src="https://raw.githubusercontent.com/lvlrSajjad/ignite-boilerplate-andross-typescript/master/gifs/collapsibletoolbarcontainer.gif" width="30%">
