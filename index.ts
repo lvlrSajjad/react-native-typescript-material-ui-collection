@@ -18,6 +18,7 @@ import MaterialCard from './Components/MaterialCard'
 import MaterialCardContent from './Components/MaterialCardContent'
 import MaterialToolbar from './Components/MaterialToolbar'
 import MaterialToolbarContent from './Components/MaterialToolbarContent'
+import MaterialBottomTabbar from './Components/MaterialBottomTabbar'
 
 export {
     MaterialTextButton,
@@ -39,5 +40,6 @@ export {
     MaterialCard,
     MaterialCardContent,
     MaterialToolbar,
-    MaterialToolbarContent
+    MaterialToolbarContent,
+    MaterialBottomTabbar
 };
