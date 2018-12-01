@@ -5,7 +5,7 @@ import MaterialFab from './Components/MaterialFab';
 import MaterialTextInput from './Components/MaterialTextInput';
 import MaterialContainer from './Components/MaterialContainer';
 import MaterialHorizontalLinear from './Components/MaterialHorizontalLinear';
-import MaterialVerticalLinear from './Components/MaterialHorizontalLinear';
+import MaterialVerticalLinear from './Components/MaterialVerticalLinear';
 import MaterialColors from './Utils/MaterialColors';
 import MaterialExtendedFab from './Components/MaterialExtendedFab';
 import MaterialProgress from './Components/MaterialProgress';
