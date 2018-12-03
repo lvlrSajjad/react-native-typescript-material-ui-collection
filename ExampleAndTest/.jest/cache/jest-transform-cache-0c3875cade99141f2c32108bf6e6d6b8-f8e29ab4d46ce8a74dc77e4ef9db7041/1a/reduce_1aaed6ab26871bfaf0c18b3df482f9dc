@@ -1,0 +1,52 @@
+deb2ebbba3fb1db2c61ab12aabb4c2b6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function reduce(collection, iteratee, accumulator) {
+  var func = require('./isArray')(collection) ? require('./_arrayReduce') : require('./_baseReduce'),
+  initAccum = arguments.length < 3;
+
+  return func(collection, require('./_baseIteratee')(iteratee, 4), accumulator, initAccum, require('./_baseEach'));
+}
+
+module.exports = reduce;

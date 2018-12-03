@@ -1,0 +1,26 @@
+a26d12eb89dd526ba9f22f3e09baf767
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var pick = require('./_flatRest')(function (object, paths) {
+  return object == null ? {} : require('./_basePick')(object, paths);
+});
+
+module.exports = pick;

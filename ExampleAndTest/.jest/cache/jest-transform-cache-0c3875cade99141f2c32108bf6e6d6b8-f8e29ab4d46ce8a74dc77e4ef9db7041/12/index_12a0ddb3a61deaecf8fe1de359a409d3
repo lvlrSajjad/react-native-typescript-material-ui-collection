@@ -1,0 +1,20 @@
+16f6942957691a29a2fad2ebf55ad2fb
+'use strict';
+
+
+
+
+
+
+var polyfill = require('./polyfill')();
+
+
+var boundFlat = require('function-bind').call(Function.call, polyfill);
+
+require('define-properties')(boundFlat, {
+  getPolyfill: require('./polyfill'),
+  implementation: require('./implementation'),
+  shim: require('./shim') });
+
+
+module.exports = boundFlat;

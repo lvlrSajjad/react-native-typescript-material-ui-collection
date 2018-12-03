@@ -1,0 +1,260 @@
+1a01e4b638d859fd61bf9b6da8c746b4
+
+
+
+
+
+
+
+
+
+
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var PRESS_RETENTION_OFFSET = { top: 20, left: 20, right: 20, bottom: 30 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var TouchableWithoutFeedback = require('create-react-class')({
+  displayName: 'TouchableWithoutFeedback',
+  mixins: [require('react-timer-mixin'), require('Touchable').Mixin],
+
+  propTypes: {
+    accessible: require('prop-types').bool,
+    accessibilityLabel: require('prop-types').node,
+    accessibilityHint: require('prop-types').string,
+    accessibilityComponentType: require('prop-types').oneOf(require('ViewAccessibility').AccessibilityComponentTypes),
+    accessibilityRole: require('prop-types').oneOf(require('ViewAccessibility').AccessibilityRoles),
+    accessibilityStates: require('prop-types').arrayOf(
+    require('prop-types').oneOf(require('ViewAccessibility').AccessibilityStates)),
+
+    accessibilityTraits: require('prop-types').oneOfType([
+    require('prop-types').oneOf(require('ViewAccessibility').AccessibilityTraits),
+    require('prop-types').arrayOf(require('prop-types').oneOf(require('ViewAccessibility').AccessibilityTraits))]),
+
+
+
+
+
+
+    onFocus: require('prop-types').func,
+
+
+
+
+
+    onBlur: require('prop-types').func,
+
+
+
+    disabled: require('prop-types').bool,
+
+
+
+
+    onPress: require('prop-types').func,
+
+
+
+
+    onPressIn: require('prop-types').func,
+
+
+
+    onPressOut: require('prop-types').func,
+
+
+
+
+
+    onLayout: require('prop-types').func,
+
+    onLongPress: require('prop-types').func,
+
+    nativeID: require('prop-types').string,
+    testID: require('prop-types').string,
+
+
+
+
+    delayPressIn: require('prop-types').number,
+
+
+
+    delayPressOut: require('prop-types').number,
+
+
+
+    delayLongPress: require('prop-types').number,
+
+
+
+
+
+
+
+    pressRetentionOffset: require('EdgeInsetsPropType'),
+
+
+
+
+
+
+
+
+    hitSlop: require('EdgeInsetsPropType') },
+
+
+  getInitialState: function getInitialState() {
+    return this.touchableGetInitialState();
+  },
+
+  componentDidMount: function componentDidMount() {
+    require('ensurePositiveDelayProps')(this.props);
+  },
+
+  UNSAFE_componentWillReceiveProps: function UNSAFE_componentWillReceiveProps(nextProps) {
+    require('ensurePositiveDelayProps')(nextProps);
+  },
+
+
+
+
+
+  touchableHandlePress: function touchableHandlePress(e) {
+    this.props.onPress && this.props.onPress(e);
+  },
+
+  touchableHandleActivePressIn: function touchableHandleActivePressIn(e) {
+    this.props.onPressIn && this.props.onPressIn(e);
+  },
+
+  touchableHandleActivePressOut: function touchableHandleActivePressOut(e) {
+    this.props.onPressOut && this.props.onPressOut(e);
+  },
+
+  touchableHandleLongPress: function touchableHandleLongPress(e) {
+    this.props.onLongPress && this.props.onLongPress(e);
+  },
+
+  touchableGetPressRectOffset: function touchableGetPressRectOffset() {
+
+    return this.props.pressRetentionOffset || PRESS_RETENTION_OFFSET;
+  },
+
+  touchableGetHitSlop: function touchableGetHitSlop() {
+    return this.props.hitSlop;
+  },
+
+  touchableGetHighlightDelayMS: function touchableGetHighlightDelayMS() {
+    return this.props.delayPressIn || 0;
+  },
+
+  touchableGetLongPressDelayMS: function touchableGetLongPressDelayMS() {
+    return this.props.delayLongPress === 0 ?
+    0 :
+    this.props.delayLongPress || 500;
+  },
+
+  touchableGetPressOutDelayMS: function touchableGetPressOutDelayMS() {
+    return this.props.delayPressOut || 0;
+  },
+
+  render: function render() {
+
+
+    var child = require('React').Children.only(this.props.children);
+    var children = child.props.children;
+    if (require('Touchable').TOUCH_TARGET_DEBUG && child.type === require('View')) {
+      children = require('React').Children.toArray(children);
+      children.push(
+      require('Touchable').renderDebugView({ color: 'red', hitSlop: this.props.hitSlop }));
+
+    }
+    return require('React').cloneElement(child, {
+      accessible: this.props.accessible !== false,
+      accessibilityLabel: this.props.accessibilityLabel,
+      accessibilityHint: this.props.accessibilityHint,
+      accessibilityComponentType: this.props.accessibilityComponentType,
+      accessibilityRole: this.props.accessibilityRole,
+      accessibilityStates: this.props.accessibilityStates,
+      accessibilityTraits: this.props.accessibilityTraits,
+      nativeID: this.props.nativeID,
+      testID: this.props.testID,
+      onLayout: this.props.onLayout,
+      hitSlop: this.props.hitSlop,
+      onStartShouldSetResponder: this.touchableHandleStartShouldSetResponder,
+      onResponderTerminationRequest: this.
+      touchableHandleResponderTerminationRequest,
+      onResponderGrant: this.touchableHandleResponderGrant,
+      onResponderMove: this.touchableHandleResponderMove,
+      onResponderRelease: this.touchableHandleResponderRelease,
+      onResponderTerminate: this.touchableHandleResponderTerminate,
+      children: children });
+
+  } });
+
+
+module.exports = TouchableWithoutFeedback;

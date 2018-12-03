@@ -1,0 +1,18 @@
+efa5d51a82f3ab88dbf6e3581417308a
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.radius = exports.styles = void 0;var _reactNative = require("react-native");function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+var radius = 10;exports.radius = radius;
+var styles = _reactNative.StyleSheet.create({
+  container: _objectSpread({},
+  _reactNative.StyleSheet.absoluteFillObject, {
+
+    backgroundColor: 'transparent',
+    overflow: 'hidden' }),
+
+
+  ripple: {
+    width: radius * 2,
+    height: radius * 2,
+    borderRadius: radius,
+    overflow: 'hidden',
+    position: 'absolute' } });exports.styles = styles;

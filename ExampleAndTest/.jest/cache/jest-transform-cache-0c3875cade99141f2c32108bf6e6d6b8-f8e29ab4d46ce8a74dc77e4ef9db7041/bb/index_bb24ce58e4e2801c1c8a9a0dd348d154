@@ -1,0 +1,551 @@
+58ed67458ef96106d528ddbe381dca5c
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _propTypes = _interopRequireDefault(require("prop-types"));
+var _react = _interopRequireWildcard(require("react"));
+var _reactNative = require("react-native");
+
+
+
+
+
+
+
+
+
+
+var _package = _interopRequireDefault(require("react-native/package.json"));
+
+var _line = _interopRequireDefault(require("../line"));
+var _label = _interopRequireDefault(require("../label"));
+var _affix = _interopRequireDefault(require("../affix"));
+var _helper = _interopRequireDefault(require("../helper"));
+var _counter = _interopRequireDefault(require("../counter"));
+
+var _styles = _interopRequireDefault(require("./styles.js"));var _jsxFileName = "D:\\CodingProjects\\Github\\typescript-material-ui-collection\\ExampleAndTest\\node_modules\\react-native-material-textfield\\src\\components\\field\\index.js";function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _objectWithoutProperties(source, excluded) {if (source == null) return {};var target = _objectWithoutPropertiesLoose(source, excluded);var key, i;if (Object.getOwnPropertySymbols) {var sourceSymbolKeys = Object.getOwnPropertySymbols(source);for (i = 0; i < sourceSymbolKeys.length; i++) {key = sourceSymbolKeys[i];if (excluded.indexOf(key) >= 0) continue;if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;target[key] = source[key];}}return target;}function _objectWithoutPropertiesLoose(source, excluded) {if (source == null) return {};var target = {};var sourceKeys = Object.keys(source);var key, i;for (i = 0; i < sourceKeys.length; i++) {key = sourceKeys[i];if (excluded.indexOf(key) >= 0) continue;target[key] = source[key];}return target;}function _extends() {_extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};return _extends.apply(this, arguments);}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}var
+
+TextField = function (_PureComponent) {_inherits(TextField, _PureComponent);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function TextField(props) {var _this;_classCallCheck(this, TextField);
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(TextField).call(this, props));
+
+    _this.onBlur = _this.onBlur.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.onFocus = _this.onFocus.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.onPress = _this.focus.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.onChange = _this.onChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.onChangeText = _this.onChangeText.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.onContentSizeChange = _this.onContentSizeChange.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.onFocusAnimationEnd = _this.onFocusAnimationEnd.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+
+    _this.updateRef = _this.updateRef.bind(_assertThisInitialized(_assertThisInitialized(_this)), 'input');var _this$props =
+
+    _this.props,value = _this$props.value,error = _this$props.error,fontSize = _this$props.fontSize;
+
+    _this.mounted = false;
+    _this.state = {
+      text: value,
+
+      focus: new _reactNative.Animated.Value(_this.focusState(error, false)),
+      focused: false,
+      receivedFocus: false,
+
+      error: error,
+      errored: !!error,
+
+      height: fontSize * 1.5 };return _this;
+
+  }_createClass(TextField, [{ key: "componentWillReceiveProps", value: function componentWillReceiveProps(
+
+    props) {var
+      error = this.state.error;
+
+      if (null != props.value) {
+        this.setState({ text: props.value });
+      }
+
+      if (props.error && props.error !== error) {
+        this.setState({ error: props.error });
+      }
+
+      if (props.error !== this.props.error) {
+        this.setState({ errored: !!props.error });
+      }
+    } }, { key: "componentDidMount", value: function componentDidMount()
+
+    {
+      this.mounted = true;
+    } }, { key: "componentWillUnmount", value: function componentWillUnmount()
+
+    {
+      this.mounted = false;
+    } }, { key: "componentWillUpdate", value: function componentWillUpdate(
+
+    props, state) {var _this$props2 =
+      this.props,error = _this$props2.error,duration = _this$props2.animationDuration;var _this$state =
+      this.state,focus = _this$state.focus,focused = _this$state.focused;
+
+      if (props.error !== error || focused ^ state.focused) {
+        var toValue = this.focusState(props.error, state.focused);
+
+        _reactNative.Animated.
+        timing(focus, { toValue: toValue, duration: duration }).
+        start(this.onFocusAnimationEnd);
+      }
+    } }, { key: "updateRef", value: function updateRef(
+
+    name, ref) {
+      this[name] = ref;
+    } }, { key: "focusState", value: function focusState(
+
+    error, focused) {
+      return error ? -1 : focused ? 1 : 0;
+    } }, { key: "focus", value: function focus()
+
+    {var _this$props3 =
+      this.props,disabled = _this$props3.disabled,editable = _this$props3.editable;
+
+      if (!disabled && editable) {
+        this.input.focus();
+      }
+    } }, { key: "blur", value: function blur()
+
+    {
+      this.input.blur();
+    } }, { key: "clear", value: function clear()
+
+    {
+      this.input.clear();
+
+
+      this.onChangeText('');
+    } }, { key: "value", value: function value()
+
+    {var _this$state2 =
+      this.state,text = _this$state2.text,receivedFocus = _this$state2.receivedFocus;var _this$props4 =
+      this.props,value = _this$props4.value,defaultValue = _this$props4.defaultValue;
+
+      return receivedFocus || null != value || null == defaultValue ?
+      text :
+      defaultValue;
+    } }, { key: "isFocused", value: function isFocused()
+
+    {
+      return this.input.isFocused();
+    } }, { key: "isRestricted", value: function isRestricted()
+
+    {var
+      characterRestriction = this.props.characterRestriction;var _this$state$text =
+      this.state.text,text = _this$state$text === void 0 ? '' : _this$state$text;
+
+      return characterRestriction < text.length;
+    } }, { key: "onFocus", value: function onFocus(
+
+    event) {var _this$props5 =
+      this.props,onFocus = _this$props5.onFocus,clearTextOnFocus = _this$props5.clearTextOnFocus;
+
+      if ('function' === typeof onFocus) {
+        onFocus(event);
+      }
+
+      if (clearTextOnFocus) {
+        this.clear();
+      }
+
+      this.setState({ focused: true, receivedFocus: true });
+    } }, { key: "onBlur", value: function onBlur(
+
+    event) {var
+      onBlur = this.props.onBlur;
+
+      if ('function' === typeof onBlur) {
+        onBlur(event);
+      }
+
+      this.setState({ focused: false });
+    } }, { key: "onChange", value: function onChange(
+
+    event) {var _this$props6 =
+      this.props,onChange = _this$props6.onChange,multiline = _this$props6.multiline;
+
+      if ('function' === typeof onChange) {
+        onChange(event);
+      }
+
+
+      if (multiline && 'android' === _reactNative.Platform.OS) {
+        if (/^0\.4[45]\./.test(_package.default.version)) {
+          this.onContentSizeChange(event);
+        }
+      }
+    } }, { key: "onChangeText", value: function onChangeText(
+
+    text) {var
+      onChangeText = this.props.onChangeText;
+
+      this.setState({ text: text });
+
+      if ('function' === typeof onChangeText) {
+        onChangeText(text);
+      }
+    } }, { key: "onContentSizeChange", value: function onContentSizeChange(
+
+    event) {var _this$props7 =
+      this.props,onContentSizeChange = _this$props7.onContentSizeChange,fontSize = _this$props7.fontSize;var
+      height = event.nativeEvent.contentSize.height;
+
+      if ('function' === typeof onContentSizeChange) {
+        onContentSizeChange(event);
+      }
+
+      this.setState({
+        height: Math.max(
+        fontSize * 1.5,
+        Math.ceil(height) + _reactNative.Platform.select({ ios: 5, android: 1 })) });
+
+
+    } }, { key: "onFocusAnimationEnd", value: function onFocusAnimationEnd()
+
+    {
+      if (this.mounted) {
+        this.setState(function (state, _ref) {var error = _ref.error;return { error: error };});
+      }
+    } }, { key: "renderAccessory", value: function renderAccessory()
+
+    {var
+      renderAccessory = this.props.renderAccessory;
+
+      if ('function' !== typeof renderAccessory) {
+        return null;
+      }
+
+      return (
+        _react.default.createElement(_reactNative.View, { style: _styles.default.accessory, __source: { fileName: _jsxFileName, lineNumber: 291 } },
+        renderAccessory()));
+
+
+    } }, { key: "renderAffix", value: function renderAffix(
+
+    type, active, focused) {var _this$props8 =
+
+
+
+
+
+
+      this.props,affix = _this$props8[type],fontSize = _this$props8.fontSize,baseColor = _this$props8.baseColor,animationDuration = _this$props8.animationDuration,affixTextStyle = _this$props8.affixTextStyle;
+
+      if (null == affix) {
+        return null;
+      }
+
+      var props = {
+        type: type,
+        active: active,
+        focused: focused,
+        fontSize: fontSize,
+        baseColor: baseColor,
+        animationDuration: animationDuration };
+
+
+      return (
+        _react.default.createElement(_affix.default, _extends({ style: affixTextStyle }, props, { __source: { fileName: _jsxFileName, lineNumber: 320 } }), affix));
+
+    } }, { key: "render", value: function render()
+
+    {var _this$state3 =
+      this.state,receivedFocus = _this$state3.receivedFocus,focus = _this$state3.focus,focused = _this$state3.focused,error = _this$state3.error,errored = _this$state3.errored,height = _this$state3.height,_this$state3$text = _this$state3.text,text = _this$state3$text === void 0 ? '' : _this$state3$text;var _this$props9 =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      this.props,inputStyleOverrides = _this$props9.style,label = _this$props9.label,title = _this$props9.title,value = _this$props9.value,defaultValue = _this$props9.defaultValue,limit = _this$props9.characterRestriction,editable = _this$props9.editable,disabled = _this$props9.disabled,disabledLineType = _this$props9.disabledLineType,disabledLineWidth = _this$props9.disabledLineWidth,animationDuration = _this$props9.animationDuration,fontSize = _this$props9.fontSize,titleFontSize = _this$props9.titleFontSize,labelFontSize = _this$props9.labelFontSize,labelHeight = _this$props9.labelHeight,labelPadding = _this$props9.labelPadding,inputContainerPadding = _this$props9.inputContainerPadding,labelTextStyle = _this$props9.labelTextStyle,titleTextStyle = _this$props9.titleTextStyle,tintColor = _this$props9.tintColor,baseColor = _this$props9.baseColor,textColor = _this$props9.textColor,errorColor = _this$props9.errorColor,lineWidth = _this$props9.lineWidth,activeLineWidth = _this$props9.activeLineWidth,containerStyle = _this$props9.containerStyle,inputContainerStyleOverrides = _this$props9.inputContainerStyle,clearTextOnFocus = _this$props9.clearTextOnFocus,props = _objectWithoutProperties(_this$props9, ["style", "label", "title", "value", "defaultValue", "characterRestriction", "editable", "disabled", "disabledLineType", "disabledLineWidth", "animationDuration", "fontSize", "titleFontSize", "labelFontSize", "labelHeight", "labelPadding", "inputContainerPadding", "labelTextStyle", "titleTextStyle", "tintColor", "baseColor", "textColor", "errorColor", "lineWidth", "activeLineWidth", "containerStyle", "inputContainerStyle", "clearTextOnFocus"]);
+
+      if (props.multiline && props.height) {
+
+        height = props.height;
+      }
+
+      var defaultVisible = !(receivedFocus || null != value || null == defaultValue);
+
+      value = defaultVisible ?
+      defaultValue :
+      text;
+
+      var active = !!(value || props.placeholder);
+      var count = value.length;
+      var restricted = limit < count;
+
+      var textAlign = _reactNative.I18nManager.isRTL ?
+      'right' :
+      'left';
+
+      var borderBottomColor = restricted ?
+      errorColor :
+      focus.interpolate({
+        inputRange: [-1, 0, 1],
+        outputRange: [errorColor, baseColor, tintColor] });
+
+
+      var borderBottomWidth = restricted ?
+      activeLineWidth :
+      focus.interpolate({
+        inputRange: [-1, 0, 1],
+        outputRange: [activeLineWidth, lineWidth, activeLineWidth] });
+
+
+      var inputContainerStyle = _objectSpread({
+        paddingTop: labelHeight,
+        paddingBottom: inputContainerPadding },
+
+      disabled ?
+      { overflow: 'hidden' } :
+      { borderBottomColor: borderBottomColor, borderBottomWidth: borderBottomWidth },
+
+      props.multiline ?
+      { height: 'web' === _reactNative.Platform.OS ? 'auto' : labelHeight + inputContainerPadding + height } :
+      { height: labelHeight + inputContainerPadding + fontSize * 1.5 });
+
+
+      var inputStyle = _objectSpread({
+        fontSize: fontSize,
+        textAlign: textAlign,
+
+        color: disabled || defaultVisible ?
+        baseColor :
+        textColor },
+
+      props.multiline ? _objectSpread({
+
+        height: fontSize * 1.5 + height },
+
+      _reactNative.Platform.select({
+        ios: { top: -1 },
+        android: { textAlignVertical: 'top' } })) :
+
+
+      { height: fontSize * 1.5 });
+
+
+      var errorStyle = {
+        color: errorColor,
+
+        opacity: focus.interpolate({
+          inputRange: [-1, 0, 1],
+          outputRange: [1, 0, 0] }),
+
+
+        fontSize: title ?
+        titleFontSize :
+        focus.interpolate({
+          inputRange: [-1, 0, 1],
+          outputRange: [titleFontSize, 0, 0] }) };
+
+
+
+      var titleStyle = {
+        color: baseColor,
+
+        opacity: focus.interpolate({
+          inputRange: [-1, 0, 1],
+          outputRange: [0, 1, 1] }),
+
+
+        fontSize: titleFontSize };
+
+
+      var helperContainerStyle = {
+        flexDirection: 'row',
+        height: title || limit ?
+        titleFontSize * 2 :
+        focus.interpolate({
+          inputRange: [-1, 0, 1],
+          outputRange: [titleFontSize * 2, 8, 8] }) };
+
+
+
+      var containerProps = {
+        style: containerStyle,
+        onStartShouldSetResponder: function onStartShouldSetResponder() {return true;},
+        onResponderRelease: this.onPress,
+        pointerEvents: !disabled && editable ?
+        'auto' :
+        'none' };
+
+
+      var inputContainerProps = {
+        style: [
+        _styles.default.inputContainer,
+        inputContainerStyle,
+        inputContainerStyleOverrides] };
+
+
+
+      var lineProps = {
+        type: disabledLineType,
+        width: disabledLineWidth,
+        color: baseColor };
+
+
+      var labelProps = {
+        baseSize: labelHeight,
+        basePadding: labelPadding,
+        fontSize: fontSize,
+        activeFontSize: labelFontSize,
+        tintColor: tintColor,
+        baseColor: baseColor,
+        errorColor: errorColor,
+        animationDuration: animationDuration,
+        active: active,
+        focused: focused,
+        errored: errored,
+        restricted: restricted,
+        style: labelTextStyle };
+
+
+      var counterProps = {
+        baseColor: baseColor,
+        errorColor: errorColor,
+        count: count,
+        limit: limit,
+        fontSize: titleFontSize,
+        style: titleTextStyle };
+
+
+      return (
+        _react.default.createElement(_reactNative.View, _extends({}, containerProps, { __source: { fileName: _jsxFileName, lineNumber: 510 } }),
+        _react.default.createElement(_reactNative.Animated.View, _extends({}, inputContainerProps, { __source: { fileName: _jsxFileName, lineNumber: 511 } }),
+        disabled && _react.default.createElement(_line.default, _extends({}, lineProps, { __source: { fileName: _jsxFileName, lineNumber: 512 } })),
+
+        _react.default.createElement(_label.default, _extends({}, labelProps, { __source: { fileName: _jsxFileName, lineNumber: 514 } }), label),
+
+        _react.default.createElement(_reactNative.View, { style: _styles.default.row, __source: { fileName: _jsxFileName, lineNumber: 516 } },
+        this.renderAffix('prefix', active, focused),
+
+        _react.default.createElement(_reactNative.TextInput, _extends({
+          style: [_styles.default.input, inputStyle, inputStyleOverrides],
+          selectionColor: tintColor },
+
+        props, {
+
+          editable: !disabled && editable,
+          onChange: this.onChange,
+          onChangeText: this.onChangeText,
+          onContentSizeChange: this.onContentSizeChange,
+          onFocus: this.onFocus,
+          onBlur: this.onBlur,
+          value: value,
+          ref: this.updateRef, __source: { fileName: _jsxFileName, lineNumber: 519 } })),
+
+
+        this.renderAffix('suffix', active, focused),
+        this.renderAccessory())),
+
+
+
+        _react.default.createElement(_reactNative.Animated.View, { style: helperContainerStyle, __source: { fileName: _jsxFileName, lineNumber: 540 } },
+        _react.default.createElement(_reactNative.View, { style: _styles.default.flex, __source: { fileName: _jsxFileName, lineNumber: 541 } },
+        _react.default.createElement(_helper.default, { style: [errorStyle, titleTextStyle], __source: { fileName: _jsxFileName, lineNumber: 542 } }, error),
+        _react.default.createElement(_helper.default, { style: [titleStyle, titleTextStyle], __source: { fileName: _jsxFileName, lineNumber: 543 } }, title)),
+
+
+        _react.default.createElement(_counter.default, _extends({}, counterProps, { __source: { fileName: _jsxFileName, lineNumber: 546 } })))));
+
+
+
+    } }]);return TextField;}(_react.PureComponent);exports.default = TextField;TextField.defaultProps = { underlineColorAndroid: 'transparent', disableFullscreenUI: true, autoCapitalize: 'sentences', editable: true, animationDuration: 225, fontSize: 16, titleFontSize: 12, labelFontSize: 12, labelHeight: 32, labelPadding: 4, inputContainerPadding: 8, tintColor: 'rgb(0, 145, 234)', textColor: 'rgba(0, 0, 0, .87)', baseColor: 'rgba(0, 0, 0, .38)', errorColor: 'rgb(213, 0, 0)', lineWidth: _reactNative.StyleSheet.hairlineWidth, activeLineWidth: 2, disabled: false, disabledLineType: 'dotted', disabledLineWidth: 1 };TextField.propTypes = _objectSpread({}, _reactNative.TextInput.propTypes, { animationDuration: _propTypes.default.number, fontSize: _propTypes.default.number, titleFontSize: _propTypes.default.number, labelFontSize: _propTypes.default.number, labelHeight: _propTypes.default.number, labelPadding: _propTypes.default.number, inputContainerPadding: _propTypes.default.number, labelTextStyle: _reactNative.Text.propTypes.style, titleTextStyle: _reactNative.Text.propTypes.style, affixTextStyle: _reactNative.Text.propTypes.style, tintColor: _propTypes.default.string, textColor: _propTypes.default.string, baseColor: _propTypes.default.string, label: _propTypes.default.string.isRequired, title: _propTypes.default.string, characterRestriction: _propTypes.default.number, error: _propTypes.default.string, errorColor: _propTypes.default.string, lineWidth: _propTypes.default.number, activeLineWidth: _propTypes.default.number, disabled: _propTypes.default.bool, disabledLineType: _line.default.propTypes.type, disabledLineWidth: _propTypes.default.number, renderAccessory: _propTypes.default.func, prefix: _propTypes.default.string, suffix: _propTypes.default.string, containerStyle: (_reactNative.ViewPropTypes || _reactNative.View.propTypes).style, inputContainerStyle: (_reactNative.ViewPropTypes || _reactNative.View.propTypes).style });

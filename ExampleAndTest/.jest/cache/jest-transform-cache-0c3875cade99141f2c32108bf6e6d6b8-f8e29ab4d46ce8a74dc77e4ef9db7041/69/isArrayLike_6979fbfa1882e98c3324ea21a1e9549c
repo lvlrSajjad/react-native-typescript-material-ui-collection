@@ -1,0 +1,34 @@
+b9859b6c96207779f65822735245c25c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function isArrayLike(value) {
+  return value != null && require('./isLength')(value.length) && !require('./isFunction')(value);
+}
+
+module.exports = isArrayLike;

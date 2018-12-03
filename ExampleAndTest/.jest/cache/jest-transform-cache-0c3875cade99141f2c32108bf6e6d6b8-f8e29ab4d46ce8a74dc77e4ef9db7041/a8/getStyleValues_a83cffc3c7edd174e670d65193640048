@@ -1,0 +1,15 @@
+bd338103c1daea7b2d3173ed07c2886c
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = getStyleValues;var _flattenStyle = _interopRequireDefault(require("./flattenStyle"));
+var _getDefaultStyleValue = _interopRequireDefault(require("./getDefaultStyleValue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+function getStyleValues(keys, style) {
+  var values = {};
+  var flatStyle = (0, _flattenStyle.default)(style);
+
+  (typeof keys === 'string' ? [keys] : keys).forEach(function (key) {
+    values[key] =
+    key in flatStyle ? flatStyle[key] : (0, _getDefaultStyleValue.default)(key, flatStyle);
+  });
+  return values;
+}

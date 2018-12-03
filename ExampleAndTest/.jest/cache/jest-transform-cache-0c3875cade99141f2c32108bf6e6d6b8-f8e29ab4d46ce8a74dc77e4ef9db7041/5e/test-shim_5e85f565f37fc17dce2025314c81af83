@@ -1,0 +1,10 @@
+cb1c473aa6cedcdacbeb5eeb747cb016
+
+
+
+
+
+
+global.requestAnimationFrame = function (callback) {
+  setTimeout(callback, 0);
+};

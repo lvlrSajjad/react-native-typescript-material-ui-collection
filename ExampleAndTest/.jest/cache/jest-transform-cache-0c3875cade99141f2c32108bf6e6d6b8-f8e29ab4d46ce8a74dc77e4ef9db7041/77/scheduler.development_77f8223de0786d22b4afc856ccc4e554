@@ -1,0 +1,640 @@
+12deb77bb4c27d42b16ad29997af5fcf
+/** @license React v16.6.1
+ * scheduler.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+'use strict';
+
+
+
+if (process.env.NODE_ENV !== "production") {
+  (function () {
+    'use strict';
+
+    Object.defineProperty(exports, '__esModule', { value: true });
+
+
+
+
+    var ImmediatePriority = 1;
+    var UserBlockingPriority = 2;
+    var NormalPriority = 3;
+    var LowPriority = 4;
+    var IdlePriority = 5;
+
+
+
+
+    var maxSigned31BitInt = 1073741823;
+
+
+    var IMMEDIATE_PRIORITY_TIMEOUT = -1;
+
+    var USER_BLOCKING_PRIORITY = 250;
+    var NORMAL_PRIORITY_TIMEOUT = 5000;
+    var LOW_PRIORITY_TIMEOUT = 10000;
+
+    var IDLE_PRIORITY = maxSigned31BitInt;
+
+
+    var firstCallbackNode = null;
+
+    var currentDidTimeout = false;
+    var currentPriorityLevel = NormalPriority;
+    var currentEventStartTime = -1;
+    var currentExpirationTime = -1;
+
+
+    var isExecutingCallback = false;
+
+    var isHostCallbackScheduled = false;
+
+    var hasNativePerformanceNow = typeof performance === 'object' && typeof performance.now === 'function';
+
+    function ensureHostCallbackIsScheduled() {
+      if (isExecutingCallback) {
+
+        return;
+      }
+
+      var expirationTime = firstCallbackNode.expirationTime;
+      if (!isHostCallbackScheduled) {
+        isHostCallbackScheduled = true;
+      } else {
+
+        cancelHostCallback();
+      }
+      _requestHostCallback(flushWork, expirationTime);
+    }
+
+    function flushFirstCallback() {
+      var flushedNode = firstCallbackNode;
+
+
+
+      var next = firstCallbackNode.next;
+      if (firstCallbackNode === next) {
+
+        firstCallbackNode = null;
+        next = null;
+      } else {
+        var lastCallbackNode = firstCallbackNode.previous;
+        firstCallbackNode = lastCallbackNode.next = next;
+        next.previous = lastCallbackNode;
+      }
+
+      flushedNode.next = flushedNode.previous = null;
+
+
+      var callback = flushedNode.callback;
+      var expirationTime = flushedNode.expirationTime;
+      var priorityLevel = flushedNode.priorityLevel;
+      var previousPriorityLevel = currentPriorityLevel;
+      var previousExpirationTime = currentExpirationTime;
+      currentPriorityLevel = priorityLevel;
+      currentExpirationTime = expirationTime;
+      var continuationCallback;
+      try {
+        continuationCallback = callback();
+      } finally {
+        currentPriorityLevel = previousPriorityLevel;
+        currentExpirationTime = previousExpirationTime;
+      }
+
+
+
+      if (typeof continuationCallback === 'function') {
+        var continuationNode = {
+          callback: continuationCallback,
+          priorityLevel: priorityLevel,
+          expirationTime: expirationTime,
+          next: null,
+          previous: null };
+
+
+
+
+
+
+        if (firstCallbackNode === null) {
+
+          firstCallbackNode = continuationNode.next = continuationNode.previous = continuationNode;
+        } else {
+          var nextAfterContinuation = null;
+          var node = firstCallbackNode;
+          do {
+            if (node.expirationTime >= expirationTime) {
+
+
+              nextAfterContinuation = node;
+              break;
+            }
+            node = node.next;
+          } while (node !== firstCallbackNode);
+
+          if (nextAfterContinuation === null) {
+
+
+            nextAfterContinuation = firstCallbackNode;
+          } else if (nextAfterContinuation === firstCallbackNode) {
+
+            firstCallbackNode = continuationNode;
+            ensureHostCallbackIsScheduled();
+          }
+
+          var previous = nextAfterContinuation.previous;
+          previous.next = nextAfterContinuation.previous = continuationNode;
+          continuationNode.next = nextAfterContinuation;
+          continuationNode.previous = previous;
+        }
+      }
+    }
+
+    function flushImmediateWork() {
+      if (
+
+      currentEventStartTime === -1 && firstCallbackNode !== null && firstCallbackNode.priorityLevel === ImmediatePriority) {
+        isExecutingCallback = true;
+        try {
+          do {
+            flushFirstCallback();
+          } while (
+
+          firstCallbackNode !== null && firstCallbackNode.priorityLevel === ImmediatePriority);
+        } finally {
+          isExecutingCallback = false;
+          if (firstCallbackNode !== null) {
+
+            ensureHostCallbackIsScheduled();
+          } else {
+            isHostCallbackScheduled = false;
+          }
+        }
+      }
+    }
+
+    function flushWork(didTimeout) {
+      isExecutingCallback = true;
+      var previousDidTimeout = currentDidTimeout;
+      currentDidTimeout = didTimeout;
+      try {
+        if (didTimeout) {
+
+          while (firstCallbackNode !== null) {
+
+
+
+            var currentTime = exports.unstable_now();
+            if (firstCallbackNode.expirationTime <= currentTime) {
+              do {
+                flushFirstCallback();
+              } while (firstCallbackNode !== null && firstCallbackNode.expirationTime <= currentTime);
+              continue;
+            }
+            break;
+          }
+        } else {
+
+          if (firstCallbackNode !== null) {
+            do {
+              flushFirstCallback();
+            } while (firstCallbackNode !== null && !shouldYieldToHost());
+          }
+        }
+      } finally {
+        isExecutingCallback = false;
+        currentDidTimeout = previousDidTimeout;
+        if (firstCallbackNode !== null) {
+
+          ensureHostCallbackIsScheduled();
+        } else {
+          isHostCallbackScheduled = false;
+        }
+
+        flushImmediateWork();
+      }
+    }
+
+    function unstable_runWithPriority(priorityLevel, eventHandler) {
+      switch (priorityLevel) {
+        case ImmediatePriority:
+        case UserBlockingPriority:
+        case NormalPriority:
+        case LowPriority:
+        case IdlePriority:
+          break;
+        default:
+          priorityLevel = NormalPriority;}
+
+
+      var previousPriorityLevel = currentPriorityLevel;
+      var previousEventStartTime = currentEventStartTime;
+      currentPriorityLevel = priorityLevel;
+      currentEventStartTime = exports.unstable_now();
+
+      try {
+        return eventHandler();
+      } finally {
+        currentPriorityLevel = previousPriorityLevel;
+        currentEventStartTime = previousEventStartTime;
+
+
+        flushImmediateWork();
+      }
+    }
+
+    function unstable_wrapCallback(callback) {
+      var parentPriorityLevel = currentPriorityLevel;
+      return function () {
+
+        var previousPriorityLevel = currentPriorityLevel;
+        var previousEventStartTime = currentEventStartTime;
+        currentPriorityLevel = parentPriorityLevel;
+        currentEventStartTime = exports.unstable_now();
+
+        try {
+          return callback.apply(this, arguments);
+        } finally {
+          currentPriorityLevel = previousPriorityLevel;
+          currentEventStartTime = previousEventStartTime;
+          flushImmediateWork();
+        }
+      };
+    }
+
+    function unstable_scheduleCallback(callback, deprecated_options) {
+      var startTime = currentEventStartTime !== -1 ? currentEventStartTime : exports.unstable_now();
+
+      var expirationTime;
+      if (typeof deprecated_options === 'object' && deprecated_options !== null && typeof deprecated_options.timeout === 'number') {
+
+        expirationTime = startTime + deprecated_options.timeout;
+      } else {
+        switch (currentPriorityLevel) {
+          case ImmediatePriority:
+            expirationTime = startTime + IMMEDIATE_PRIORITY_TIMEOUT;
+            break;
+          case UserBlockingPriority:
+            expirationTime = startTime + USER_BLOCKING_PRIORITY;
+            break;
+          case IdlePriority:
+            expirationTime = startTime + IDLE_PRIORITY;
+            break;
+          case LowPriority:
+            expirationTime = startTime + LOW_PRIORITY_TIMEOUT;
+            break;
+          case NormalPriority:
+          default:
+            expirationTime = startTime + NORMAL_PRIORITY_TIMEOUT;}
+
+      }
+
+      var newNode = {
+        callback: callback,
+        priorityLevel: currentPriorityLevel,
+        expirationTime: expirationTime,
+        next: null,
+        previous: null };
+
+
+
+
+
+      if (firstCallbackNode === null) {
+
+        firstCallbackNode = newNode.next = newNode.previous = newNode;
+        ensureHostCallbackIsScheduled();
+      } else {
+        var next = null;
+        var node = firstCallbackNode;
+        do {
+          if (node.expirationTime > expirationTime) {
+
+            next = node;
+            break;
+          }
+          node = node.next;
+        } while (node !== firstCallbackNode);
+
+        if (next === null) {
+
+
+          next = firstCallbackNode;
+        } else if (next === firstCallbackNode) {
+
+          firstCallbackNode = newNode;
+          ensureHostCallbackIsScheduled();
+        }
+
+        var previous = next.previous;
+        previous.next = next.previous = newNode;
+        newNode.next = next;
+        newNode.previous = previous;
+      }
+
+      return newNode;
+    }
+
+    function unstable_cancelCallback(callbackNode) {
+      var next = callbackNode.next;
+      if (next === null) {
+
+        return;
+      }
+
+      if (next === callbackNode) {
+
+        firstCallbackNode = null;
+      } else {
+
+        if (callbackNode === firstCallbackNode) {
+          firstCallbackNode = next;
+        }
+        var previous = callbackNode.previous;
+        previous.next = next;
+        next.previous = previous;
+      }
+
+      callbackNode.next = callbackNode.previous = null;
+    }
+
+    function unstable_getCurrentPriorityLevel() {
+      return currentPriorityLevel;
+    }
+
+    function unstable_shouldYield() {
+      return !currentDidTimeout && (firstCallbackNode !== null && firstCallbackNode.expirationTime < currentExpirationTime || shouldYieldToHost());
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    var localDate = Date;
+
+
+
+
+
+    var localSetTimeout = typeof setTimeout === 'function' ? setTimeout : undefined;
+    var localClearTimeout = typeof clearTimeout === 'function' ? clearTimeout : undefined;
+
+
+
+    var localRequestAnimationFrame = typeof requestAnimationFrame === 'function' ? requestAnimationFrame : undefined;
+    var localCancelAnimationFrame = typeof cancelAnimationFrame === 'function' ? cancelAnimationFrame : undefined;
+
+
+
+
+
+
+    var ANIMATION_FRAME_TIMEOUT = 100;
+    var rAFID;
+    var rAFTimeoutID;
+    var requestAnimationFrameWithTimeout = function requestAnimationFrameWithTimeout(callback) {
+
+      rAFID = localRequestAnimationFrame(function (timestamp) {
+
+        localClearTimeout(rAFTimeoutID);
+        callback(timestamp);
+      });
+      rAFTimeoutID = localSetTimeout(function () {
+
+        localCancelAnimationFrame(rAFID);
+        callback(exports.unstable_now());
+      }, ANIMATION_FRAME_TIMEOUT);
+    };
+
+    if (hasNativePerformanceNow) {
+      var Performance = performance;
+      exports.unstable_now = function () {
+        return Performance.now();
+      };
+    } else {
+      exports.unstable_now = function () {
+        return localDate.now();
+      };
+    }
+
+    var _requestHostCallback;
+    var cancelHostCallback;
+    var shouldYieldToHost;
+
+    if (typeof window !== 'undefined' && window._schedMock) {
+
+      var impl = window._schedMock;
+      _requestHostCallback = impl[0];
+      cancelHostCallback = impl[1];
+      shouldYieldToHost = impl[2];
+    } else if (
+
+
+    typeof window === 'undefined' ||
+
+
+    typeof window.addEventListener !== 'function') {
+      var _callback = null;
+      var _currentTime = -1;
+      var _flushCallback = function _flushCallback(didTimeout, ms) {
+        if (_callback !== null) {
+          var cb = _callback;
+          _callback = null;
+          try {
+            _currentTime = ms;
+            cb(didTimeout);
+          } finally {
+            _currentTime = -1;
+          }
+        }
+      };
+      _requestHostCallback = function requestHostCallback(cb, ms) {
+        if (_currentTime !== -1) {
+
+          setTimeout(_requestHostCallback, 0, cb, ms);
+        } else {
+          _callback = cb;
+          setTimeout(_flushCallback, ms, true, ms);
+          setTimeout(_flushCallback, maxSigned31BitInt, false, maxSigned31BitInt);
+        }
+      };
+      cancelHostCallback = function cancelHostCallback() {
+        _callback = null;
+      };
+      shouldYieldToHost = function shouldYieldToHost() {
+        return false;
+      };
+      exports.unstable_now = function () {
+        return _currentTime === -1 ? 0 : _currentTime;
+      };
+    } else {
+      if (typeof console !== 'undefined') {
+
+        if (typeof localRequestAnimationFrame !== 'function') {
+          console.error("This browser doesn't support requestAnimationFrame. " + 'Make sure that you load a ' + 'polyfill in older browsers. https://fb.me/react-polyfills');
+        }
+        if (typeof localCancelAnimationFrame !== 'function') {
+          console.error("This browser doesn't support cancelAnimationFrame. " + 'Make sure that you load a ' + 'polyfill in older browsers. https://fb.me/react-polyfills');
+        }
+      }
+
+      var scheduledHostCallback = null;
+      var isMessageEventScheduled = false;
+      var timeoutTime = -1;
+
+      var isAnimationFrameScheduled = false;
+
+      var isFlushingHostCallback = false;
+
+      var frameDeadline = 0;
+
+
+
+      var previousFrameTime = 33;
+      var activeFrameTime = 33;
+
+      shouldYieldToHost = function shouldYieldToHost() {
+        return frameDeadline <= exports.unstable_now();
+      };
+
+
+      var messageKey = '__reactIdleCallback$' + Math.random().toString(36).slice(2);
+      var idleTick = function idleTick(event) {
+        if (event.source !== window || event.data !== messageKey) {
+          return;
+        }
+
+        isMessageEventScheduled = false;
+
+        var prevScheduledCallback = scheduledHostCallback;
+        var prevTimeoutTime = timeoutTime;
+        scheduledHostCallback = null;
+        timeoutTime = -1;
+
+        var currentTime = exports.unstable_now();
+
+        var didTimeout = false;
+        if (frameDeadline - currentTime <= 0) {
+
+
+          if (prevTimeoutTime !== -1 && prevTimeoutTime <= currentTime) {
+
+
+            didTimeout = true;
+          } else {
+
+            if (!isAnimationFrameScheduled) {
+
+              isAnimationFrameScheduled = true;
+              requestAnimationFrameWithTimeout(animationTick);
+            }
+
+            scheduledHostCallback = prevScheduledCallback;
+            timeoutTime = prevTimeoutTime;
+            return;
+          }
+        }
+
+        if (prevScheduledCallback !== null) {
+          isFlushingHostCallback = true;
+          try {
+            prevScheduledCallback(didTimeout);
+          } finally {
+            isFlushingHostCallback = false;
+          }
+        }
+      };
+
+
+      window.addEventListener('message', idleTick, false);
+
+      var animationTick = function animationTick(rafTime) {
+        if (scheduledHostCallback !== null) {
+
+
+
+
+
+
+
+
+          requestAnimationFrameWithTimeout(animationTick);
+        } else {
+
+          isAnimationFrameScheduled = false;
+          return;
+        }
+
+        var nextFrameTime = rafTime - frameDeadline + activeFrameTime;
+        if (nextFrameTime < activeFrameTime && previousFrameTime < activeFrameTime) {
+          if (nextFrameTime < 8) {
+
+
+            nextFrameTime = 8;
+          }
+
+
+
+
+
+
+
+          activeFrameTime = nextFrameTime < previousFrameTime ? previousFrameTime : nextFrameTime;
+        } else {
+          previousFrameTime = nextFrameTime;
+        }
+        frameDeadline = rafTime + activeFrameTime;
+        if (!isMessageEventScheduled) {
+          isMessageEventScheduled = true;
+          window.postMessage(messageKey, '*');
+        }
+      };
+
+      _requestHostCallback = function _requestHostCallback(callback, absoluteTimeout) {
+        scheduledHostCallback = callback;
+        timeoutTime = absoluteTimeout;
+        if (isFlushingHostCallback || absoluteTimeout < 0) {
+
+          window.postMessage(messageKey, '*');
+        } else if (!isAnimationFrameScheduled) {
+
+
+
+
+          isAnimationFrameScheduled = true;
+          requestAnimationFrameWithTimeout(animationTick);
+        }
+      };
+
+      cancelHostCallback = function cancelHostCallback() {
+        scheduledHostCallback = null;
+        isMessageEventScheduled = false;
+        timeoutTime = -1;
+      };
+    }
+
+    exports.unstable_ImmediatePriority = ImmediatePriority;
+    exports.unstable_UserBlockingPriority = UserBlockingPriority;
+    exports.unstable_NormalPriority = NormalPriority;
+    exports.unstable_IdlePriority = IdlePriority;
+    exports.unstable_LowPriority = LowPriority;
+    exports.unstable_runWithPriority = unstable_runWithPriority;
+    exports.unstable_scheduleCallback = unstable_scheduleCallback;
+    exports.unstable_cancelCallback = unstable_cancelCallback;
+    exports.unstable_wrapCallback = unstable_wrapCallback;
+    exports.unstable_getCurrentPriorityLevel = unstable_getCurrentPriorityLevel;
+    exports.unstable_shouldYield = unstable_shouldYield;
+  })();
+}

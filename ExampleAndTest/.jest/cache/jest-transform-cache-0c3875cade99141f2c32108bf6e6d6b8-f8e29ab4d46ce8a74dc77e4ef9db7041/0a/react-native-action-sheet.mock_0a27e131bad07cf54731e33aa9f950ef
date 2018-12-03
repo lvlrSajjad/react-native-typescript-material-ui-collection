@@ -1,0 +1,2 @@
+5075bb917a06e3fe9a1fadcb5865c383
+jest.mock('@expo/react-native-action-sheet', function () {return 'ActionSheet';});

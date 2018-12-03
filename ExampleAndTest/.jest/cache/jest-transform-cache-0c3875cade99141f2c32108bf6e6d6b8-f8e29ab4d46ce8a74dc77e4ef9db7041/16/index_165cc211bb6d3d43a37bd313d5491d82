@@ -1,0 +1,28 @@
+171c6bb054f042c5f6c6c840ed73db2e
+
+
+
+
+
+
+
+
+'use strict';
+
+
+
+
+if (typeof require('react') === 'undefined') {
+  throw Error(
+  'create-react-class could not find the React object. If you are using script tags, ' +
+  'make sure that React is being loaded before create-react-class.');
+
+}
+
+
+var ReactNoopUpdateQueue = new (require('react').Component)().updater;
+
+module.exports = require('./factory')(
+require('react').Component,
+require('react').isValidElement,
+ReactNoopUpdateQueue);

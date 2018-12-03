@@ -1,0 +1,5 @@
+7c70d5d4e83689ee0d272a4ff1982311
+
+var freeGlobal = typeof global == 'object' && global && global.Object === Object && global;
+
+module.exports = freeGlobal;

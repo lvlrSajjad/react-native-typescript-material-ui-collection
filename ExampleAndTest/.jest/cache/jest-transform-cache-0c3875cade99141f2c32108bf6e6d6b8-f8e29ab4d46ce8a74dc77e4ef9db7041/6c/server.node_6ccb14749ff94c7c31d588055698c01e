@@ -1,0 +1,8 @@
+ee74ff3200a535b2247692ea075fb480
+'use strict';
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = require('./cjs/react-dom-server.node.production.min.js');
+} else {
+  module.exports = require('./cjs/react-dom-server.node.development.js');
+}

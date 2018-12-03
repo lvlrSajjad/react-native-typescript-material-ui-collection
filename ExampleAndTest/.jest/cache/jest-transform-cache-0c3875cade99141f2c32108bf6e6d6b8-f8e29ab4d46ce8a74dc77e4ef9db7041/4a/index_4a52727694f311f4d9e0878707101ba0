@@ -1,0 +1,19 @@
+8a2d1d93157f4a45a7ece3a981c8949d
+'use strict';
+
+
+
+
+
+
+
+
+var boundTrim = require('function-bind').call(Function.call, require('./polyfill')());
+
+require('define-properties')(boundTrim, {
+  getPolyfill: require('./polyfill'),
+  implementation: require('./implementation'),
+  shim: require('./shim') });
+
+
+module.exports = boundTrim;

@@ -1,0 +1,10 @@
+d41bd90fa69cb8dd1cec99c58967bf2c
+
+
+
+var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
+
+
+var root = require('./_freeGlobal') || freeSelf || Function('return this')();
+
+module.exports = root;

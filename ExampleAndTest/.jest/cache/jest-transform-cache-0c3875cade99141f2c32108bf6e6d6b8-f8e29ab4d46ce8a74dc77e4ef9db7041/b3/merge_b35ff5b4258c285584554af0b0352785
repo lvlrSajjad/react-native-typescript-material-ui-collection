@@ -1,0 +1,40 @@
+09c515178bbbd71e846ff085ab239f7b
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var merge = require('./_createAssigner')(function (object, source, srcIndex) {
+  require('./_baseMerge')(object, source, srcIndex);
+});
+
+module.exports = merge;

@@ -1,0 +1,51 @@
+dfe63ece4e5f9d52f3fca705ed93dfa0
+
+
+
+
+
+
+
+
+
+
+'use strict';function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+
+
+
+
+
+
+
+
+var ReactNativeStyleAttributes = {};var _arr =
+
+Object.keys(_objectSpread({}, require('ViewStylePropTypes'), require('TextStylePropTypes'), require('ImageStylePropTypes')));for (var _i = 0; _i < _arr.length; _i++)
+
+
+
+{var attributeName = _arr[_i];
+  ReactNativeStyleAttributes[attributeName] = true;
+}
+
+ReactNativeStyleAttributes.transform = { process: require('processTransform') };
+ReactNativeStyleAttributes.shadowOffset = { diff: require('sizesDiffer') };
+
+var colorAttributes = { process: require('processColor') };
+ReactNativeStyleAttributes.backgroundColor = colorAttributes;
+ReactNativeStyleAttributes.borderBottomColor = colorAttributes;
+ReactNativeStyleAttributes.borderColor = colorAttributes;
+ReactNativeStyleAttributes.borderLeftColor = colorAttributes;
+ReactNativeStyleAttributes.borderRightColor = colorAttributes;
+ReactNativeStyleAttributes.borderTopColor = colorAttributes;
+ReactNativeStyleAttributes.borderStartColor = colorAttributes;
+ReactNativeStyleAttributes.borderEndColor = colorAttributes;
+ReactNativeStyleAttributes.color = colorAttributes;
+ReactNativeStyleAttributes.shadowColor = colorAttributes;
+ReactNativeStyleAttributes.textDecorationColor = colorAttributes;
+ReactNativeStyleAttributes.tintColor = colorAttributes;
+ReactNativeStyleAttributes.textShadowColor = colorAttributes;
+ReactNativeStyleAttributes.overlayColor = colorAttributes;
+
+module.exports = ReactNativeStyleAttributes;

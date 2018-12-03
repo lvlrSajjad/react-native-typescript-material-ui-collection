@@ -1,0 +1,18 @@
+51504da4dc22f2b5444231c03dce483c
+
+
+
+
+
+
+
+
+
+
+
+function getNative(object, key) {
+  var value = require('./_getValue')(object, key);
+  return require('./_baseIsNative')(value) ? value : undefined;
+}
+
+module.exports = getNative;

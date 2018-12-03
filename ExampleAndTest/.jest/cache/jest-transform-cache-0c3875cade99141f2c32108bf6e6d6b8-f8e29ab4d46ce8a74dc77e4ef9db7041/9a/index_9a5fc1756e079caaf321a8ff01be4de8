@@ -1,0 +1,5 @@
+8a3df4d16a13619962b5155d8a2cb251
+'use strict';
+
+
+module.exports = require('./ReactSixteenAdapter');

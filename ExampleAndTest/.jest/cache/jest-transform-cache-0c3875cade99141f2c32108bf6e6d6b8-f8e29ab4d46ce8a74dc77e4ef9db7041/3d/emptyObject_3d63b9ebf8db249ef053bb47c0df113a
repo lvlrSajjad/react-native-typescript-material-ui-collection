@@ -1,0 +1,18 @@
+a0196a166b5968ddcd1572b235573a12
+
+
+
+
+
+
+
+
+'use strict';
+
+var emptyObject = {};
+
+if (process.env.NODE_ENV !== 'production') {
+  Object.freeze(emptyObject);
+}
+
+module.exports = emptyObject;

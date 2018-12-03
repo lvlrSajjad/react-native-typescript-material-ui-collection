@@ -1,0 +1,26 @@
+8a2d9442b905cfdca67024e117b71758
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function isNil(value) {
+  return value == null;
+}
+
+module.exports = isNil;

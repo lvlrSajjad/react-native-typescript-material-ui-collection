@@ -1,0 +1,21 @@
+383ad102367108ff5f78a32e7daf8b45
+
+
+
+var maskSrcKey = function () {
+  var uid = /[^.]+$/.exec(require('./_coreJsData') && require('./_coreJsData').keys && require('./_coreJsData').keys.IE_PROTO || '');
+  return uid ? 'Symbol(src)_1.' + uid : '';
+}();
+
+
+
+
+
+
+
+
+function isMasked(func) {
+  return !!maskSrcKey && maskSrcKey in func;
+}
+
+module.exports = isMasked;

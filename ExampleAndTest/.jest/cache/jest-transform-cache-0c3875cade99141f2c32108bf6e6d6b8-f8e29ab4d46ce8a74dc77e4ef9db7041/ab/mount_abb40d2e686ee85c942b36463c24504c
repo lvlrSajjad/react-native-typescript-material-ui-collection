@@ -1,0 +1,23 @@
+e12d973d989162642d6188a92225b60e
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports['default'] = mount;
+
+
+
+var _ReactWrapper2 = _interopRequireDefault(require('./ReactWrapper'));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { 'default': obj };}
+
+
+
+
+
+
+
+function mount(node, options) {
+  return new _ReactWrapper2['default'](node, null, options);
+}

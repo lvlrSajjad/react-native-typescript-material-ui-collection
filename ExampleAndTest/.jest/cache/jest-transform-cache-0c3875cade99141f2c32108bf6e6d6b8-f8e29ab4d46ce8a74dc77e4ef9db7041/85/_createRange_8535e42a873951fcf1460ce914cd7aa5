@@ -1,0 +1,31 @@
+35c7ecc431dbbaa6ab82e85c034b026b
+
+
+
+
+
+
+
+
+
+
+
+function createRange(fromRight) {
+  return function (start, end, step) {
+    if (step && typeof step != 'number' && require('./_isIterateeCall')(start, end, step)) {
+      end = step = undefined;
+    }
+
+    start = require('./toFinite')(start);
+    if (end === undefined) {
+      end = start;
+      start = 0;
+    } else {
+      end = require('./toFinite')(end);
+    }
+    step = step === undefined ? start < end ? 1 : -1 : require('./toFinite')(step);
+    return require('./_baseRange')(start, end, step, fromRight);
+  };
+}
+
+module.exports = createRange;

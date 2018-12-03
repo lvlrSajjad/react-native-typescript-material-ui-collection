@@ -1,0 +1,71 @@
+9ddb0e06a7f0e862fef74c813180c2e8
+
+
+
+
+
+
+
+
+
+'use strict';function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Animation = function () {function Animation() {_classCallCheck(this, Animation);}_createClass(Animation, [{ key: "start", value: function start(
+
+
+
+
+
+
+    fromValue,
+    onUpdate,
+    onEnd,
+    previousAnimation,
+    animatedValue)
+    {} }, { key: "stop", value: function stop()
+    {
+      if (this.__nativeId) {
+        require('NativeAnimatedHelper').API.stopAnimation(this.__nativeId);
+      }
+    } }, { key: "__getNativeAnimationConfig", value: function __getNativeAnimationConfig()
+    {
+
+
+      throw new Error('This animation type cannot be offloaded to native');
+    } }, { key: "__debouncedOnEnd", value: function __debouncedOnEnd(
+
+    result) {
+      var onEnd = this.__onEnd;
+      this.__onEnd = null;
+      onEnd && onEnd(result);
+    } }, { key: "__startNativeAnimation", value: function __startNativeAnimation(
+    animatedValue) {
+      animatedValue.__makeNative();
+      this.__nativeId = require('NativeAnimatedHelper').generateNewAnimationId();
+      require('NativeAnimatedHelper').API.startAnimatingNode(
+      this.__nativeId,
+      animatedValue.__getNativeTag(),
+      this.__getNativeAnimationConfig(),
+      this.__debouncedOnEnd.bind(this));
+
+    } }]);return Animation;}();
+
+
+module.exports = Animation;

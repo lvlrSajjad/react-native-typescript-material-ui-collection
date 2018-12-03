@@ -1,0 +1,63 @@
+b754d39a3e7e80dd59d6b74b5efe2973
+
+
+
+
+
+
+
+
+
+'use strict';function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+
+
+
+
+
+
+
+var ImageStylePropTypes = _objectSpread({}, require('LayoutPropTypes'), require('ShadowPropTypesIOS'), require('TransformPropTypes'), {
+
+
+
+  resizeMode: require('prop-types').oneOf(Object.keys(require('ImageResizeMode'))),
+  backfaceVisibility: require('prop-types').oneOf(['visible', 'hidden']),
+  backgroundColor: require('ColorPropType'),
+  borderColor: require('ColorPropType'),
+  borderWidth: require('prop-types').number,
+  borderRadius: require('prop-types').number,
+  overflow: require('prop-types').oneOf(['visible', 'hidden']),
+
+
+
+
+  tintColor: require('ColorPropType'),
+  opacity: require('prop-types').number,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  overlayColor: require('prop-types').string,
+
+
+  borderTopLeftRadius: require('prop-types').number,
+  borderTopRightRadius: require('prop-types').number,
+  borderBottomLeftRadius: require('prop-types').number,
+  borderBottomRightRadius: require('prop-types').number });
+
+
+module.exports = ImageStylePropTypes;

@@ -1,0 +1,40 @@
+33b45935203c42f4fbcd2a347906934a
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _propTypes = _interopRequireDefault(require("prop-types"));
+var _react = _interopRequireWildcard(require("react"));
+var _reactNative = require("react-native");
+
+var _styles = _interopRequireDefault(require("./styles"));var _jsxFileName = "D:\\CodingProjects\\Github\\typescript-material-ui-collection\\ExampleAndTest\\node_modules\\react-native-material-textfield\\src\\components\\counter\\index.js";function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}var
+
+Counter = function (_PureComponent) {_inherits(Counter, _PureComponent);function Counter() {_classCallCheck(this, Counter);return _possibleConstructorReturn(this, _getPrototypeOf(Counter).apply(this, arguments));}_createClass(Counter, [{ key: "render", value: function render()
+
+
+
+
+
+
+
+
+
+
+
+
+    {var _this$props =
+      this.props,count = _this$props.count,limit = _this$props.limit,baseColor = _this$props.baseColor,errorColor = _this$props.errorColor,fontSize = _this$props.fontSize,style = _this$props.style;
+
+      var textStyle = {
+        color: count > limit ? errorColor : baseColor,
+        fontSize: fontSize };
+
+
+      if (!limit) {
+        return null;
+      }
+
+      return (
+        _react.default.createElement(_reactNative.View, { style: _styles.default.container, __source: { fileName: _jsxFileName, lineNumber: 33 } },
+        _react.default.createElement(_reactNative.Text, { style: [_styles.default.text, style, textStyle], __source: { fileName: _jsxFileName, lineNumber: 34 } },
+        count, " / ", limit)));
+
+
+
+    } }]);return Counter;}(_react.PureComponent);exports.default = Counter;Counter.propTypes = { count: _propTypes.default.number.isRequired, limit: _propTypes.default.number, fontSize: _propTypes.default.number, baseColor: _propTypes.default.string.isRequired, errorColor: _propTypes.default.string.isRequired, style: _reactNative.Text.propTypes.style };

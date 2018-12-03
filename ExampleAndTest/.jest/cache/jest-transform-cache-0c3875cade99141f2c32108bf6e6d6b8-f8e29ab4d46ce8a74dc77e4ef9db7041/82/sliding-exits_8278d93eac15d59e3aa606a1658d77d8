@@ -1,0 +1,19 @@
+2ab17d910b9008bbfe22de49e63e808d
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.slideOutRight = exports.slideOutLeft = exports.slideOutUp = exports.slideOutDown = void 0;function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function makeSlideOutTranslation(translationType, fromValue) {
+  return {
+    from: _defineProperty({},
+    translationType, 0),
+
+    to: _defineProperty({},
+    translationType, fromValue) };
+
+
+}
+
+var slideOutDown = makeSlideOutTranslation('translateY', 100);exports.slideOutDown = slideOutDown;
+
+var slideOutUp = makeSlideOutTranslation('translateY', -100);exports.slideOutUp = slideOutUp;
+
+var slideOutLeft = makeSlideOutTranslation('translateX', -100);exports.slideOutLeft = slideOutLeft;
+
+var slideOutRight = makeSlideOutTranslation('translateX', 100);exports.slideOutRight = slideOutRight;

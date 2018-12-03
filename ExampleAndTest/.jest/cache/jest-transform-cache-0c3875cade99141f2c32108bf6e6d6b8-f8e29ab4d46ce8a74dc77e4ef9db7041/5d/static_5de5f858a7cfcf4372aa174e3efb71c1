@@ -1,0 +1,235 @@
+82d3cc97bc4fd779290cb8bcf094d8a6
+
+
+
+
+var
+
+
+
+
+_ = {
+  merge: require('lodash/merge'),
+  defaults: require('lodash/defaults') };
+
+
+
+
+
+
+exports.load = function (content, options, isDocument) {
+  var Cheerio = require('./cheerio');
+
+  options = _.defaults(require('./options').flatten(options || {}), require('./options').default);
+
+  if (isDocument === void 0)
+  isDocument = true;
+
+  var root = require('./parse')(content, options, isDocument);
+
+  var initialize = function initialize(selector, context, r, opts) {
+    if (!(this instanceof initialize)) {
+      return new initialize(selector, context, r, opts);
+    }
+    opts = _.defaults(opts || {}, options);
+    return Cheerio.call(this, selector, context, r || root, opts);
+  };
+
+
+
+  initialize.prototype = Object.create(Cheerio.prototype);
+  initialize.prototype.constructor = initialize;
+
+
+  initialize.fn = initialize.prototype;
+
+
+
+  initialize.prototype._originalRoot = root;
+
+
+  _.merge(initialize, exports);
+
+
+  initialize._root = root;
+
+  initialize._options = options;
+
+  return initialize;
+};
+
+
+
+
+
+function render(that, dom, options) {
+  if (!dom) {
+    if (that._root && that._root.children) {
+      dom = that._root.children;
+    } else {
+      return '';
+    }
+  } else if (typeof dom === 'string') {
+    dom = require('css-select')(dom, that._root, options);
+  }
+
+  return require('dom-serializer')(dom, options);
+}
+
+
+
+
+
+exports.html = function (dom, options) {
+
+
+
+
+  if (Object.prototype.toString.call(dom) === '[object Object]' && !options && !('length' in dom) && !('type' in dom))
+  {
+    options = dom;
+    dom = undefined;
+  }
+
+
+
+  options = _.defaults(require('./options').flatten(options || {}), this._options, require('./options').default);
+
+  return render(this, dom, options);
+};
+
+
+
+
+
+exports.xml = function (dom) {
+  var options = _.defaults({ xml: true }, this._options);
+
+  return render(this, dom, options);
+};
+
+
+
+
+
+exports.text = function (elems) {
+  if (!elems) {
+    elems = this.root();
+  }
+
+  var ret = '',
+  len = elems.length,
+  elem;
+
+  for (var i = 0; i < len; i++) {
+    elem = elems[i];
+    if (elem.type === 'text') ret += elem.data;else
+    if (elem.children && elem.type !== 'comment' && elem.tagName !== 'script' && elem.tagName !== 'style') {
+      ret += exports.text(elem.children);
+    }
+  }
+
+  return ret;
+};
+
+
+
+
+
+
+exports.parseHTML = function (data, context, keepScripts) {
+  var parsed;
+
+  if (!data || typeof data !== 'string') {
+    return null;
+  }
+
+  if (typeof context === 'boolean') {
+    keepScripts = context;
+  }
+
+  parsed = this.load(data, require('./options').default, false);
+  if (!keepScripts) {
+    parsed('script').remove();
+  }
+
+
+
+
+
+
+  return parsed.root()[0].children.slice();
+};
+
+
+
+
+exports.root = function () {
+  return this(this._root);
+};
+
+
+
+
+exports.contains = function (container, contained) {
+
+
+  if (contained === container) {
+    return false;
+  }
+
+
+
+  while (contained && contained !== contained.parent) {
+    contained = contained.parent;
+    if (contained === container) {
+      return true;
+    }
+  }
+
+  return false;
+};
+
+
+
+
+
+exports.merge = function (arr1, arr2) {
+  if (!(isArrayLike(arr1) && isArrayLike(arr2))) {
+    return;
+  }
+  var newLength = arr1.length + arr2.length;
+  var i = 0;
+  while (i < arr2.length) {
+    arr1[i + arr1.length] = arr2[i];
+    i++;
+  }
+  arr1.length = newLength;
+  return arr1;
+};
+
+function isArrayLike(item) {
+  if (Array.isArray(item)) {
+    return true;
+  }
+  if (typeof item !== 'object') {
+    return false;
+  }
+  if (!item.hasOwnProperty('length')) {
+    return false;
+  }
+  if (typeof item.length !== 'number') {
+    return false;
+  }
+  if (item.length < 0) {
+    return false;
+  }
+  var i = 0;
+  while (i < item.length) {
+    if (!(i in item)) {
+      return false;
+    }
+    i++;
+  }
+  return true;
+}

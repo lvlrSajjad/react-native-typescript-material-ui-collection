@@ -1,0 +1,1448 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MaterialTextButton Renders Correctly 1`] = `
+<View
+  accessible={true}
+  onLayout={[Function]}
+  onPress={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onRippleAnimation={[Function]}
+  onStartShouldSetResponder={[Function]}
+  pointerEvents="box-only"
+  rippleCentered={false}
+  rippleColor="rgb(0, 0, 0)"
+  rippleDuration={400}
+  rippleFades={true}
+  rippleOpacity={0.3}
+  rippleSequential={false}
+  rippleSize={0}
+  style={
+    Object {
+      "alignItems": "center",
+      "borderRadius": 4,
+      "flexDirection": "row",
+      "height": 36,
+      "justifyContent": "center",
+      "margin": undefined,
+      "minWidth": 64,
+      "overflow": "hidden",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": undefined,
+        "fontFamily": undefined,
+        "fontSize": 14,
+      }
+    }
+  >
+    text
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "bottom": 0,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 0,
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`MaterialTextButton Renders Correctly 2`] = `
+<View
+  accessible={true}
+  onLayout={[Function]}
+  onPress={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onRippleAnimation={[Function]}
+  onStartShouldSetResponder={[Function]}
+  pointerEvents="box-only"
+  rippleCentered={false}
+  rippleColor="rgb(0, 0, 0)"
+  rippleDuration={400}
+  rippleFades={true}
+  rippleOpacity={0.3}
+  rippleSequential={false}
+  rippleSize={0}
+  style={
+    Object {
+      "alignItems": "center",
+      "borderColor": undefined,
+      "borderRadius": 4,
+      "borderWidth": 2,
+      "flexDirection": "row",
+      "height": 36,
+      "justifyContent": "center",
+      "margin": undefined,
+      "minWidth": 64,
+      "overflow": "hidden",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": undefined,
+        "fontFamily": undefined,
+        "fontSize": 14,
+      }
+    }
+  >
+    text
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "bottom": 0,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 0,
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`MaterialTextButton Renders Correctly 3`] = `
+<View
+  accessible={true}
+  onLayout={[Function]}
+  onPress={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onRippleAnimation={[Function]}
+  onStartShouldSetResponder={[Function]}
+  pointerEvents="box-only"
+  rippleCentered={false}
+  rippleColor="rgb(0, 0, 0)"
+  rippleDuration={400}
+  rippleFades={true}
+  rippleOpacity={0.3}
+  rippleSequential={false}
+  rippleSize={0}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": undefined,
+      "borderRadius": 4,
+      "elevation": 4,
+      "flexDirection": "row",
+      "height": 36,
+      "justifyContent": "center",
+      "margin": undefined,
+      "minWidth": 64,
+      "overflow": "hidden",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "shadowColor": "black",
+      "shadowOffset": Object {
+        "height": 4,
+        "width": 0,
+      },
+      "shadowOpacity": 0.24,
+      "shadowRadius": 4,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": undefined,
+        "fontFamily": undefined,
+        "fontSize": 14,
+      }
+    }
+  >
+    text
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "bottom": 0,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 0,
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`MaterialTextButton Renders Correctly 4`] = `
+<View
+  accessible={true}
+  onLayout={[Function]}
+  onPress={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onRippleAnimation={[Function]}
+  onStartShouldSetResponder={[Function]}
+  pointerEvents="box-only"
+  rippleCentered={false}
+  rippleColor="rgb(0, 0, 0)"
+  rippleDuration={400}
+  rippleFades={true}
+  rippleOpacity={0.3}
+  rippleSequential={false}
+  rippleSize={0}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": undefined,
+      "borderRadius": 28,
+      "bottom": undefined,
+      "elevation": 16,
+      "height": 56,
+      "justifyContent": "center",
+      "left": undefined,
+      "overflow": "hidden",
+      "position": "absolute",
+      "right": undefined,
+      "shadowColor": "black",
+      "shadowOffset": Object {
+        "height": 16,
+        "width": 0,
+      },
+      "shadowOpacity": 0.24,
+      "shadowRadius": 16,
+      "top": undefined,
+      "width": 56,
+      "zIndex": 900,
+    }
+  }
+>
+  <Text
+    allowFontScaling={false}
+    style={
+      Array [
+        Object {
+          "color": undefined,
+          "fontSize": 24,
+        },
+        Object {
+          "margin": 8,
+        },
+        Object {
+          "fontFamily": "Material Design Icons",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+        Object {},
+      ]
+    }
+  >
+    
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "bottom": 0,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 0,
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`MaterialTextButton Renders Correctly 5`] = `
+<View
+  accessible={true}
+  onLayout={[Function]}
+  onPress={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onRippleAnimation={[Function]}
+  onStartShouldSetResponder={[Function]}
+  pointerEvents="box-only"
+  rippleCentered={false}
+  rippleColor="rgb(0, 0, 0)"
+  rippleDuration={400}
+  rippleFades={true}
+  rippleOpacity={0.3}
+  rippleSequential={false}
+  rippleSize={0}
+  style={
+    Object {
+      "alignItems": "center",
+      "alignSelf": "center",
+      "backgroundColor": undefined,
+      "borderRadius": 28,
+      "bottom": 16,
+      "elevation": 16,
+      "flexDirection": "row",
+      "height": 56,
+      "justifyContent": "center",
+      "overflow": "hidden",
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "position": "absolute",
+      "shadowColor": "black",
+      "shadowOffset": Object {
+        "height": 16,
+        "width": 0,
+      },
+      "shadowOpacity": 0.24,
+      "shadowRadius": 16,
+      "top": undefined,
+    }
+  }
+>
+  <Text
+    allowFontScaling={false}
+    style={
+      Array [
+        Object {
+          "color": undefined,
+          "fontSize": 24,
+        },
+        Object {
+          "marginRight": 8,
+        },
+        Object {
+          "fontFamily": "Material Design Icons",
+          "fontStyle": "normal",
+          "fontWeight": "normal",
+        },
+        Object {},
+      ]
+    }
+  >
+    
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": undefined,
+        "fontFamily": undefined,
+        "fontSize": 14,
+      }
+    }
+  >
+    text
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "transparent",
+          "bottom": 0,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        },
+        Object {
+          "borderRadius": 0,
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`MaterialTextButton Renders Correctly 6`] = `
+<View
+  onResponderRelease={[Function]}
+  onStartShouldSetResponder={[Function]}
+  pointerEvents="auto"
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": "transparent",
+        "borderBottomColor": "rgba(0, 0, 0, 0.38)",
+        "borderBottomWidth": 0.5,
+        "height": 64,
+        "paddingBottom": 8,
+        "paddingTop": 32,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "position": "absolute",
+          "top": 36,
+        }
+      }
+    >
+      <Text
+        numberOfLines={1}
+        style={
+          Object {
+            "color": "rgba(0, 0, 0, 0.38)",
+            "fontSize": 16,
+          }
+        }
+      >
+        text
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flexDirection": "row",
+        }
+      }
+    >
+      <TextInput
+        allowFontScaling={true}
+        autoCapitalize="sentences"
+        disableFullscreenUI={true}
+        editable={true}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onChangeText={[Function]}
+        onContentSizeChange={[Function]}
+        onFocus={[Function]}
+        selectionColor="rgb(0, 145, 234)"
+        style={
+          Array [
+            Object {
+              "flex": 1,
+              "margin": 0,
+              "padding": 0,
+              "top": 2,
+            },
+            Object {
+              "color": "rgba(0, 0, 0, .87)",
+              "fontSize": 16,
+              "height": 24,
+              "textAlign": "left",
+            },
+            undefined,
+          ]
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "flexDirection": "row",
+        "height": 8,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "bottom": 0,
+            "left": 0,
+            "paddingVertical": 4,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <Text
+          numberOfLines={1}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "rgb(213, 0, 0)",
+              "fontSize": 0,
+              "opacity": 0,
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "alignItems": "flex-start",
+            "bottom": 0,
+            "left": 0,
+            "paddingVertical": 4,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <Text
+          numberOfLines={1}
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "color": "rgba(0, 0, 0, .38)",
+              "fontSize": 12,
+              "opacity": 1,
+            }
+          }
+        />
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`MaterialTextButton Renders Correctly 7`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "center",
+    }
+  }
+/>
+`;
+
+exports[`MaterialTextButton Renders Correctly 8`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "column",
+      "justifyContent": "center",
+    }
+  }
+/>
+`;
+
+exports[`MaterialTextButton Renders Correctly 9`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "height": "100%",
+      "padding": 16,
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`MaterialTextButton Renders Correctly 10`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "justifyContent": "center",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    animating={true}
+    animationDuration={2400}
+    animationEasing={[Function]}
+    color="red"
+    interaction={true}
+    renderComponent={[Function]}
+    style={
+      Object {
+        "height": 48,
+        "width": 48,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "height": 48,
+            "transform": Array [
+              Object {
+                "rotate": "45deg",
+              },
+            ],
+            "width": 48,
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          style={
+            Object {
+              "height": 24,
+              "overflow": "hidden",
+              "width": 48,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "height": 48,
+                "transform": Array [
+                  Object {
+                    "translateY": 0,
+                  },
+                  Object {
+                    "rotate": "-165deg",
+                  },
+                ],
+                "width": 48,
+              }
+            }
+          >
+            <View
+              collapsable={false}
+              style={
+                Object {
+                  "height": 24,
+                  "overflow": "hidden",
+                  "width": 48,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 24,
+                    "borderWidth": 4.8,
+                    "height": 48,
+                    "width": 48,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "height": 48,
+            "transform": Array [
+              Object {
+                "rotate": "45deg",
+              },
+            ],
+            "width": 48,
+          }
+        }
+      >
+        <View
+          collapsable={false}
+          style={
+            Object {
+              "height": 24,
+              "overflow": "hidden",
+              "top": 24,
+              "width": 48,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "height": 48,
+                "transform": Array [
+                  Object {
+                    "translateY": -24,
+                  },
+                  Object {
+                    "rotate": "345deg",
+                  },
+                ],
+                "width": 48,
+              }
+            }
+          >
+            <View
+              collapsable={false}
+              style={
+                Object {
+                  "height": 24,
+                  "overflow": "hidden",
+                  "width": 48,
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "borderColor": "red",
+                    "borderRadius": 24,
+                    "borderWidth": 4.8,
+                    "height": 48,
+                    "width": 48,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </View>
+  </View>
+</View>
+`;
+
+exports[`MaterialTextButton Renders Correctly 11`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "justifyContent": "center",
+    }
+  }
+>
+  <View
+    accessible={true}
+    onLayout={[Function]}
+    onPress={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onRippleAnimation={[Function]}
+    onStartShouldSetResponder={[Function]}
+    pointerEvents="box-only"
+    rippleCentered={false}
+    rippleColor="rgb(0, 0, 0)"
+    rippleDuration={400}
+    rippleFades={true}
+    rippleOpacity={0.3}
+    rippleSequential={false}
+    rippleSize={0}
+    style={
+      Object {
+        "alignItems": "center",
+        "borderRadius": 4,
+        "height": 36,
+        "justifyContent": "center",
+        "overflow": "hidden",
+      }
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        Array [
+          Object {
+            "color": "grey",
+            "fontSize": 24,
+          },
+          Object {
+            "margin": 8,
+          },
+          Object {
+            "fontFamily": "Material Design Icons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
+        ]
+      }
+    >
+      
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "bottom": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 0,
+          },
+        ]
+      }
+    />
+  </View>
+  <Text
+    style={
+      Object {
+        "color": undefined,
+        "fontFamily": undefined,
+        "fontSize": 14,
+      }
+    }
+  />
+</View>
+`;
+
+exports[`MaterialTextButton Renders Correctly 12`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <RCTScrollView
+    onLeftIconPress={[Function]}
+    onRightIconPress={[Function]}
+    onScroll={[Function]}
+    renderCollapsedToolbarContent={[Function]}
+    scrollEventThrottle={1}
+    translucentStatusBar={false}
+  >
+    <View>
+      <View
+        style={
+          Object {
+            "backgroundColor": "#FFF",
+            "height": 300,
+            "left": 0,
+            "opacity": -1,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          }
+        }
+      >
+        <Text
+          allowFontScaling={false}
+          style={
+            Array [
+              Object {
+                "color": "white",
+                "fontSize": 24,
+              },
+              Object {
+                "left": 16,
+                "position": "absolute",
+                "top": 16,
+              },
+              Object {
+                "fontFamily": "Material Design Icons",
+                "fontStyle": "normal",
+                "fontWeight": "normal",
+              },
+              Object {},
+            ]
+          }
+        >
+          
+        </Text>
+        <Text
+          style={
+            Object {
+              "bottom": 16,
+              "color": "#FFF",
+              "marginLeft": 56,
+              "position": "absolute",
+              "textAlign": "center",
+              "transform": Array [
+                Object {
+                  "scale": 3,
+                },
+              ],
+            }
+          }
+        />
+      </View>
+      <View
+        style={
+          Object {
+            "opacity": 2,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "height": 300,
+            }
+          }
+        >
+          <Image
+            blurRadius={0}
+            source={
+              Object {
+                "uri": "",
+              }
+            }
+            style={
+              Object {
+                "height": 300,
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "bottom": 50,
+                "justifyContent": "center",
+                "left": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 50,
+              }
+            }
+          />
+          <Text
+            style={
+              Object {
+                "bottom": 16,
+                "color": "#FFF",
+                "marginLeft": 56,
+                "position": "absolute",
+                "textAlign": "center",
+                "transform": Array [
+                  Object {
+                    "scale": 3,
+                  },
+                ],
+              }
+            }
+          />
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+  <View
+    style={
+      Object {
+        "backgroundColor": "#FFF",
+        "borderBottomColor": "rgba(0, 0, 0, .3)",
+        "borderBottomWidth": 0.5,
+        "flexDirection": "row",
+        "height": 64,
+        "left": 0,
+        "opacity": -2359.000000000134,
+        "paddingTop": 20,
+        "position": "absolute",
+        "right": 0,
+        "shadowColor": "black",
+        "shadowOffset": Object {
+          "height": 0.5,
+          "width": 0.5,
+        },
+        "shadowOpacity": 0.1,
+        "shadowRadius": 0.5,
+      }
+    }
+  >
+    <View
+      accessible={true}
+      onLayout={[Function]}
+      onPress={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onRippleAnimation={[Function]}
+      onStartShouldSetResponder={[Function]}
+      pointerEvents="box-only"
+      rippleCentered={false}
+      rippleColor="rgb(0, 0, 0)"
+      rippleDuration={400}
+      rippleFades={true}
+      rippleOpacity={0.3}
+      rippleSequential={false}
+      rippleSize={0}
+      style={
+        Object {
+          "alignItems": "center",
+          "height": 56,
+          "justifyContent": "center",
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "top": 0,
+          "width": 56,
+          "zIndex": 100,
+        }
+      }
+    >
+      <Text
+        allowFontScaling={false}
+        style={
+          Array [
+            Object {
+              "color": undefined,
+              "fontSize": 24,
+            },
+            undefined,
+            Object {
+              "fontFamily": "Material Design Icons",
+              "fontStyle": "normal",
+              "fontWeight": "normal",
+            },
+            Object {},
+          ]
+        }
+      >
+        
+      </Text>
+      <View
+        style={
+          Array [
+            Object {
+              "backgroundColor": "transparent",
+              "bottom": 0,
+              "left": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            },
+            Object {
+              "borderRadius": 0,
+            },
+          ]
+        }
+      />
+    </View>
+    <Text
+      style={
+        Object {
+          "bottom": 16,
+          "color": "#FFF",
+          "marginLeft": 56,
+          "position": "absolute",
+          "textAlign": "center",
+          "transform": Array [
+            Object {
+              "scale": 1,
+            },
+          ],
+        }
+      }
+    />
+  </View>
+  <View
+    accessible={true}
+    onLayout={[Function]}
+    onPress={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onRippleAnimation={[Function]}
+    onStartShouldSetResponder={[Function]}
+    pointerEvents="box-only"
+    rippleCentered={false}
+    rippleColor="rgb(0, 0, 0)"
+    rippleDuration={400}
+    rippleFades={true}
+    rippleOpacity={0.3}
+    rippleSequential={false}
+    rippleSize={0}
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 56,
+        "justifyContent": "center",
+        "left": 0,
+        "overflow": "hidden",
+        "position": "absolute",
+        "top": 0,
+        "width": 56,
+      }
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        Array [
+          Object {
+            "color": undefined,
+            "fontSize": 24,
+          },
+          undefined,
+          Object {
+            "fontFamily": "Material Design Icons",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {},
+        ]
+      }
+    >
+      
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "bottom": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {
+            "borderRadius": 0,
+          },
+        ]
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`MaterialTextButton Renders Correctly 13`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "backgroundColor": undefined,
+        "height": 1334,
+        "paddingBottom": 16,
+        "paddingTop": 64,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "alignSelf": "center",
+          "color": undefined,
+          "position": "absolute",
+          "top": 18,
+        }
+      }
+    />
+    <View>
+      <RCTScrollView
+        onLayout={[Function]}
+        style={
+          Object {
+            "maxHeight": 1270,
+            "position": "absolute",
+            "width": "100%",
+          }
+        }
+      >
+        <View />
+      </RCTScrollView>
+    </View>
+  </View>
+  <View
+    style={
+      Object {
+        "backgroundColor": undefined,
+        "borderTopLeftRadius": 16,
+        "borderTopRightRadius": 16,
+        "elevation": 4,
+        "flex": 1,
+        "left": 0,
+        "maxHeight": 1270,
+        "minHeight": 64,
+        "position": "absolute",
+        "right": 0,
+        "shadowColor": "black",
+        "shadowOffset": Object {
+          "height": 4,
+          "width": 0,
+        },
+        "shadowOpacity": 0.24,
+        "shadowRadius": 4,
+        "top": 64,
+        "transform": Array [
+          Object {
+            "translateY": 0,
+          },
+        ],
+      }
+    }
+  >
+    <RCTScrollView
+      style={
+        Object {
+          "marginTop": 16,
+          "padding": 16,
+          "width": "100%",
+        }
+      }
+    >
+      <View />
+    </RCTScrollView>
+  </View>
+</View>
+`;
+
+exports[`MaterialTextButton Renders Correctly 14`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+      "padding": 16,
+      "width": undefined,
+    }
+  }
+>
+  <View
+    accessible={true}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "height": 20,
+        "justifyContent": "center",
+        "width": 36,
+      }
+    }
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "#212121",
+          "borderRadius": 10,
+          "height": 16,
+          "opacity": 0.5,
+          "position": "absolute",
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "backgroundColor": "white",
+          "borderRadius": 10,
+          "elevation": 2,
+          "height": 20,
+          "shadowColor": "black",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.24,
+          "shadowRadius": 2,
+          "transform": Array [
+            Object {
+              "translateX": 0,
+            },
+          ],
+          "width": 20,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`MaterialTextButton Renders Correctly 15`] = `
+<RCTScrollView
+  disableVirtualization={false}
+  extraData={
+    Object {
+      "selected": -1,
+    }
+  }
+  getItem={[Function]}
+  getItemCount={[Function]}
+  horizontal={false}
+  initialNumToRender={10}
+  keyExtractor={[Function]}
+  maxToRenderPerBatch={10}
+  numColumns={1}
+  onContentSizeChange={[Function]}
+  onEndReachedThreshold={2}
+  onLayout={[Function]}
+  onMomentumScrollEnd={[Function]}
+  onScroll={[Function]}
+  onScrollBeginDrag={[Function]}
+  onScrollEndDrag={[Function]}
+  renderItem={[Function]}
+  scrollEventThrottle={50}
+  stickyHeaderIndices={Array []}
+  updateCellsBatchingPeriod={50}
+  viewabilityConfigCallbackPairs={Array []}
+  windowSize={21}
+>
+  <View />
+</RCTScrollView>
+`;
+
+exports[`MaterialTextButton Renders Correctly 16`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#eeeeee",
+      "borderRadius": 4,
+      "elevation": 2,
+      "margin": 8,
+      "overflow": "hidden",
+      "shadowColor": "black",
+      "shadowOffset": Object {
+        "height": 2,
+        "width": 0,
+      },
+      "shadowOpacity": 0.24,
+      "shadowRadius": 2,
+    }
+  }
+/>
+`;
+
+exports[`MaterialTextButton Renders Correctly 17`] = `
+<View
+  style={
+    Object {
+      "padding": 16,
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`MaterialTextButton Renders Correctly 18`] = `
+<View
+  style={
+    Object {
+      "alignSelf": "flex-start",
+      "backgroundColor": "#eeeeee",
+      "elevation": 4,
+      "flexDirection": "row",
+      "height": 56,
+      "shadowOffset": Object {
+        "height": 4,
+        "width": 0,
+      },
+      "shadowOpacity": 0.24,
+      "shadowRadius": 4,
+      "width": "100%",
+    }
+  }
+/>
+`;
+
+exports[`MaterialTextButton Renders Correctly 19`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "flexDirection": "row",
+      "height": 56,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "alignSelf": "center",
+        "color": "#212121",
+        "flex": 1,
+        "fontFamily": undefined,
+        "fontSize": 16,
+      }
+    }
+  />
+</View>
+`;

@@ -1,0 +1,67 @@
+f29fbbd4250b15d5cfedfa8965506101
+
+
+
+function defineProp(name, value) {
+  delete module.exports[name];
+  module.exports[name] = value;
+  return value;
+}
+
+module.exports = {
+  Parser: require("./Parser.js"),
+  Tokenizer: require("./Tokenizer.js"),
+  ElementType: require("domelementtype"),
+  DomHandler: require("domhandler"),
+  get FeedHandler() {
+    return defineProp("FeedHandler", require("./FeedHandler.js"));
+  },
+  get Stream() {
+    return defineProp("Stream", require("./Stream.js"));
+  },
+  get WritableStream() {
+    return defineProp("WritableStream", require("./WritableStream.js"));
+  },
+  get ProxyHandler() {
+    return defineProp("ProxyHandler", require("./ProxyHandler.js"));
+  },
+  get DomUtils() {
+    return defineProp("DomUtils", require("domutils"));
+  },
+  get CollectingHandler() {
+    return defineProp("CollectingHandler", require("./CollectingHandler.js"));
+  },
+
+  DefaultHandler: require("domhandler"),
+  get RssHandler() {
+    return defineProp("RssHandler", this.FeedHandler);
+  },
+
+  parseDOM: function parseDOM(data, options) {
+    var handler = new (require("domhandler"))(options);
+    new (require("./Parser.js"))(handler, options).end(data);
+    return handler.dom;
+  },
+  parseFeed: function parseFeed(feed, options) {
+    var handler = new module.exports.FeedHandler(options);
+    new (require("./Parser.js"))(handler, options).end(feed);
+    return handler.dom;
+  },
+  createDomStream: function createDomStream(cb, options, elementCb) {
+    var handler = new (require("domhandler"))(cb, options, elementCb);
+    return new (require("./Parser.js"))(handler, options);
+  },
+
+  EVENTS: {
+    attribute: 2,
+    cdatastart: 0,
+    cdataend: 0,
+    text: 1,
+    processinginstruction: 2,
+    comment: 1,
+    commentend: 0,
+    closetag: 1,
+    opentag: 2,
+    opentagname: 1,
+    error: 1,
+    end: 0 } };

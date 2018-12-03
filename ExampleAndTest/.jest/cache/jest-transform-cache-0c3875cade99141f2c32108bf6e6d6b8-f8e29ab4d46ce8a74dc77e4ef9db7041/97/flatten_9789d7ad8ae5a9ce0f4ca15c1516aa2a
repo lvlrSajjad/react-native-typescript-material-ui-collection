@@ -1,0 +1,23 @@
+0bb02e85351fe016267f45ba5e046019
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function flatten(array) {
+  var length = array == null ? 0 : array.length;
+  return length ? require('./_baseFlatten')(array, 1) : [];
+}
+
+module.exports = flatten;

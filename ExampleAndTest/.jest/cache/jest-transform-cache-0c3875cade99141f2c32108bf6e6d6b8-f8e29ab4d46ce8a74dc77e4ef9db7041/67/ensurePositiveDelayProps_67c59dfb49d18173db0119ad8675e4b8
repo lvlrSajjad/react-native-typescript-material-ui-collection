@@ -1,0 +1,27 @@
+e3ee6618fd6391e2cd24ae3e3abf07b5
+
+
+
+
+
+
+
+
+
+
+'use strict';
+
+
+
+var ensurePositiveDelayProps = function ensurePositiveDelayProps(props) {
+  require('fbjs/lib/invariant')(
+  !(
+  props.delayPressIn < 0 ||
+  props.delayPressOut < 0 ||
+  props.delayLongPress < 0),
+
+  'Touchable components cannot have negative delay properties');
+
+};
+
+module.exports = ensurePositiveDelayProps;

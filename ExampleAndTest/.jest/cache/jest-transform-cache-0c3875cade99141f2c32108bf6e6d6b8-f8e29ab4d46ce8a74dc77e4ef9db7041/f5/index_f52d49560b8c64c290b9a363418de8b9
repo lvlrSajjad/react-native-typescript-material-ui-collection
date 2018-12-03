@@ -1,0 +1,46 @@
+a145d8d219042e1de3daa01acd043304
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports.createSerializer = exports.renderToJson = exports.shallowToJson = exports.mountToJson = undefined;
+
+exports.default = function (wrapper, options) {
+  if ((0, require('./utils').isShallowWrapper)(wrapper)) {
+    return (0, _shallow2.default)(wrapper, options);
+  }
+
+  if ((0, require('./utils').isReactWrapper)(wrapper)) {
+    return (0, _mount2.default)(wrapper, options);
+  }
+
+  if ((0, require('./utils').isCheerioWrapper)(wrapper)) {
+    return (0, _render2.default)(wrapper, options);
+  }
+};
+
+
+
+
+
+var _shallow2 = _interopRequireDefault(require('./shallow'));
+
+
+
+var _mount2 = _interopRequireDefault(require('./mount'));
+
+
+
+var _render2 = _interopRequireDefault(require('./render'));
+
+
+
+var _createSerializer2 = _interopRequireDefault(require('./createSerializer'));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+exports.mountToJson = _mount2.default;
+exports.shallowToJson = _shallow2.default;
+exports.renderToJson = _render2.default;
+exports.createSerializer = _createSerializer2.default;

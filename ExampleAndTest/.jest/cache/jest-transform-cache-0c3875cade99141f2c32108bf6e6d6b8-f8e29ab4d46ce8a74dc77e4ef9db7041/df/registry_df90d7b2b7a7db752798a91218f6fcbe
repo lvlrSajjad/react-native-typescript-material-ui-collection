@@ -1,0 +1,25 @@
+b47de21af5fcb7b4c61bd76dae79630c
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.registerAnimation = registerAnimation;exports.getAnimationByName = getAnimationByName;exports.getAnimationNames = getAnimationNames;exports.initializeRegistryWithDefinitions = initializeRegistryWithDefinitions;var _createAnimation = _interopRequireDefault(require("./createAnimation"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var animationRegistry = {};
+
+function registerAnimation(animationName, animation) {
+  animationRegistry[animationName] = animation;
+}
+
+function getAnimationByName(animationName) {
+  return animationRegistry[animationName];
+}
+
+function getAnimationNames() {
+  return Object.keys(animationRegistry);
+}
+
+function initializeRegistryWithDefinitions(definitions) {
+  Object.keys(definitions).forEach(function (animationName) {
+    registerAnimation(
+    animationName,
+    (0, _createAnimation.default)(definitions[animationName]));
+
+  });
+}

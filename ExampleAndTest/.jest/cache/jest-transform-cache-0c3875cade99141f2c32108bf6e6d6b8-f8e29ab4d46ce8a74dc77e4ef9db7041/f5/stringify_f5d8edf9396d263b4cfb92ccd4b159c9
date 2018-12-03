@@ -1,0 +1,24 @@
+920934df770ebad19ac2dbab08907e39
+
+
+
+
+module.exports = {
+  getInnerHTML: getInnerHTML,
+  getOuterHTML: require("dom-serializer"),
+  getText: getText };
+
+
+function getInnerHTML(elem, opts) {
+  return elem.children ? elem.children.map(function (elem) {
+    return require("dom-serializer")(elem, opts);
+  }).join("") : "";
+}
+
+function getText(elem) {
+  if (Array.isArray(elem)) return elem.map(getText).join("");
+  if (require("domelementtype").isTag(elem)) return elem.name === "br" ? "\n" : getText(elem.children);
+  if (elem.type === require("domelementtype").CDATA) return getText(elem.children);
+  if (elem.type === require("domelementtype").Text) return elem.data;
+  return "";
+}

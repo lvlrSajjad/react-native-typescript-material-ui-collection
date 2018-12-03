@@ -1,0 +1,23 @@
+9d6a0fedad15a1fa34732a32768d9cfb
+
+
+
+
+
+
+
+
+
+
+
+
+var baseSetToString = !require('./_defineProperty') ? require('./identity') : function (func, string) {
+  return require('./_defineProperty')(func, 'toString', {
+    'configurable': true,
+    'enumerable': false,
+    'value': require('./constant')(string),
+    'writable': true });
+
+};
+
+module.exports = baseSetToString;

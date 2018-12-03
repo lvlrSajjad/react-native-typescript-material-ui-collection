@@ -1,0 +1,8 @@
+8f6e829a371900c47cfc91915e6c2a09
+'use strict';
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = require('./cjs/react-test-renderer.production.min.js');
+} else {
+  module.exports = require('./cjs/react-test-renderer.development.js');
+}

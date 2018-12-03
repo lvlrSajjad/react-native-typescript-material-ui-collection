@@ -1,0 +1,1225 @@
+dbec6508f3b6a691e694405818bee470
+
+
+
+
+
+
+
+
+
+'use strict';var _jsxFileName = "D:\\CodingProjects\\Github\\typescript-material-ui-collection\\ExampleAndTest\\node_modules\\react-native\\Libraries\\Components\\TextInput\\TextInput.js";function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _extends() {_extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};return _extends.apply(this, arguments);}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var AndroidTextInput;
+var RCTMultilineTextInputView;
+var RCTSinglelineTextInputView;
+
+if (require('Platform').OS === 'android') {
+  AndroidTextInput = require('requireNativeComponent')('AndroidTextInput');
+} else if (require('Platform').OS === 'ios') {
+  RCTMultilineTextInputView = require('requireNativeComponent')(
+  'RCTMultilineTextInputView');
+
+  RCTSinglelineTextInputView = require('requireNativeComponent')(
+  'RCTSinglelineTextInputView');
+
+}
+
+var onlyMultiline = {
+  onTextInput: true,
+  children: true };
+
+
+
+
+
+
+
+
+var DataDetectorTypes = [
+'phoneNumber',
+'link',
+'address',
+'calendarEvent',
+'none',
+'all'];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var TextInput = require('create-react-class')({
+  displayName: 'TextInput',
+  statics: {
+    State: {
+      currentlyFocusedField: require('TextInputState').currentlyFocusedField,
+      focusTextInput: require('TextInputState').focusTextInput,
+      blurTextInput: require('TextInputState').blurTextInput } },
+
+
+  propTypes: _objectSpread({}, require('ViewPropTypes'), {
+
+
+
+
+
+
+
+
+
+    autoCapitalize: require('prop-types').oneOf([
+    'none',
+    'sentences',
+    'words',
+    'characters']),
+
+
+
+
+    autoCorrect: require('prop-types').bool,
+
+
+
+
+
+    spellCheck: require('prop-types').bool,
+
+
+
+
+    autoFocus: require('prop-types').bool,
+
+
+
+
+    allowFontScaling: require('prop-types').bool,
+
+
+
+    editable: require('prop-types').bool,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    keyboardType: require('prop-types').oneOf([
+
+    'default',
+    'email-address',
+    'numeric',
+    'phone-pad',
+    'number-pad',
+
+    'ascii-capable',
+    'numbers-and-punctuation',
+    'url',
+    'name-phone-pad',
+    'decimal-pad',
+    'twitter',
+    'web-search',
+
+    'visible-password']),
+
+
+
+
+
+    keyboardAppearance: require('prop-types').oneOf(['default', 'light', 'dark']),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    returnKeyType: require('prop-types').oneOf([
+
+    'done',
+    'go',
+    'next',
+    'search',
+    'send',
+
+    'none',
+    'previous',
+
+    'default',
+    'emergency-call',
+    'google',
+    'join',
+    'route',
+    'yahoo']),
+
+
+
+
+
+    returnKeyLabel: require('prop-types').string,
+
+
+
+
+    maxLength: require('prop-types').number,
+
+
+
+
+
+    numberOfLines: require('prop-types').number,
+
+
+
+
+
+
+
+
+    disableFullscreenUI: require('prop-types').bool,
+
+
+
+
+
+    enablesReturnKeyAutomatically: require('prop-types').bool,
+
+
+
+
+    multiline: require('prop-types').bool,
+
+
+
+
+
+    textBreakStrategy: require('prop-types').oneOf(['simple', 'highQuality', 'balanced']),
+
+
+
+    onBlur: require('prop-types').func,
+
+
+
+    onFocus: require('prop-types').func,
+
+
+
+    onChange: require('prop-types').func,
+
+
+
+
+    onChangeText: require('prop-types').func,
+
+
+
+
+
+
+
+    onContentSizeChange: require('prop-types').func,
+    onTextInput: require('prop-types').func,
+
+
+
+    onEndEditing: require('prop-types').func,
+
+
+
+
+
+    onSelectionChange: require('prop-types').func,
+
+
+
+
+    onSubmitEditing: require('prop-types').func,
+
+
+
+
+
+
+
+    onKeyPress: require('prop-types').func,
+
+
+
+    onLayout: require('prop-types').func,
+
+
+
+
+
+    onScroll: require('prop-types').func,
+
+
+
+    placeholder: require('prop-types').string,
+
+
+
+    placeholderTextColor: require('ColorPropType'),
+
+
+
+
+
+    scrollEnabled: require('prop-types').bool,
+
+
+
+
+    secureTextEntry: require('prop-types').bool,
+
+
+
+    selectionColor: require('ColorPropType'),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    selectionState: require('prop-types').instanceOf(require('DocumentSelectionState')),
+
+
+
+
+    selection: require('prop-types').shape({
+      start: require('prop-types').number.isRequired,
+      end: require('prop-types').number }),
+
+
+
+
+
+
+
+
+
+
+    value: require('prop-types').string,
+
+
+
+
+
+    defaultValue: require('prop-types').string,
+
+
+
+
+
+    clearButtonMode: require('prop-types').oneOf([
+    'never',
+    'while-editing',
+    'unless-editing',
+    'always']),
+
+
+
+
+
+    clearTextOnFocus: require('prop-types').bool,
+
+
+
+    selectTextOnFocus: require('prop-types').bool,
+
+
+
+
+
+
+
+    blurOnSubmit: require('prop-types').bool,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    style: require('Text').propTypes.style,
+
+
+
+
+    underlineColorAndroid: require('ColorPropType'),
+
+
+
+
+
+
+
+
+
+
+
+
+    inlineImageLeft: require('prop-types').string,
+
+
+
+
+
+    inlineImagePadding: require('prop-types').number,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    dataDetectorTypes: require('prop-types').oneOfType([
+    require('prop-types').oneOf(DataDetectorTypes),
+    require('prop-types').arrayOf(require('prop-types').oneOf(DataDetectorTypes))]),
+
+
+
+
+
+    caretHidden: require('prop-types').bool,
+
+
+
+    contextMenuHidden: require('prop-types').bool,
+
+
+
+
+
+
+    inputAccessoryViewID: require('prop-types').string,
+
+
+
+
+
+    textContentType: require('prop-types').oneOf([
+    'none',
+    'URL',
+    'addressCity',
+    'addressCityAndState',
+    'addressState',
+    'countryName',
+    'creditCardNumber',
+    'emailAddress',
+    'familyName',
+    'fullStreetAddress',
+    'givenName',
+    'jobTitle',
+    'location',
+    'middleName',
+    'name',
+    'namePrefix',
+    'nameSuffix',
+    'nickname',
+    'organizationName',
+    'postalCode',
+    'streetAddressLine1',
+    'streetAddressLine2',
+    'sublocality',
+    'telephoneNumber',
+    'username',
+    'password',
+    'newPassword',
+    'oneTimeCode']) }),
+
+
+  getDefaultProps: function getDefaultProps() {
+    return {
+      allowFontScaling: true,
+      underlineColorAndroid: 'transparent' };
+
+  },
+
+
+
+
+  mixins: [require('NativeMethodsMixin'), require('react-timer-mixin')],
+
+
+
+
+  isFocused: function isFocused() {
+    return (
+      require('TextInputState').currentlyFocusedField() ===
+      require('ReactNative').findNodeHandle(this._inputRef));
+
+  },
+
+  _inputRef: undefined,
+  _focusSubscription: undefined,
+  _lastNativeText: undefined,
+  _lastNativeSelection: undefined,
+
+  componentDidMount: function componentDidMount() {var _this = this;
+    this._lastNativeText = this.props.value;
+    var tag = require('ReactNative').findNodeHandle(this._inputRef);
+    if (tag != null) {
+
+      require('TextInputState').registerInput(tag);
+    }
+
+    if (this.context.focusEmitter) {
+      this._focusSubscription = this.context.focusEmitter.addListener(
+      'focus',
+      function (el) {
+        if (_this === el) {
+          _this.requestAnimationFrame(_this.focus);
+        } else if (_this.isFocused()) {
+          _this.blur();
+        }
+      });
+
+      if (this.props.autoFocus) {
+        this.context.onFocusRequested(this);
+      }
+    } else {
+      if (this.props.autoFocus) {
+        this.requestAnimationFrame(this.focus);
+      }
+    }
+  },
+
+  componentWillUnmount: function componentWillUnmount() {
+    this._focusSubscription && this._focusSubscription.remove();
+    if (this.isFocused()) {
+      this.blur();
+    }
+    var tag = require('ReactNative').findNodeHandle(this._inputRef);
+    if (tag != null) {
+      require('TextInputState').unregisterInput(tag);
+    }
+  },
+
+  contextTypes: {
+    onFocusRequested: require('prop-types').func,
+    focusEmitter: require('prop-types').instanceOf(require('EventEmitter')) },
+
+
+
+
+
+  clear: function clear() {
+    this.setNativeProps({ text: '' });
+  },
+
+  render: function render() {
+    var textInput;
+    if (require('Platform').OS === 'ios') {
+      textInput = require('UIManager').RCTVirtualText ?
+      this._renderIOS() :
+      this._renderIOSLegacy();
+    } else if (require('Platform').OS === 'android') {
+      textInput = this._renderAndroid();
+    }
+    return (
+      require('React').createElement(require('TextAncestor').Provider, { value: true, __source: { fileName: _jsxFileName, lineNumber: 876 } }, textInput));
+
+  },
+
+  _getText: function _getText() {
+    return typeof this.props.value === 'string' ?
+    this.props.value :
+    typeof this.props.defaultValue === 'string' ?
+    this.props.defaultValue :
+    '';
+  },
+
+  _setNativeRef: function _setNativeRef(ref) {
+    this._inputRef = ref;
+  },
+
+  _renderIOSLegacy: function _renderIOSLegacy() {
+    var textContainer;
+
+    var props = _extends({}, this.props);
+    props.style = [this.props.style];
+
+    if (props.selection && props.selection.end == null) {
+      props.selection = {
+        start: props.selection.start,
+        end: props.selection.start };
+
+    }
+
+    if (!props.multiline) {
+      if (__DEV__) {
+        for (var propKey in onlyMultiline) {
+          if (props[propKey]) {
+            var error = new Error(
+            'TextInput prop `' +
+            propKey +
+            '` is only supported with multiline.');
+
+            require('fbjs/lib/warning')(false, '%s', error.stack);
+          }
+        }
+      }
+      textContainer =
+      require('React').createElement(RCTSinglelineTextInputView, _extends({
+        ref: this._setNativeRef },
+      props, {
+        onFocus: this._onFocus,
+        onBlur: this._onBlur,
+        onChange: this._onChange,
+        onSelectionChange: this._onSelectionChange,
+        onSelectionChangeShouldSetResponder: require('fbjs/lib/emptyFunction').thatReturnsTrue,
+        text: this._getText(), __source: { fileName: _jsxFileName, lineNumber: 919 } }));
+
+
+    } else {
+      var children = props.children;
+      var childCount = 0;
+      require('React').Children.forEach(children, function () {return ++childCount;});
+      require('fbjs/lib/invariant')(
+      !(props.value && childCount),
+      'Cannot specify both value and children.');
+
+      if (childCount >= 1) {
+        children =
+        require('React').createElement(require('Text'), { style: props.style, allowFontScaling: props.allowFontScaling, __source: { fileName: _jsxFileName, lineNumber: 940 } },
+        children);
+
+
+      }
+      if (props.inputView) {
+        children = [children, props.inputView];
+      }
+      props.style.unshift(styles.multilineInput);
+      textContainer =
+      require('React').createElement(RCTMultilineTextInputView, _extends({
+        ref: this._setNativeRef },
+      props, {
+        children: children,
+        onFocus: this._onFocus,
+        onBlur: this._onBlur,
+        onChange: this._onChange,
+        onContentSizeChange: this.props.onContentSizeChange,
+        onSelectionChange: this._onSelectionChange,
+        onTextInput: this._onTextInput,
+        onSelectionChangeShouldSetResponder: require('fbjs/lib/emptyFunction').thatReturnsTrue,
+        text: this._getText(),
+        dataDetectorTypes: this.props.dataDetectorTypes,
+        onScroll: this._onScroll, __source: { fileName: _jsxFileName, lineNumber: 950 } }));
+
+
+    }
+
+    return (
+      require('React').createElement(require('TouchableWithoutFeedback'), {
+        onLayout: props.onLayout,
+        onPress: this._onPress,
+        rejectResponderTermination: true,
+        accessible: props.accessible,
+        accessibilityLabel: props.accessibilityLabel,
+        accessibilityRole: props.accessibilityRole,
+        accessibilityStates: props.accessibilityStates,
+        nativeID: this.props.nativeID,
+        testID: props.testID, __source: { fileName: _jsxFileName, lineNumber: 969 } },
+      textContainer));
+
+
+  },
+
+  _renderIOS: function _renderIOS() {
+    var props = _extends({}, this.props);
+    props.style = [this.props.style];
+
+    if (props.selection && props.selection.end == null) {
+      props.selection = {
+        start: props.selection.start,
+        end: props.selection.start };
+
+    }
+
+    var RCTTextInputView = props.multiline ?
+    RCTMultilineTextInputView :
+    RCTSinglelineTextInputView;
+
+    if (props.multiline) {
+      props.style.unshift(styles.multilineInput);
+    }
+
+    var textContainer =
+    require('React').createElement(RCTTextInputView, _extends({
+      ref: this._setNativeRef },
+    props, {
+      onFocus: this._onFocus,
+      onBlur: this._onBlur,
+      onChange: this._onChange,
+      onContentSizeChange: this.props.onContentSizeChange,
+      onSelectionChange: this._onSelectionChange,
+      onTextInput: this._onTextInput,
+      onSelectionChangeShouldSetResponder: require('fbjs/lib/emptyFunction').thatReturnsTrue,
+      text: this._getText(),
+      dataDetectorTypes: this.props.dataDetectorTypes,
+      onScroll: this._onScroll, __source: { fileName: _jsxFileName, lineNumber: 1004 } }));
+
+
+
+    return (
+      require('React').createElement(require('TouchableWithoutFeedback'), {
+        onLayout: props.onLayout,
+        onPress: this._onPress,
+        rejectResponderTermination: true,
+        accessible: props.accessible,
+        accessibilityLabel: props.accessibilityLabel,
+        accessibilityRole: props.accessibilityRole,
+        accessibilityStates: props.accessibilityStates,
+        nativeID: this.props.nativeID,
+        testID: props.testID, __source: { fileName: _jsxFileName, lineNumber: 1021 } },
+      textContainer));
+
+
+  },
+
+  _renderAndroid: function _renderAndroid() {
+    var props = _extends({}, this.props);
+    props.style = [this.props.style];
+    props.autoCapitalize =
+    require('UIManager').AndroidTextInput.Constants.AutoCapitalizationType[
+    props.autoCapitalize || 'sentences'];
+
+
+
+
+    var children = this.props.children;
+    var childCount = 0;
+    require('React').Children.forEach(children, function () {return ++childCount;});
+    require('fbjs/lib/invariant')(
+    !(this.props.value && childCount),
+    'Cannot specify both value and children.');
+
+    if (childCount > 1) {
+      children = require('React').createElement(require('Text'), { __source: { fileName: _jsxFileName, lineNumber: 1054 } }, children);
+    }
+
+    if (props.selection && props.selection.end == null) {
+      props.selection = {
+        start: props.selection.start,
+        end: props.selection.start };
+
+    }
+
+    var textContainer =
+    require('React').createElement(AndroidTextInput, _extends({
+      ref: this._setNativeRef },
+    props, {
+      mostRecentEventCount: 0,
+      onFocus: this._onFocus,
+      onBlur: this._onBlur,
+      onChange: this._onChange,
+      onSelectionChange: this._onSelectionChange,
+      onTextInput: this._onTextInput,
+      text: this._getText(),
+      children: children,
+      disableFullscreenUI: this.props.disableFullscreenUI,
+      textBreakStrategy: this.props.textBreakStrategy,
+      onScroll: this._onScroll, __source: { fileName: _jsxFileName, lineNumber: 1065 } }));
+
+
+
+    return (
+      require('React').createElement(require('TouchableWithoutFeedback'), {
+        onLayout: props.onLayout,
+        onPress: this._onPress,
+        accessible: this.props.accessible,
+        accessibilityLabel: this.props.accessibilityLabel,
+        accessibilityRole: this.props.accessibilityRole,
+        accessibilityStates: this.props.accessibilityStates,
+        nativeID: this.props.nativeID,
+        testID: this.props.testID, __source: { fileName: _jsxFileName, lineNumber: 1083 } },
+      textContainer));
+
+
+  },
+
+  _onFocus: function _onFocus(event) {
+    if (this.props.onFocus) {
+      this.props.onFocus(event);
+    }
+
+    if (this.props.selectionState) {
+      this.props.selectionState.focus();
+    }
+  },
+
+  _onPress: function _onPress(event) {
+    if (this.props.editable || this.props.editable === undefined) {
+      this.focus();
+    }
+  },
+
+  _onChange: function _onChange(event) {
+
+
+    if (this._inputRef) {
+      this._inputRef.setNativeProps({
+        mostRecentEventCount: event.nativeEvent.eventCount });
+
+    }
+
+    var text = event.nativeEvent.text;
+    this.props.onChange && this.props.onChange(event);
+    this.props.onChangeText && this.props.onChangeText(text);
+
+    if (!this._inputRef) {
+
+
+      return;
+    }
+
+    this._lastNativeText = text;
+    this.forceUpdate();
+  },
+
+  _onSelectionChange: function _onSelectionChange(event) {
+    this.props.onSelectionChange && this.props.onSelectionChange(event);
+
+    if (!this._inputRef) {
+
+
+      return;
+    }
+
+    this._lastNativeSelection = event.nativeEvent.selection;
+
+    if (this.props.selection || this.props.selectionState) {
+      this.forceUpdate();
+    }
+  },
+
+  componentDidUpdate: function componentDidUpdate() {
+
+
+
+    var nativeProps = {};
+
+    if (
+    this._lastNativeText !== this.props.value &&
+    typeof this.props.value === 'string')
+    {
+      nativeProps.text = this.props.value;
+    }var
+
+
+
+    selection = this.props.selection;
+    if (
+    this._lastNativeSelection &&
+    selection && (
+    this._lastNativeSelection.start !== selection.start ||
+    this._lastNativeSelection.end !== selection.end))
+    {
+      nativeProps.selection = this.props.selection;
+    }
+
+    if (Object.keys(nativeProps).length > 0 && this._inputRef) {
+      this._inputRef.setNativeProps(nativeProps);
+    }
+
+    if (this.props.selectionState && selection) {
+      this.props.selectionState.update(selection.start, selection.end);
+    }
+  },
+
+  _onBlur: function _onBlur(event) {
+    this.blur();
+    if (this.props.onBlur) {
+      this.props.onBlur(event);
+    }
+
+    if (this.props.selectionState) {
+      this.props.selectionState.blur();
+    }
+  },
+
+  _onTextInput: function _onTextInput(event) {
+    this.props.onTextInput && this.props.onTextInput(event);
+  },
+
+  _onScroll: function _onScroll(event) {
+    this.props.onScroll && this.props.onScroll(event);
+  } });var
+
+
+InternalTextInputType = function (_ReactNative$NativeCo) {_inherits(InternalTextInputType, _ReactNative$NativeCo);function InternalTextInputType() {_classCallCheck(this, InternalTextInputType);return _possibleConstructorReturn(this, _getPrototypeOf(InternalTextInputType).apply(this, arguments));}_createClass(InternalTextInputType, [{ key: "clear", value: function clear()
+    {} }, { key: "isFocused", value: function isFocused()
+
+
+    {} }]);return InternalTextInputType;}(require('ReactNative').NativeComponent);
+
+
+var TypedTextInput = TextInput;
+
+var styles = require('StyleSheet').create({
+  multilineInput: {
+
+
+
+    paddingTop: 5 } });
+
+
+
+module.exports = TypedTextInput;

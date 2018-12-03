@@ -1,0 +1,120 @@
+d39b3837324188ff186bb90638dfe1cc
+"use strict";var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");require("react-native");
+var React = _interopRequireWildcard(require("react"));
+var renderer = _interopRequireWildcard(require("react-test-renderer"));
+var _lib = require("../lib");var _jsxFileName = "D:\\CodingProjects\\Github\\typescript-material-ui-collection\\ExampleAndTest\\tests\\SimpleUnit.test.js";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialTextButton, { text: 'text', __source: { fileName: _jsxFileName, lineNumber: 27 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialOutlinedButton, { text: 'text', __source: { fileName: _jsxFileName, lineNumber: 32 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialContainedButton, { text: 'text', __source: { fileName: _jsxFileName, lineNumber: 37 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialFab, { iconName: 'menu', position: 'bottom', __source: { fileName: _jsxFileName, lineNumber: 42 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialExtendedFab, { iconName: 'menu', position: 'bottom', text: 'text', __source: { fileName: _jsxFileName, lineNumber: 47 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialTextInput, { label: 'text', __source: { fileName: _jsxFileName, lineNumber: 52 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialHorizontalLinear, { __source: { fileName: _jsxFileName, lineNumber: 57 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialVerticalLinear, { __source: { fileName: _jsxFileName, lineNumber: 62 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialContainer, { __source: { fileName: _jsxFileName, lineNumber: 67 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialProgress, { color: 'red', __source: { fileName: _jsxFileName, lineNumber: 72 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialCheckbox, { __source: { fileName: _jsxFileName, lineNumber: 77 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialCollapsibleToolbarContainer, { __source: { fileName: _jsxFileName, lineNumber: 82 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialBackdrop, { __source: { fileName: _jsxFileName, lineNumber: 87 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialSwitch, { __source: { fileName: _jsxFileName, lineNumber: 92 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialRadioGroup, { __source: { fileName: _jsxFileName, lineNumber: 97 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialCard, { __source: { fileName: _jsxFileName, lineNumber: 102 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialCardContent, { __source: { fileName: _jsxFileName, lineNumber: 107 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialToolbar, { __source: { fileName: _jsxFileName, lineNumber: 112 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});
+
+test("MaterialTextButton Renders Correctly", function () {
+  var tree = renderer.create(React.createElement(_lib.MaterialToolbarContent, { __source: { fileName: _jsxFileName, lineNumber: 117 } })).toJSON();
+  expect(tree).toMatchSnapshot();
+});

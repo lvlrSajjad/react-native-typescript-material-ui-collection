@@ -1,0 +1,192 @@
+7f6be4ae036229275ef8929718ac64bd
+
+
+
+
+
+
+
+
+
+
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports = {
+
+
+
+  style: require('StyleSheetPropType')(require('ImageStylePropTypes')),
+
+
+
+
+
+  source: require('ImageSourcePropType'),
+
+
+
+
+
+  defaultSource: require('prop-types').oneOfType([
+  require('prop-types').shape({
+    uri: require('prop-types').string,
+    width: require('prop-types').number,
+    height: require('prop-types').number,
+    scale: require('prop-types').number }),
+
+  require('prop-types').number]),
+
+
+
+
+
+
+  accessible: require('prop-types').bool,
+
+
+
+
+
+
+  accessibilityLabel: require('prop-types').node,
+
+
+
+
+
+  blurRadius: require('prop-types').number,
+
+
+
+  capInsets: require('EdgeInsetsPropType'),
+
+
+
+  resizeMethod: require('prop-types').oneOf(['auto', 'resize', 'scale']),
+
+
+
+
+
+
+  resizeMode: require('prop-types').oneOf([
+  'cover',
+  'contain',
+  'stretch',
+  'repeat',
+  'center']),
+
+
+
+
+
+
+
+  testID: require('prop-types').string,
+
+
+
+
+
+
+  onLayout: require('prop-types').func,
+
+
+
+
+
+  onLoadStart: require('prop-types').func,
+
+
+
+
+
+  onProgress: require('prop-types').func,
+
+
+
+
+
+  onError: require('prop-types').func,
+
+
+
+
+
+  onPartialLoad: require('prop-types').func,
+
+
+
+
+
+  onLoad: require('prop-types').func,
+
+
+
+
+
+  onLoadEnd: require('prop-types').func };

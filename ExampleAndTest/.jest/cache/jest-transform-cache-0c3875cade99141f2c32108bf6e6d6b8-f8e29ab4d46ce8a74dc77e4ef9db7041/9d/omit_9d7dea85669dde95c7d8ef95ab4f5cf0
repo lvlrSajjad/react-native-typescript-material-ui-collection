@@ -1,0 +1,58 @@
+e4aec14ebeb0d74f35dacb3f5353d5ab
+
+
+
+
+
+
+
+
+
+
+var CLONE_DEEP_FLAG = 1,
+CLONE_FLAT_FLAG = 2,
+CLONE_SYMBOLS_FLAG = 4;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var omit = require('./_flatRest')(function (object, paths) {
+  var result = {};
+  if (object == null) {
+    return result;
+  }
+  var isDeep = false;
+  paths = require('./_arrayMap')(paths, function (path) {
+    path = require('./_castPath')(path, object);
+    isDeep || (isDeep = path.length > 1);
+    return path;
+  });
+  require('./_copyObject')(object, require('./_getAllKeysIn')(object), result);
+  if (isDeep) {
+    result = require('./_baseClone')(result, CLONE_DEEP_FLAG | CLONE_FLAT_FLAG | CLONE_SYMBOLS_FLAG, require('./_customOmitClone'));
+  }
+  var length = paths.length;
+  while (length--) {
+    require('./_baseUnset')(result, paths[length]);
+  }
+  return result;
+});
+
+module.exports = omit;

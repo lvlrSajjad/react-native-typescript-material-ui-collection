@@ -1,0 +1,29 @@
+11d8dc650873253a6342f632e6f2ee2f
+
+
+
+
+var objectProto = Object.prototype;
+
+
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+
+
+
+
+
+
+
+
+
+
+function assignValue(object, key, value) {
+  var objValue = object[key];
+  if (!(hasOwnProperty.call(object, key) && require('./eq')(objValue, value)) ||
+  value === undefined && !(key in object)) {
+    require('./_baseAssignValue')(object, key, value);
+  }
+}
+
+module.exports = assignValue;

@@ -1,0 +1,47 @@
+39309295e78fefe6df6a97bef89d4367
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function reject(collection, predicate) {
+  var func = require('./isArray')(collection) ? require('./_arrayFilter') : require('./_baseFilter');
+  return func(collection, require('./negate')(require('./_baseIteratee')(predicate, 3)));
+}
+
+module.exports = reject;

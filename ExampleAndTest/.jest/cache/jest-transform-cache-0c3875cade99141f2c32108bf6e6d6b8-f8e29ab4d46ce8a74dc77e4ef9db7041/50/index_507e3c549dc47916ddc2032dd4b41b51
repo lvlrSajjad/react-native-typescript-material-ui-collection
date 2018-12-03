@@ -1,0 +1,6 @@
+7f8050f1a705e7d8e376f022add742c2
+'use strict';
+
+
+
+module.exports = Function.prototype.bind || require('./implementation');

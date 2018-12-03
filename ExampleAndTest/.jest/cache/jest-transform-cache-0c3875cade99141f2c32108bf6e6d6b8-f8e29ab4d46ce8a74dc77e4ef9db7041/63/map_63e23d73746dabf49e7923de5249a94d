@@ -1,0 +1,54 @@
+11918825f565efeb847c409dbcfa91d2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function map(collection, iteratee) {
+  var func = require('./isArray')(collection) ? require('./_arrayMap') : require('./_baseMap');
+  return func(collection, require('./_baseIteratee')(iteratee, 3));
+}
+
+module.exports = map;

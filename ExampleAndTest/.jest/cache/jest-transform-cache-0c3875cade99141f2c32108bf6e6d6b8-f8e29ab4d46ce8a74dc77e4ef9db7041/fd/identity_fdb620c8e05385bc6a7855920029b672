@@ -1,0 +1,22 @@
+44f487e678f12c95d2ad2160c616f791
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function identity(value) {
+  return value;
+}
+
+module.exports = identity;

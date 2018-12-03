@@ -1,0 +1,12 @@
+9e7bb640b00e9765640f8a2cec2d22d1
+
+
+
+
+exports = module.exports = require('./lib/cheerio');
+
+
+
+
+
+exports.version = require('./package.json').version;

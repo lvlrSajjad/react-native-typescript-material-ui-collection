@@ -1,0 +1,52 @@
+d1cbfe270020a2d2f94bd5fb21bc22ba
+'use strict';function _extends() {_extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};return _extends.apply(this, arguments);}
+
+
+
+var lacksProperEnumerationOrder = function lacksProperEnumerationOrder() {
+  if (!Object.assign) {
+    return false;
+  }
+
+
+  var str = 'abcdefghijklmnopqrst';
+  var letters = str.split('');
+  var map = {};
+  for (var i = 0; i < letters.length; ++i) {
+    map[letters[i]] = letters[i];
+  }
+  var obj = _extends({}, map);
+  var actual = '';
+  for (var k in obj) {
+    actual += k;
+  }
+  return str !== actual;
+};
+
+var assignHasPendingExceptions = function assignHasPendingExceptions() {
+  if (!Object.assign || !Object.preventExtensions) {
+    return false;
+  }
+
+
+  var thrower = Object.preventExtensions({ 1: 2 });
+  try {
+    _extends(thrower, 'xy');
+  } catch (e) {
+    return thrower[1] === 'y';
+  }
+  return false;
+};
+
+module.exports = function getPolyfill() {
+  if (!Object.assign) {
+    return require('./implementation');
+  }
+  if (lacksProperEnumerationOrder()) {
+    return require('./implementation');
+  }
+  if (assignHasPendingExceptions()) {
+    return require('./implementation');
+  }
+  return Object.assign;
+};

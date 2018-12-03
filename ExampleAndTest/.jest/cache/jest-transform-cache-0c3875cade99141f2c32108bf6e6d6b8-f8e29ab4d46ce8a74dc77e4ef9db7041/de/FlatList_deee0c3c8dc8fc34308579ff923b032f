@@ -1,0 +1,682 @@
+05980d4ccd52c5bb2726c8707e7e0aec
+
+
+
+
+
+
+
+
+
+'use strict';var _jsxFileName = "D:\\CodingProjects\\Github\\typescript-material-ui-collection\\ExampleAndTest\\node_modules\\react-native\\Libraries\\Lists\\FlatList.js";function _extends() {_extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};return _extends.apply(this, arguments);}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var defaultProps = _objectSpread({},
+require('VirtualizedList').defaultProps, {
+  numColumns: 1 });var
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FlatList = function (_React$PureComponent) {_inherits(FlatList, _React$PureComponent);_createClass(FlatList, [{ key: "scrollToEnd", value: function scrollToEnd(
+
+
+
+
+
+    params) {
+      if (this._listRef) {
+        this._listRef.scrollToEnd(params);
+      }
+    } }, { key: "scrollToIndex", value: function scrollToIndex(
+
+
+
+
+
+
+
+
+
+    params)
+
+
+
+
+    {
+      if (this._listRef) {
+
+        this._listRef.scrollToIndex(params);
+      }
+    } }, { key: "scrollToItem", value: function scrollToItem(
+
+
+
+
+
+
+
+    params)
+
+
+
+    {
+      if (this._listRef) {
+
+        this._listRef.scrollToItem(params);
+      }
+    } }, { key: "scrollToOffset", value: function scrollToOffset(
+
+
+
+
+
+
+    params) {
+      if (this._listRef) {
+
+        this._listRef.scrollToOffset(params);
+      }
+    } }, { key: "recordInteraction", value: function recordInteraction()
+
+
+
+
+
+
+    {
+      if (this._listRef) {
+
+        this._listRef.recordInteraction();
+      }
+    } }, { key: "flashScrollIndicators", value: function flashScrollIndicators()
+
+
+
+
+
+
+    {
+      if (this._listRef) {
+
+        this._listRef.flashScrollIndicators();
+      }
+    } }, { key: "getScrollResponder", value: function getScrollResponder()
+
+
+
+
+    {
+      if (this._listRef) {
+
+        return this._listRef.getScrollResponder();
+      }
+    } }, { key: "getScrollableNode", value: function getScrollableNode()
+
+    {
+      if (this._listRef) {
+
+        return this._listRef.getScrollableNode();
+      }
+    } }, { key: "setNativeProps", value: function setNativeProps(
+
+    props) {
+      if (this._listRef) {
+        this._listRef.setNativeProps(props);
+      }
+    } }]);
+
+  function FlatList(props) {var _this;_classCallCheck(this, FlatList);
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(FlatList).call(this, props));_this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    _hasWarnedLegacy = false;_this.
+
+    _virtualizedListPairs = [];_this.
+
+    _captureRef = function (ref) {
+      _this._listRef = ref;
+    };_this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    _getItem = function (data, index) {var
+      numColumns = _this.props.numColumns;
+      if (numColumns > 1) {
+        var ret = [];
+        for (var kk = 0; kk < numColumns; kk++) {
+          var _item = data[index * numColumns + kk];
+          if (_item != null) {
+            ret.push(_item);
+          }
+        }
+        return ret;
+      } else {
+        return data[index];
+      }
+    };_this.
+
+    _getItemCount = function (data) {
+      return data ? Math.ceil(data.length / _this.props.numColumns) : 0;
+    };_this.
+
+    _keyExtractor = function (items, index) {var _this$props =
+      _this.props,keyExtractor = _this$props.keyExtractor,numColumns = _this$props.numColumns;
+      if (numColumns > 1) {
+        require('fbjs/lib/invariant')(
+        Array.isArray(items),
+        'FlatList: Encountered internal consistency error, expected each item to consist of an ' +
+        'array with 1-%s columns; instead, received a single item.',
+        numColumns);
+
+        return items.
+        map(function (it, kk) {return keyExtractor(it, index * numColumns + kk);}).
+        join(':');
+      } else {
+
+
+
+        return keyExtractor(items, index);
+      }
+    };_this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    _renderItem = function (info) {var _this$props2 =
+      _this.props,renderItem = _this$props2.renderItem,numColumns = _this$props2.numColumns,columnWrapperStyle = _this$props2.columnWrapperStyle;
+      if (numColumns > 1) {var
+        _item2 = info.item,_index = info.index;
+        require('fbjs/lib/invariant')(
+        Array.isArray(_item2),
+        'Expected array of items with numColumns > 1');
+
+        return (
+          require('React').createElement(require('View'), {
+            style: require('StyleSheet').compose(
+            styles.row,
+            columnWrapperStyle), __source: { fileName: _jsxFileName, lineNumber: 626 } },
+
+          _item2.map(function (it, kk) {
+            var element = renderItem({
+              item: it,
+              index: _index * numColumns + kk,
+              separators: info.separators });
+
+            return element && require('React').cloneElement(element, { key: kk });
+          })));
+
+
+      } else {
+        return renderItem(info);
+      }
+    };_this._checkProps(_this.props);if (_this.props.viewabilityConfigCallbackPairs) {_this._virtualizedListPairs = _this.props.viewabilityConfigCallbackPairs.map(function (pair) {return { viewabilityConfig: pair.viewabilityConfig, onViewableItemsChanged: _this._createOnViewableItemsChanged(pair.onViewableItemsChanged) };});} else if (_this.props.onViewableItemsChanged) {_this._virtualizedListPairs.push({ viewabilityConfig: _this.props.viewabilityConfig, onViewableItemsChanged: _this._createOnViewableItemsChanged(_this.props.onViewableItemsChanged) });}return _this;}_createClass(FlatList, [{ key: "componentDidUpdate", value: function componentDidUpdate(prevProps) {require('fbjs/lib/invariant')(prevProps.numColumns === this.props.numColumns, 'Changing numColumns on the fly is not supported. Change the key prop on FlatList when ' + 'changing the number of columns to force a fresh render of the component.');require('fbjs/lib/invariant')(prevProps.onViewableItemsChanged === this.props.onViewableItemsChanged, 'Changing onViewableItemsChanged on the fly is not supported');require('fbjs/lib/invariant')(prevProps.viewabilityConfig === this.props.viewabilityConfig, 'Changing viewabilityConfig on the fly is not supported');require('fbjs/lib/invariant')(prevProps.viewabilityConfigCallbackPairs === this.props.viewabilityConfigCallbackPairs, 'Changing viewabilityConfigCallbackPairs on the fly is not supported');this._checkProps(this.props);} }, { key: "_checkProps", value: function _checkProps(props) {var getItem = props.getItem,getItemCount = props.getItemCount,horizontal = props.horizontal,legacyImplementation = props.legacyImplementation,numColumns = props.numColumns,columnWrapperStyle = props.columnWrapperStyle,onViewableItemsChanged = props.onViewableItemsChanged,viewabilityConfigCallbackPairs = props.viewabilityConfigCallbackPairs;require('fbjs/lib/invariant')(!getItem && !getItemCount, 'FlatList does not support custom data formats.');if (numColumns > 1) {require('fbjs/lib/invariant')(!horizontal, 'numColumns does not support horizontal.');} else {require('fbjs/lib/invariant')(!columnWrapperStyle, 'columnWrapperStyle not supported for single column lists');}if (legacyImplementation) {require('fbjs/lib/invariant')(numColumns === 1, 'Legacy list does not support multiple columns.');if (!this._hasWarnedLegacy) {console.warn('FlatList: legacyImplementation is deprecated and will be removed in a ' + 'future release - some features not supported and performance may suffer. ' + 'Please migrate to the default implementation.');this._hasWarnedLegacy = true;}}require('fbjs/lib/invariant')(!(onViewableItemsChanged && viewabilityConfigCallbackPairs), 'FlatList does not support setting both onViewableItemsChanged and ' + 'viewabilityConfigCallbackPairs.');} }, { key: "_pushMultiColumnViewable", value: function _pushMultiColumnViewable(arr, v) {var _this$props3 = this.props,numColumns = _this$props3.numColumns,keyExtractor = _this$props3.keyExtractor;v.item.forEach(function (item, ii) {require('fbjs/lib/invariant')(v.index != null, 'Missing index!');var index = v.index * numColumns + ii;arr.push(_objectSpread({}, v, { item: item, key: keyExtractor(item, index), index: index }));});} }, { key: "_createOnViewableItemsChanged", value: function _createOnViewableItemsChanged(onViewableItemsChanged) {var _this2 = this;return function (info) {var numColumns = _this2.props.numColumns;if (onViewableItemsChanged) {if (numColumns > 1) {var changed = [];var viewableItems = [];info.viewableItems.forEach(function (v) {return _this2._pushMultiColumnViewable(viewableItems, v);});info.changed.forEach(function (v) {return _this2._pushMultiColumnViewable(changed, v);});onViewableItemsChanged({ viewableItems: viewableItems, changed: changed });} else {onViewableItemsChanged(info);}}};} }, { key: "render", value: function render()
+
+    {
+      if (this.props.legacyImplementation) {
+        return (
+
+
+
+          require('React').createElement(require('MetroListView'), _extends({},
+          this.props, {
+
+
+
+            items: this.props.data,
+            ref: this._captureRef, __source: { fileName: _jsxFileName, lineNumber: 652 } })));
+
+
+      } else {
+        return (
+          require('React').createElement(require('VirtualizedList'), _extends({},
+          this.props, {
+            renderItem: this._renderItem,
+            getItem: this._getItem,
+            getItemCount: this._getItemCount,
+            keyExtractor: this._keyExtractor,
+            ref: this._captureRef,
+            viewabilityConfigCallbackPairs: this._virtualizedListPairs, __source: { fileName: _jsxFileName, lineNumber: 663 } })));
+
+
+      }
+    } }]);return FlatList;}(require('React').PureComponent);FlatList.defaultProps = defaultProps;
+
+
+var styles = require('StyleSheet').create({
+  row: { flexDirection: 'row' } });
+
+
+module.exports = FlatList;

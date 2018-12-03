@@ -1,0 +1,58 @@
+7d5308f22e004ff42c756de39db4e175
+
+
+
+
+
+
+var WRAP_BIND_FLAG = 1,
+WRAP_PARTIAL_FLAG = 32;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var bind = require('./_baseRest')(function (func, thisArg, partials) {
+  var bitmask = WRAP_BIND_FLAG;
+  if (partials.length) {
+    var holders = require('./_replaceHolders')(partials, require('./_getHolder')(bind));
+    bitmask |= WRAP_PARTIAL_FLAG;
+  }
+  return require('./_createWrap')(func, bitmask, thisArg, partials, holders);
+});
+
+
+bind.placeholder = {};
+
+module.exports = bind;

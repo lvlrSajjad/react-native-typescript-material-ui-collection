@@ -1,0 +1,17 @@
+bd7eba99340ef70f34f9e2b1b621957d
+
+
+
+
+
+
+
+
+
+
+
+function flatRest(func) {
+  return require('./_setToString')(require('./_overRest')(func, undefined, require('./flatten')), func + '');
+}
+
+module.exports = flatRest;

@@ -1,0 +1,52 @@
+37e8a8a0297f9e59e8d513a574b42910
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function some(collection, predicate, guard) {
+  var func = require('./isArray')(collection) ? require('./_arraySome') : require('./_baseSome');
+  if (guard && require('./_isIterateeCall')(collection, predicate, guard)) {
+    predicate = undefined;
+  }
+  return func(collection, require('./_baseIteratee')(predicate, 3));
+}
+
+module.exports = some;

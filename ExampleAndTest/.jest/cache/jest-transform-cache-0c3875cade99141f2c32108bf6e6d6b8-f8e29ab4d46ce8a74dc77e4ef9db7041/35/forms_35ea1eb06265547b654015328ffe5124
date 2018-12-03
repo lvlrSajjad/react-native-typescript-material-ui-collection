@@ -1,0 +1,66 @@
+a8a6c0e89032759df1cf824c8cb0ee4f
+
+
+var submittableSelector = 'input,select,textarea,keygen',
+r20 = /%20/g,
+rCRLF = /\r?\n/g,
+_ = {
+  map: require('lodash/map') };
+
+
+exports.serialize = function () {
+
+  var arr = this.serializeArray();
+
+
+  var retArr = _.map(arr, function (data) {
+    return encodeURIComponent(data.name) + '=' + encodeURIComponent(data.value);
+  });
+
+
+  return retArr.join('&').replace(r20, '+');
+};
+
+exports.serializeArray = function () {
+
+  var Cheerio = this.constructor;
+  return this.map(function () {
+    var elem = this;
+    var $elem = Cheerio(elem);
+    if (elem.name === 'form') {
+      return $elem.find(submittableSelector).toArray();
+    } else {
+      return $elem.filter(submittableSelector).toArray();
+    }
+  }).filter(
+
+  '[name!=""]:not(:disabled)' +
+
+  ':not(:submit, :button, :image, :reset, :file)' +
+
+  ':matches([checked], :not(:checkbox, :radio))').
+
+  map(function (i, elem) {
+    var $elem = Cheerio(elem);
+    var name = $elem.attr('name');
+    var value = $elem.val();
+
+
+    if (value == null) {
+      value = '';
+    }
+
+
+    if (Array.isArray(value)) {
+      return _.map(value, function (val) {
+
+
+        return { name: name, value: val.replace(rCRLF, '\r\n') };
+      });
+
+    } else {
+      return { name: name, value: value.replace(rCRLF, '\r\n') };
+    }
+
+  }).get();
+};

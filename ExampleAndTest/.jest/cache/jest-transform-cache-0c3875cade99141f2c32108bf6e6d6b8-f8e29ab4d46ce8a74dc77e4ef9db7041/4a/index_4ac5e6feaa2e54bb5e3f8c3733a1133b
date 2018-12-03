@@ -1,0 +1,218 @@
+f46e4c82b97f11f1d2166e92506af771
+
+
+var re_whitespace = /\s+/g;
+
+
+
+function DomHandler(callback, options, elementCB) {
+  if (typeof callback === "object") {
+    elementCB = options;
+    options = callback;
+    callback = null;
+  } else if (typeof options === "function") {
+    elementCB = options;
+    options = defaultOpts;
+  }
+  this._callback = callback;
+  this._options = options || defaultOpts;
+  this._elementCB = elementCB;
+  this.dom = [];
+  this._done = false;
+  this._tagStack = [];
+  this._parser = this._parser || null;
+}
+
+
+var defaultOpts = {
+  normalizeWhitespace: false,
+  withStartIndices: false,
+  withEndIndices: false };
+
+
+DomHandler.prototype.onparserinit = function (parser) {
+  this._parser = parser;
+};
+
+
+DomHandler.prototype.onreset = function () {
+  DomHandler.call(this, this._callback, this._options, this._elementCB);
+};
+
+
+DomHandler.prototype.onend = function () {
+  if (this._done) return;
+  this._done = true;
+  this._parser = null;
+  this._handleCallback(null);
+};
+
+DomHandler.prototype._handleCallback =
+DomHandler.prototype.onerror = function (error) {
+  if (typeof this._callback === "function") {
+    this._callback(error, this.dom);
+  } else {
+    if (error) throw error;
+  }
+};
+
+DomHandler.prototype.onclosetag = function () {
+
+
+  var elem = this._tagStack.pop();
+
+  if (this._options.withEndIndices && elem) {
+    elem.endIndex = this._parser.endIndex;
+  }
+
+  if (this._elementCB) this._elementCB(elem);
+};
+
+DomHandler.prototype._createDomElement = function (properties) {
+  if (!this._options.withDomLvl1) return properties;
+
+  var element;
+  if (properties.type === "tag") {
+    element = Object.create(require("./lib/element"));
+  } else {
+    element = Object.create(require("./lib/node"));
+  }
+
+  for (var key in properties) {
+    if (properties.hasOwnProperty(key)) {
+      element[key] = properties[key];
+    }
+  }
+
+  return element;
+};
+
+DomHandler.prototype._addDomElement = function (element) {
+  var parent = this._tagStack[this._tagStack.length - 1];
+  var siblings = parent ? parent.children : this.dom;
+  var previousSibling = siblings[siblings.length - 1];
+
+  element.next = null;
+
+  if (this._options.withStartIndices) {
+    element.startIndex = this._parser.startIndex;
+  }
+  if (this._options.withEndIndices) {
+    element.endIndex = this._parser.endIndex;
+  }
+
+  if (previousSibling) {
+    element.prev = previousSibling;
+    previousSibling.next = element;
+  } else {
+    element.prev = null;
+  }
+
+  siblings.push(element);
+  element.parent = parent || null;
+};
+
+DomHandler.prototype.onopentag = function (name, attribs) {
+  var properties = {
+    type: name === "script" ? require("domelementtype").Script : name === "style" ? require("domelementtype").Style : require("domelementtype").Tag,
+    name: name,
+    attribs: attribs,
+    children: [] };
+
+
+  var element = this._createDomElement(properties);
+
+  this._addDomElement(element);
+
+  this._tagStack.push(element);
+};
+
+DomHandler.prototype.ontext = function (data) {
+
+
+  var normalize = this._options.normalizeWhitespace || this._options.ignoreWhitespace;
+
+  var lastTag;
+
+  if (!this._tagStack.length && this.dom.length && (lastTag = this.dom[this.dom.length - 1]).type === require("domelementtype").Text) {
+    if (normalize) {
+      lastTag.data = (lastTag.data + data).replace(re_whitespace, " ");
+    } else {
+      lastTag.data += data;
+    }
+  } else {
+    if (
+    this._tagStack.length && (
+    lastTag = this._tagStack[this._tagStack.length - 1]) && (
+    lastTag = lastTag.children[lastTag.children.length - 1]) &&
+    lastTag.type === require("domelementtype").Text)
+    {
+      if (normalize) {
+        lastTag.data = (lastTag.data + data).replace(re_whitespace, " ");
+      } else {
+        lastTag.data += data;
+      }
+    } else {
+      if (normalize) {
+        data = data.replace(re_whitespace, " ");
+      }
+
+      var element = this._createDomElement({
+        data: data,
+        type: require("domelementtype").Text });
+
+
+      this._addDomElement(element);
+    }
+  }
+};
+
+DomHandler.prototype.oncomment = function (data) {
+  var lastTag = this._tagStack[this._tagStack.length - 1];
+
+  if (lastTag && lastTag.type === require("domelementtype").Comment) {
+    lastTag.data += data;
+    return;
+  }
+
+  var properties = {
+    data: data,
+    type: require("domelementtype").Comment };
+
+
+  var element = this._createDomElement(properties);
+
+  this._addDomElement(element);
+  this._tagStack.push(element);
+};
+
+DomHandler.prototype.oncdatastart = function () {
+  var properties = {
+    children: [{
+      data: "",
+      type: require("domelementtype").Text }],
+
+    type: require("domelementtype").CDATA };
+
+
+  var element = this._createDomElement(properties);
+
+  this._addDomElement(element);
+  this._tagStack.push(element);
+};
+
+DomHandler.prototype.oncommentend = DomHandler.prototype.oncdataend = function () {
+  this._tagStack.pop();
+};
+
+DomHandler.prototype.onprocessinginstruction = function (name, data) {
+  var element = this._createDomElement({
+    name: name,
+    data: data,
+    type: require("domelementtype").Directive });
+
+
+  this._addDomElement(element);
+};
+
+module.exports = DomHandler;

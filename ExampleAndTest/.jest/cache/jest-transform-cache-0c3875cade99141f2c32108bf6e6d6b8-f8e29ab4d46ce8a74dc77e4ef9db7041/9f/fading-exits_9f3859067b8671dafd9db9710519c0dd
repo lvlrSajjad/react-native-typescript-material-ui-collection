@@ -1,0 +1,38 @@
+dc4f03c19c1ebae30f4e7bed1e3ac842
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.fadeOutRightBig = exports.fadeOutLeftBig = exports.fadeOutUpBig = exports.fadeOutDownBig = exports.fadeOutRight = exports.fadeOutLeft = exports.fadeOutUp = exports.fadeOutDown = exports.fadeOut = void 0;function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function makeFadeOutTranslation(translationType, toValue) {
+  return {
+    from: _defineProperty({
+      opacity: 1 },
+    translationType, 0),
+
+    to: _defineProperty({
+      opacity: 0 },
+    translationType, toValue) };
+
+
+}
+
+var fadeOut = {
+  from: {
+    opacity: 1 },
+
+  to: {
+    opacity: 0 } };exports.fadeOut = fadeOut;
+
+
+
+var fadeOutDown = makeFadeOutTranslation('translateY', 100);exports.fadeOutDown = fadeOutDown;
+
+var fadeOutUp = makeFadeOutTranslation('translateY', -100);exports.fadeOutUp = fadeOutUp;
+
+var fadeOutLeft = makeFadeOutTranslation('translateX', -100);exports.fadeOutLeft = fadeOutLeft;
+
+var fadeOutRight = makeFadeOutTranslation('translateX', 100);exports.fadeOutRight = fadeOutRight;
+
+var fadeOutDownBig = makeFadeOutTranslation('translateY', 500);exports.fadeOutDownBig = fadeOutDownBig;
+
+var fadeOutUpBig = makeFadeOutTranslation('translateY', -500);exports.fadeOutUpBig = fadeOutUpBig;
+
+var fadeOutLeftBig = makeFadeOutTranslation('translateX', -500);exports.fadeOutLeftBig = fadeOutLeftBig;
+
+var fadeOutRightBig = makeFadeOutTranslation('translateX', 500);exports.fadeOutRightBig = fadeOutRightBig;

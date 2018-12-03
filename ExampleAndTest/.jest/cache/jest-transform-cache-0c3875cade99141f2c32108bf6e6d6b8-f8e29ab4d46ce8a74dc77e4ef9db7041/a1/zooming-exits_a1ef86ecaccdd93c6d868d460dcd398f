@@ -1,0 +1,47 @@
+a9e0851d8489643a588421e3ca782b07
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.zoomOutRight = exports.zoomOutLeft = exports.zoomOutUp = exports.zoomOutDown = exports.zoomOut = void 0;var _reactNative = require("react-native");function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+function makeZoomOutTranslation(translationType, pivotPoint) {
+  var modifier = Math.min(1, Math.max(-1, pivotPoint));
+  return {
+    easing: _reactNative.Easing.bezier(0.175, 0.885, 0.32, 1),
+    0: _defineProperty({
+      opacity: 1,
+      scale: 1 },
+    translationType, 0),
+
+    0.4: _defineProperty({
+      opacity: 1,
+      scale: 0.457 },
+    translationType, pivotPoint),
+
+    1: _defineProperty({
+      opacity: 0,
+      scale: 0.1 },
+    translationType, modifier * -1000) };
+
+
+}
+
+var zoomOut = {
+  from: {
+    opacity: 1,
+    scale: 1 },
+
+  0.5: {
+    opacity: 1,
+    scale: 0.3 },
+
+  to: {
+    opacity: 0,
+    scale: 0 } };exports.zoomOut = zoomOut;
+
+
+
+var zoomOutDown = makeZoomOutTranslation('translateY', 60);exports.zoomOutDown = zoomOutDown;
+
+var zoomOutUp = makeZoomOutTranslation('translateY', -60);exports.zoomOutUp = zoomOutUp;
+
+var zoomOutLeft = makeZoomOutTranslation('translateX', 10);exports.zoomOutLeft = zoomOutLeft;
+
+var zoomOutRight = makeZoomOutTranslation('translateX', -10);exports.zoomOutRight = zoomOutRight;

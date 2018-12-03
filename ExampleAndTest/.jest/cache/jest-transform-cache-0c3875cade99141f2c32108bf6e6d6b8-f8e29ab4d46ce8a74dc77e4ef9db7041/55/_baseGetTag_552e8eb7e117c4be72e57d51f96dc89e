@@ -1,0 +1,29 @@
+bbc1aa39511aedf22451c6e6b5e39787
+
+
+
+
+
+var nullTag = '[object Null]',
+undefinedTag = '[object Undefined]';
+
+
+var symToStringTag = require('./_Symbol') ? typeof require('./_Symbol') === "function" ? require('./_Symbol').toStringTag : "@@toStringTag" : undefined;
+
+
+
+
+
+
+
+
+function baseGetTag(value) {
+  if (value == null) {
+    return value === undefined ? undefinedTag : nullTag;
+  }
+  return symToStringTag && symToStringTag in Object(value) ?
+  require('./_getRawTag')(value) :
+  require('./_objectToString')(value);
+}
+
+module.exports = baseGetTag;

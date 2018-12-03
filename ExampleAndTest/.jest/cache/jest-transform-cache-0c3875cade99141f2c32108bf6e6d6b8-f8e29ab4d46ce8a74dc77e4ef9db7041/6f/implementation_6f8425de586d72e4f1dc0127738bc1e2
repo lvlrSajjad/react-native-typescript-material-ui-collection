@@ -1,0 +1,66 @@
+858fac98b1e9a40e47467a000170f9b0
+'use strict';
+
+
+
+var MAX_SAFE_INTEGER = Number.MAX_SAFE_INTEGER || Math.pow(2, 53) - 1;
+
+
+var FlattenIntoArray = function FlattenIntoArray(target, source, sourceLen, start, depth) {
+  var targetIndex = start;
+  var sourceIndex = 0;
+
+
+
+
+
+
+
+
+  while (sourceIndex < sourceLen) {
+    var P = require('es-abstract/es2017').ToString(sourceIndex);
+    var exists = require('es-abstract/es2017').HasProperty(source, P);
+    if (exists) {
+      var element = require('es-abstract/es2017').Get(source, P);
+
+
+
+
+
+
+
+
+      var shouldFlatten = false;
+      if (depth > 0) {
+        shouldFlatten = require('es-abstract/es2017').IsArray(element);
+      }
+      if (shouldFlatten) {
+        var elementLen = require('es-abstract/es2017').ToLength(require('es-abstract/es2017').Get(element, 'length'));
+        targetIndex = FlattenIntoArray(target, element, elementLen, targetIndex, depth - 1);
+      } else {
+        if (targetIndex >= MAX_SAFE_INTEGER) {
+          throw new TypeError('index too large');
+        }
+        require('es-abstract/es2017').CreateDataPropertyOrThrow(target, require('es-abstract/es2017').ToString(targetIndex), element);
+        targetIndex += 1;
+      }
+    }
+    sourceIndex += 1;
+  }
+
+  return targetIndex;
+};
+
+module.exports = function flat() {
+  var O = require('es-abstract/es2017').ToObject(this);
+  var sourceLen = require('es-abstract/es2017').ToLength(require('es-abstract/es2017').Get(O, 'length'));
+
+  var depthNum = 1;
+  if (arguments.length > 0 && typeof arguments[0] !== 'undefined') {
+    depthNum = require('es-abstract/es2017').ToInteger(arguments[0]);
+  }
+
+  var A = require('es-abstract/es2017').ArraySpeciesCreate(O, 0);
+  FlattenIntoArray(A, O, sourceLen, 0, depthNum);
+  return A;
+};

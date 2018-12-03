@@ -1,0 +1,17 @@
+4779dff8b72b29a57b21740180935ade
+
+
+
+
+
+
+
+
+
+module.exports = {
+  process: function process(src, path) {
+    if (path.endsWith('.ts') || path.endsWith('.tsx') || path.endsWith('.js')) {
+      return require('typescript').transpile(src, require('../../../tsconfig.json').compilerOptions, path, []);
+    }
+    return src;
+  } };

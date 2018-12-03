@@ -1,0 +1,36 @@
+d6dd6c68002f1dbe3e695e441f65342f
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function isEqual(value, other) {
+  return require('./_baseIsEqual')(value, other);
+}
+
+module.exports = isEqual;

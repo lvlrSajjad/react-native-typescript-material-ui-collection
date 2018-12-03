@@ -1,0 +1,34 @@
+e97cc49bfba04c61ab0717b4a5a5ad00
+
+
+
+
+
+var objectProto = Object.prototype;
+
+
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+
+
+
+
+
+
+
+function baseKeysIn(object) {
+  if (!require('./isObject')(object)) {
+    return require('./_nativeKeysIn')(object);
+  }
+  var isProto = require('./_isPrototype')(object),
+  result = [];
+
+  for (var key in object) {
+    if (!(key == 'constructor' && (isProto || !hasOwnProperty.call(object, key)))) {
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+module.exports = baseKeysIn;

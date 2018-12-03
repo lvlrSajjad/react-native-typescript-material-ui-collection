@@ -1,0 +1,153 @@
+c439bfa270fafd53fc72d34f44828638
+
+
+
+
+
+
+
+
+
+'use strict';function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _get(target, property, receiver) {if (typeof Reflect !== "undefined" && Reflect.get) {_get = Reflect.get;} else {_get = function _get(target, property, receiver) {var base = _superPropBase(target, property);if (!base) return;var desc = Object.getOwnPropertyDescriptor(base, property);if (desc.get) {return desc.get.call(receiver);}return desc.value;};}return _get(target, property, receiver || target);}function _superPropBase(object, property) {while (!Object.prototype.hasOwnProperty.call(object, property)) {object = _getPrototypeOf(object);if (object === null) break;}return object;}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _easeInOut;
+function easeInOut() {
+  if (!_easeInOut) {
+    var Easing = require('Easing');
+    _easeInOut = Easing.inOut(Easing.ease);
+  }
+  return _easeInOut;
+}var
+
+TimingAnimation = function (_Animation) {_inherits(TimingAnimation, _Animation);
+
+
+
+
+
+
+
+
+
+
+
+  function TimingAnimation(config) {var _this;_classCallCheck(this, TimingAnimation);
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(TimingAnimation).call(this));
+    _this._toValue = config.toValue;
+    _this._easing = config.easing !== undefined ? config.easing : easeInOut();
+    _this._duration = config.duration !== undefined ? config.duration : 500;
+    _this._delay = config.delay !== undefined ? config.delay : 0;
+    _this.__iterations = config.iterations !== undefined ? config.iterations : 1;
+    _this.__isInteraction =
+    config.isInteraction !== undefined ? config.isInteraction : true;
+    _this._useNativeDriver = require('../NativeAnimatedHelper').shouldUseNativeDriver(config);return _this;
+  }_createClass(TimingAnimation, [{ key: "__getNativeAnimationConfig", value: function __getNativeAnimationConfig()
+
+    {
+      var frameDuration = 1000.0 / 60.0;
+      var frames = [];
+      for (var dt = 0.0; dt < this._duration; dt += frameDuration) {
+        frames.push(this._easing(dt / this._duration));
+      }
+      frames.push(this._easing(1));
+      return {
+        type: 'frames',
+        frames: frames,
+        toValue: this._toValue,
+        iterations: this.__iterations };
+
+    } }, { key: "start", value: function start(
+
+
+    fromValue,
+    onUpdate,
+    onEnd,
+    previousAnimation,
+    animatedValue)
+    {var _this2 = this;
+      this.__active = true;
+      this._fromValue = fromValue;
+      this._onUpdate = onUpdate;
+      this.__onEnd = onEnd;
+
+      var start = function start() {
+
+
+
+        if (_this2._duration === 0 && !_this2._useNativeDriver) {
+          _this2._onUpdate(_this2._toValue);
+          _this2.__debouncedOnEnd({ finished: true });
+        } else {
+          _this2._startTime = Date.now();
+          if (_this2._useNativeDriver) {
+            _this2.__startNativeAnimation(animatedValue);
+          } else {
+            _this2._animationFrame = requestAnimationFrame(
+            _this2.onUpdate.bind(_this2));
+
+          }
+        }
+      };
+      if (this._delay) {
+        this._timeout = setTimeout(start, this._delay);
+      } else {
+        start();
+      }
+    } }, { key: "onUpdate", value: function onUpdate()
+
+    {
+      var now = Date.now();
+      if (now >= this._startTime + this._duration) {
+        if (this._duration === 0) {
+          this._onUpdate(this._toValue);
+        } else {
+          this._onUpdate(
+          this._fromValue + this._easing(1) * (this._toValue - this._fromValue));
+
+        }
+        this.__debouncedOnEnd({ finished: true });
+        return;
+      }
+
+      this._onUpdate(
+      this._fromValue +
+      this._easing((now - this._startTime) / this._duration) * (
+      this._toValue - this._fromValue));
+
+      if (this.__active) {
+        this._animationFrame = requestAnimationFrame(this.onUpdate.bind(this));
+      }
+    } }, { key: "stop", value: function stop()
+
+    {
+      _get(_getPrototypeOf(TimingAnimation.prototype), "stop", this).call(this);
+      this.__active = false;
+      clearTimeout(this._timeout);
+      global.cancelAnimationFrame(this._animationFrame);
+      this.__debouncedOnEnd({ finished: false });
+    } }]);return TimingAnimation;}(require('./Animation'));
+
+
+module.exports = TimingAnimation;

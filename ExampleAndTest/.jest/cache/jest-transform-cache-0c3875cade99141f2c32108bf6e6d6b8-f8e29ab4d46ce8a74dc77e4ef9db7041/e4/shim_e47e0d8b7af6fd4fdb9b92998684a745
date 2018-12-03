@@ -1,0 +1,15 @@
+0ab4fd99724dbd9bc995eb271612ebd5
+'use strict';
+
+
+
+
+module.exports = function shimFlat() {
+  var polyfill = require('./polyfill')();
+  require('define-properties')(
+  Array.prototype,
+  { flat: polyfill },
+  { flat: function flat() {return Array.prototype.flat !== polyfill;} });
+
+  return polyfill;
+};

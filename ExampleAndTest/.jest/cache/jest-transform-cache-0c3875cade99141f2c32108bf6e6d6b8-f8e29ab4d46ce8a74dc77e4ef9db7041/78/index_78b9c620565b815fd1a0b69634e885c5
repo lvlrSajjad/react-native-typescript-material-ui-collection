@@ -1,0 +1,6 @@
+498ae60b27c2b6306f6cbb43074b119a
+'use strict';
+
+
+
+module.exports = require('function-bind').call(Function.call, Object.prototype.hasOwnProperty);

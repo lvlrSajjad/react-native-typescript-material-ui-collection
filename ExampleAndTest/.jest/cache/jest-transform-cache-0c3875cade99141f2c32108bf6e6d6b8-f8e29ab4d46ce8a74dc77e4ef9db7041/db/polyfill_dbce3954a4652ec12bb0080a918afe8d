@@ -1,0 +1,13 @@
+b140fc03e5477978381cf2cbbaad9649
+'use strict';
+
+
+
+var zeroWidthSpace = "\u200B";
+
+module.exports = function getPolyfill() {
+  if (String.prototype.trim && zeroWidthSpace.trim() === zeroWidthSpace) {
+    return String.prototype.trim;
+  }
+  return require('./implementation');
+};

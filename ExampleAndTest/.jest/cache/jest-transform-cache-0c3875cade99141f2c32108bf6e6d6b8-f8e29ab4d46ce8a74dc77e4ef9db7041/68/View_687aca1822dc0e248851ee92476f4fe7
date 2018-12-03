@@ -1,0 +1,57 @@
+31a4a98edc566a235921a1d5934ea362
+
+
+
+
+
+
+
+
+
+
+'use strict';var _jsxFileName = "D:\\CodingProjects\\Github\\typescript-material-ui-collection\\ExampleAndTest\\node_modules\\react-native\\Libraries\\Components\\View\\View.js";function _extends() {_extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};return _extends.apply(this, arguments);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var ViewToExport = require('ViewNativeComponent');
+if (__DEV__) {
+  if (!global.__RCTProfileIsProfiling) {
+    var View = function View(
+    props,
+    forwardedRef)
+    {
+      return (
+        require('React').createElement(require('TextAncestor').Consumer, { __source: { fileName: _jsxFileName, lineNumber: 39 } },
+        function (hasTextAncestor) {
+          require('fbjs/lib/invariant')(
+          !hasTextAncestor,
+          'Nesting of <View> within <Text> is not currently supported.');
+
+          return require('React').createElement(require('ViewNativeComponent'), _extends({}, props, { ref: forwardedRef, __source: { fileName: _jsxFileName, lineNumber: 45 } }));
+        }));
+
+
+    };
+
+    ViewToExport = require('React').forwardRef(View);
+    ViewToExport.displayName = 'View';
+  }
+}
+
+module.exports = ViewToExport;

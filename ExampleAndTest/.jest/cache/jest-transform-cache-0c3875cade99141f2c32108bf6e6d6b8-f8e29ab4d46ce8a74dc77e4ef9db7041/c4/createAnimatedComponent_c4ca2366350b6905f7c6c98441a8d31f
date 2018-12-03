@@ -1,0 +1,207 @@
+032cfae26913c334b089f1f2e8532735
+
+
+
+
+
+
+
+
+
+'use strict';var _jsxFileName = "D:\\CodingProjects\\Github\\typescript-material-ui-collection\\ExampleAndTest\\node_modules\\react-native\\Libraries\\Animated\\src\\createAnimatedComponent.js";function _extends() {_extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};return _extends.apply(this, arguments);}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}
+
+
+
+
+
+
+
+
+function createAnimatedComponent(Component) {
+  require('fbjs/lib/invariant')(
+  typeof Component !== 'function' ||
+  Component.prototype && Component.prototype.isReactComponent,
+  '`createAnimatedComponent` does not support stateless functional components; ' +
+  'use a class component instead.');var
+
+
+  AnimatedComponent = function (_React$Component) {_inherits(AnimatedComponent, _React$Component);
+
+
+
+
+
+
+
+
+
+    function AnimatedComponent(props) {var _this;_classCallCheck(this, AnimatedComponent);
+      _this = _possibleConstructorReturn(this, _getPrototypeOf(AnimatedComponent).call(this, props));_this._invokeAnimatedPropsCallbackOnMount = false;_this._eventDetachers = [];_this.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      _animatedPropsCallback = function () {
+        if (_this._component == null) {
+
+
+
+
+
+          _this._invokeAnimatedPropsCallbackOnMount = true;
+        } else if (
+        AnimatedComponent.__skipSetNativeProps_FOR_TESTS_ONLY ||
+        typeof _this._component.setNativeProps !== 'function')
+        {
+          _this.forceUpdate();
+        } else if (!_this._propsAnimated.__isNative) {
+          _this._component.setNativeProps(
+          _this._propsAnimated.__getAnimatedValue());
+
+        } else {
+          throw new Error(
+          'Attempting to run JS driven animation on animated ' +
+          'node that has been moved to "native" earlier by starting an ' +
+          'animation with `useNativeDriver: true`');
+
+        }
+      };_this._setComponentRef = _this._setComponentRef.bind(_assertThisInitialized(_assertThisInitialized(_this)));return _this;}_createClass(AnimatedComponent, [{ key: "componentWillUnmount", value: function componentWillUnmount() {this._propsAnimated && this._propsAnimated.__detach();this._detachNativeEvents();} }, { key: "setNativeProps", value: function setNativeProps(props) {this._component.setNativeProps(props);} }, { key: "UNSAFE_componentWillMount", value: function UNSAFE_componentWillMount() {this._attachProps(this.props);} }, { key: "componentDidMount", value: function componentDidMount() {if (this._invokeAnimatedPropsCallbackOnMount) {this._invokeAnimatedPropsCallbackOnMount = false;this._animatedPropsCallback();}this._propsAnimated.setNativeView(this._component);this._attachNativeEvents();} }, { key: "_attachNativeEvents", value: function _attachNativeEvents() {var _this2 = this;var scrollableNode = this._component.getScrollableNode ? this._component.getScrollableNode() : this._component;var _loop = function _loop(key) {var prop = _this2.props[key];if (prop instanceof require('./AnimatedEvent').AnimatedEvent && prop.__isNative) {prop.__attach(scrollableNode, key);_this2._eventDetachers.push(function () {return prop.__detach(scrollableNode, key);});}};for (var key in this.props) {_loop(key);}} }, { key: "_detachNativeEvents", value: function _detachNativeEvents() {this._eventDetachers.forEach(function (remove) {return remove();});this._eventDetachers = [];} }, { key: "_attachProps", value: function _attachProps(
+
+      nextProps) {
+        var oldPropsAnimated = this._propsAnimated;
+
+        this._propsAnimated = new (require('./nodes/AnimatedProps'))(
+        nextProps,
+        this._animatedPropsCallback);
+
+
+
+
+
+
+
+
+
+
+        oldPropsAnimated && oldPropsAnimated.__detach();
+      } }, { key: "UNSAFE_componentWillReceiveProps", value: function UNSAFE_componentWillReceiveProps(
+
+      newProps) {
+        this._attachProps(newProps);
+      } }, { key: "componentDidUpdate", value: function componentDidUpdate(
+
+      prevProps) {
+        if (this._component !== this._prevComponent) {
+          this._propsAnimated.setNativeView(this._component);
+        }
+        if (this._component !== this._prevComponent || prevProps !== this.props) {
+          this._detachNativeEvents();
+          this._attachNativeEvents();
+        }
+      } }, { key: "render", value: function render()
+
+      {
+        var props = this._propsAnimated.__getValue();
+        return (
+          require('React').createElement(Component, _extends({},
+          props, {
+            ref: this._setComponentRef,
+
+
+
+
+            collapsable:
+            this._propsAnimated.__isNative ? false : props.collapsable, __source: { fileName: _jsxFileName, lineNumber: 153 } })));
+
+
+
+      } }, { key: "_setComponentRef", value: function _setComponentRef(
+
+      c) {
+        this._prevComponent = this._component;
+        this._component = c;
+      } }, { key: "getNode", value: function getNode()
+
+
+
+      {
+        return this._component;
+      } }]);return AnimatedComponent;}(require('React').Component);AnimatedComponent.__skipSetNativeProps_FOR_TESTS_ONLY = false;
+
+
+  var propTypes = Component.propTypes;
+
+  AnimatedComponent.propTypes = {
+    style: function style(props, propName, componentName) {
+      if (!propTypes) {
+        return;
+      }
+
+      for (var key in require('ViewStylePropTypes')) {
+        if (!propTypes[key] && props[key] !== undefined) {
+          console.warn(
+          'You are setting the style `{ ' +
+          key +
+          ': ... }` as a prop. You ' +
+          'should nest it in a style object. ' +
+          'E.g. `{ style: { ' +
+          key +
+          ': ... } }`');
+
+        }
+      }
+    } };
+
+
+  return AnimatedComponent;
+}
+
+module.exports = createAnimatedComponent;

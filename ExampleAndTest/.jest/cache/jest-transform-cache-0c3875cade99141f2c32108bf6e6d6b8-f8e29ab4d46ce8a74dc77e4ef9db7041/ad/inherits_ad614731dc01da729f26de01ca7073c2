@@ -1,0 +1,8 @@
+0f79420c6f29bfab09d7de25b48e4ea5
+try {
+  var util = require('util');
+  if (typeof util.inherits !== 'function') throw '';
+  module.exports = util.inherits;
+} catch (e) {
+  module.exports = require('./inherits_browser.js');
+}

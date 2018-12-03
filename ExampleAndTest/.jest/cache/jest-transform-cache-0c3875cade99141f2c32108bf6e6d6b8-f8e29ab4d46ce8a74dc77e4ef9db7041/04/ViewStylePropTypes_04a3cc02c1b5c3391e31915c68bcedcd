@@ -1,0 +1,62 @@
+46558414749ffbb9fc5ab8b960ec0fa3
+
+
+
+
+
+
+
+
+
+
+'use strict';function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+
+
+
+
+
+
+
+
+
+var ViewStylePropTypes = _objectSpread({}, require('LayoutPropTypes'), require('ShadowPropTypesIOS'), require('TransformPropTypes'), {
+
+
+
+  backfaceVisibility: require('prop-types').oneOf(['visible', 'hidden']),
+  backgroundColor: require('ColorPropType'),
+  borderColor: require('ColorPropType'),
+  borderTopColor: require('ColorPropType'),
+  borderRightColor: require('ColorPropType'),
+  borderBottomColor: require('ColorPropType'),
+  borderLeftColor: require('ColorPropType'),
+  borderStartColor: require('ColorPropType'),
+  borderEndColor: require('ColorPropType'),
+  borderRadius: require('prop-types').number,
+  borderTopLeftRadius: require('prop-types').number,
+  borderTopRightRadius: require('prop-types').number,
+  borderTopStartRadius: require('prop-types').number,
+  borderTopEndRadius: require('prop-types').number,
+  borderBottomLeftRadius: require('prop-types').number,
+  borderBottomRightRadius: require('prop-types').number,
+  borderBottomStartRadius: require('prop-types').number,
+  borderBottomEndRadius: require('prop-types').number,
+  borderStyle: require('prop-types').oneOf(['solid', 'dotted', 'dashed']),
+  borderWidth: require('prop-types').number,
+  borderTopWidth: require('prop-types').number,
+  borderRightWidth: require('prop-types').number,
+  borderBottomWidth: require('prop-types').number,
+  borderLeftWidth: require('prop-types').number,
+  opacity: require('prop-types').number,
+
+
+
+
+
+
+
+  elevation: require('prop-types').number });
+
+
+module.exports = ViewStylePropTypes;

@@ -1,0 +1,34 @@
+b6bbb0623306a90dbbf3f03c210ddd5d
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.lightSpeedOut = exports.lightSpeedIn = void 0;var lightSpeedIn = {
+  easing: 'ease-out',
+  0: {
+    opacity: 0,
+    translateX: 200,
+    skewX: '-30deg' },
+
+  0.6: {
+    opacity: 1,
+    translateX: 0,
+    skewX: '20deg' },
+
+  0.8: {
+    skewX: '-5deg' },
+
+  1: {
+    opacity: 1,
+    translateX: 0,
+    skewX: '0deg' } };exports.lightSpeedIn = lightSpeedIn;
+
+
+
+var lightSpeedOut = {
+  easing: 'ease-in',
+  0: {
+    opacity: 1,
+    translateX: 0,
+    skewX: '0deg' },
+
+  1: {
+    opacity: 0,
+    translateX: 200,
+    skewX: '30deg' } };exports.lightSpeedOut = lightSpeedOut;

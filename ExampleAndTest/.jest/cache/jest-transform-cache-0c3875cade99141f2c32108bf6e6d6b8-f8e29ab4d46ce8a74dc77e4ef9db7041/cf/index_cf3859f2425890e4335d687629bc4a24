@@ -1,0 +1,91 @@
+e689889e930b53dd9cb815146d6841f4
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _propTypes = _interopRequireDefault(require("prop-types"));
+var _react = _interopRequireWildcard(require("react"));
+var _reactNative = require("react-native");
+
+var _styles = _interopRequireDefault(require("./styles"));var _jsxFileName = "D:\\CodingProjects\\Github\\typescript-material-ui-collection\\ExampleAndTest\\node_modules\\react-native-material-textfield\\src\\components\\affix\\index.js";function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}var
+
+Affix = function (_PureComponent) {_inherits(Affix, _PureComponent);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function Affix(props) {var _this;_classCallCheck(this, Affix);
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Affix).call(this, props));var _this$props =
+
+    _this.props,active = _this$props.active,focused = _this$props.focused;
+
+    _this.state = {
+      opacity: new _reactNative.Animated.Value(active || focused ? 1 : 0) };return _this;
+
+  }_createClass(Affix, [{ key: "componentWillReceiveProps", value: function componentWillReceiveProps(
+
+    props) {var
+      opacity = this.state.opacity;var _this$props2 =
+      this.props,active = _this$props2.active,focused = _this$props2.focused,animationDuration = _this$props2.animationDuration;
+
+      if (focused ^ props.focused || active ^ props.active) {
+        _reactNative.Animated.
+        timing(opacity, {
+          toValue: props.active || props.focused ? 1 : 0,
+          duration: animationDuration }).
+
+        start();
+      }
+    } }, { key: "render", value: function render()
+
+    {var
+      opacity = this.state.opacity;var _this$props3 =
+      this.props,style = _this$props3.style,children = _this$props3.children,type = _this$props3.type,fontSize = _this$props3.fontSize,color = _this$props3.baseColor;
+
+      var containerStyle = {
+        height: fontSize * 1.5,
+        opacity: opacity };
+
+
+      var textStyle = {
+        color: color,
+        fontSize: fontSize };
+
+
+      switch (type) {
+        case 'prefix':
+          containerStyle.paddingRight = 8;
+          textStyle.textAlign = 'left';
+          break;
+
+        case 'suffix':
+          containerStyle.paddingLeft = 8;
+          textStyle.textAlign = 'right';
+          break;}
+
+
+      return (
+        _react.default.createElement(_reactNative.Animated.View, { style: [_styles.default.container, containerStyle], __source: { fileName: _jsxFileName, lineNumber: 86 } },
+        _react.default.createElement(_reactNative.Animated.Text, { style: [style, textStyle], __source: { fileName: _jsxFileName, lineNumber: 87 } }, children)));
+
+
+    } }]);return Affix;}(_react.PureComponent);exports.default = Affix;Affix.defaultProps = { numberOfLines: 1, active: false, focused: false };Affix.propTypes = { numberOfLines: _propTypes.default.number, active: _propTypes.default.bool, focused: _propTypes.default.bool, type: _propTypes.default.oneOf(['prefix', 'suffix']).isRequired, fontSize: _propTypes.default.number.isRequired, baseColor: _propTypes.default.string.isRequired, animationDuration: _propTypes.default.number.isRequired, style: _reactNative.Animated.Text.propTypes.style, children: _propTypes.default.oneOfType([_propTypes.default.arrayOf(_propTypes.default.node), _propTypes.default.node]) };

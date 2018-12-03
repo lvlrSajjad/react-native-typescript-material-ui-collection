@@ -1,0 +1,747 @@
+73794f3be06b1d86e570a53c69e3df64
+'use strict';
+
+var _typeof = typeof Symbol === "function" && typeof (typeof Symbol === "function" ? Symbol.iterator : "@@iterator") === "symbol" ? function (obj) {return typeof obj;} : function (obj) {return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== (typeof Symbol === "function" ? Symbol.prototype : "@@prototype") ? "symbol" : typeof obj;};
+
+var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();
+
+
+
+var _object2 = _interopRequireDefault(require('object.assign'));
+
+
+
+var _functionPrototype2 = _interopRequireDefault(require('function.prototype.name'));
+
+
+
+var _react2 = _interopRequireDefault(require('react'));
+
+
+
+var _reactDom2 = _interopRequireDefault(require('react-dom'));
+
+
+
+var _server2 = _interopRequireDefault(require('react-dom/server'));
+
+
+
+var _shallow2 = _interopRequireDefault(require('react-test-renderer/shallow'));
+
+
+
+var _testUtils2 = _interopRequireDefault(require('react-dom/test-utils'));
+
+
+
+
+
+
+
+
+
+
+
+var _findCurrentFiberUsingSlowPath2 = _interopRequireDefault(require('./findCurrentFiberUsingSlowPath'));
+
+
+
+var _detectFiberTags2 = _interopRequireDefault(require('./detectFiberTags'));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { 'default': obj };}
+
+function _toConsumableArray(arr) {if (Array.isArray(arr)) {for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) {arr2[i] = arr[i];}return arr2;} else {return Array.from(arr);}}
+
+function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}
+
+function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}
+
+function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}
+
+
+
+
+
+
+
+
+var is164 = !!_testUtils2['default'].Simulate.touchStart;
+var is165 = !!_testUtils2['default'].Simulate.auxClick;
+var is166 = is165 && !_react2['default'].unstable_AsyncMode;
+
+
+var FiberTags = null;
+
+function nodeAndSiblingsArray(nodeWithSibling) {
+  var array = [];
+  var node = nodeWithSibling;
+  while (node != null) {
+    array.push(node);
+    node = node.sibling;
+  }
+  return array;
+}
+
+function flatten(arr) {
+  var result = [];
+  var stack = [{ i: 0, array: arr }];
+  while (stack.length) {
+    var n = stack.pop();
+    while (n.i < n.array.length) {
+      var el = n.array[n.i];
+      n.i += 1;
+      if (Array.isArray(el)) {
+        stack.push(n);
+        stack.push({ i: 0, array: el });
+        break;
+      }
+      result.push(el);
+    }
+  }
+  return result;
+}
+
+function nodeTypeFromType(type) {
+  if (type === require('react-is').Portal) {
+    return 'portal';
+  }
+
+  return (0, require('enzyme-adapter-utils').nodeTypeFromType)(type);
+}
+
+function elementToTree(el) {
+  if (!(0, require('react-is').isPortal)(el)) {
+    return (0, require('enzyme-adapter-utils').elementToTree)(el, elementToTree);
+  }
+
+  var children = el.children,
+  containerInfo = el.containerInfo;
+
+  var props = { children: children, containerInfo: containerInfo };
+
+  return {
+    nodeType: 'portal',
+    type: require('react-is').Portal,
+    props: props,
+    key: (0, require('enzyme-adapter-utils').ensureKeyOrUndefined)(el.key),
+    ref: el.ref || null,
+    instance: null,
+    rendered: elementToTree(el.children) };
+
+}
+
+function toTree(vnode) {
+  if (vnode == null) {
+    return null;
+  }
+
+
+
+  var node = (0, _findCurrentFiberUsingSlowPath2['default'])(vnode);
+  switch (node.tag) {
+    case FiberTags.HostRoot:
+      return childrenToTree(node.child);
+    case FiberTags.HostPortal:
+      {
+        var containerInfo = node.stateNode.containerInfo,
+        children = node.memoizedProps;
+
+        var props = { containerInfo: containerInfo, children: children };
+        return {
+          nodeType: 'portal',
+          type: require('react-is').Portal,
+          props: props,
+          key: (0, require('enzyme-adapter-utils').ensureKeyOrUndefined)(node.key),
+          ref: node.ref,
+          instance: null,
+          rendered: childrenToTree(node.child) };
+
+      }
+    case FiberTags.ClassComponent:
+      return {
+        nodeType: 'class',
+        type: node.type,
+        props: (0, _object2['default'])({}, node.memoizedProps),
+        key: (0, require('enzyme-adapter-utils').ensureKeyOrUndefined)(node.key),
+        ref: node.ref,
+        instance: node.stateNode,
+        rendered: childrenToTree(node.child) };
+
+    case FiberTags.FunctionalComponent:
+      return {
+        nodeType: 'function',
+        type: node.type,
+        props: (0, _object2['default'])({}, node.memoizedProps),
+        key: (0, require('enzyme-adapter-utils').ensureKeyOrUndefined)(node.key),
+        ref: node.ref,
+        instance: null,
+        rendered: childrenToTree(node.child) };
+
+
+    case FiberTags.HostComponent:
+      {
+        var renderedNodes = flatten(nodeAndSiblingsArray(node.child).map(toTree));
+        if (renderedNodes.length === 0) {
+          renderedNodes = [node.memoizedProps.children];
+        }
+        return {
+          nodeType: 'host',
+          type: node.type,
+          props: (0, _object2['default'])({}, node.memoizedProps),
+          key: (0, require('enzyme-adapter-utils').ensureKeyOrUndefined)(node.key),
+          ref: node.ref,
+          instance: node.stateNode,
+          rendered: renderedNodes };
+
+      }
+    case FiberTags.HostText:
+      return node.memoizedProps;
+    case FiberTags.Fragment:
+    case FiberTags.Mode:
+    case FiberTags.ContextProvider:
+    case FiberTags.ContextConsumer:
+      return childrenToTree(node.child);
+    case FiberTags.ForwardRef:
+      {
+        return {
+          nodeType: 'function',
+          type: node.type,
+          props: (0, _object2['default'])({}, node.pendingProps),
+          key: (0, require('enzyme-adapter-utils').ensureKeyOrUndefined)(node.key),
+          ref: node.ref,
+          instance: null,
+          rendered: childrenToTree(node.child) };
+
+      }
+    default:
+      throw new Error('Enzyme Internal Error: unknown node with tag ' + String(node.tag));}
+
+}
+
+function childrenToTree(node) {
+  if (!node) {
+    return null;
+  }
+  var children = nodeAndSiblingsArray(node);
+  if (children.length === 0) {
+    return null;
+  }
+  if (children.length === 1) {
+    return toTree(children[0]);
+  }
+  return flatten(children.map(toTree));
+}
+
+function _nodeToHostNode(_node) {
+
+
+
+
+
+  var node = _node;
+  while (node && !Array.isArray(node) && node.instance === null) {
+    node = node.rendered;
+  }
+  if (Array.isArray(node)) {
+
+    throw new Error('Trying to get host node of an array');
+  }
+
+  if (!node) {
+    return null;
+  }
+  return _reactDom2['default'].findDOMNode(node.instance);
+}
+
+var eventOptions = {
+  animation: true,
+  pointerEvents: is164,
+  auxClick: is165 };
+
+
+function getEmptyStateValue() {
+
+
+
+
+
+  var EmptyState = function (_React$Component) {
+    _inherits(EmptyState, _React$Component);
+
+    function EmptyState() {
+      _classCallCheck(this, EmptyState);
+
+      return _possibleConstructorReturn(this, (EmptyState.__proto__ || Object.getPrototypeOf(EmptyState)).apply(this, arguments));
+    }
+
+    _createClass(EmptyState, [{
+      key: 'render',
+      value: function () {
+        function render() {
+          return null;
+        }
+
+        return render;
+      }() }]);
+
+
+    return EmptyState;
+  }(_react2['default'].Component);
+
+  var testRenderer = new _shallow2['default']();
+  testRenderer.render(_react2['default'].createElement(EmptyState));
+  return testRenderer._instance.state;
+}
+
+var ReactSixteenAdapter = function (_EnzymeAdapter) {
+  _inherits(ReactSixteenAdapter, _EnzymeAdapter);
+
+  function ReactSixteenAdapter() {
+    _classCallCheck(this, ReactSixteenAdapter);
+
+    var _this2 = _possibleConstructorReturn(this, (ReactSixteenAdapter.__proto__ || Object.getPrototypeOf(ReactSixteenAdapter)).call(this));
+
+    var lifecycles = _this2.options.lifecycles;
+
+    _this2.options = (0, _object2['default'])({}, _this2.options, {
+      enableComponentDidUpdateOnSetState: true,
+      lifecycles: (0, _object2['default'])({}, lifecycles, {
+        componentDidUpdate: {
+          onSetState: true },
+
+        getDerivedStateFromProps: true,
+        getSnapshotBeforeUpdate: true,
+        setState: {
+          skipsComponentDidUpdateOnNullish: true } }) });
+
+
+
+    return _this2;
+  }
+
+  _createClass(ReactSixteenAdapter, [{
+    key: 'createMountRenderer',
+    value: function () {
+      function createMountRenderer(options) {
+        (0, require('enzyme-adapter-utils').assertDomAvailable)('mount');
+        if (FiberTags === null) {
+
+          FiberTags = (0, _detectFiberTags2['default'])();
+        }
+        var attachTo = options.attachTo,
+        hydrateIn = options.hydrateIn;
+
+        var domNode = hydrateIn || attachTo || global.document.createElement('div');
+        var instance = null;
+        var adapter = this;
+        return {
+          render: function () {
+            function render(el, context, callback) {
+              if (instance === null) {
+                var type = el.type,
+                props = el.props,
+                ref = el.ref;
+
+                var wrapperProps = (0, _object2['default'])({
+                  Component: type,
+                  props: props,
+                  context: context },
+                ref && { ref: ref });
+                var ReactWrapperComponent = (0, require('enzyme-adapter-utils').createMountWrapper)(el, (0, _object2['default'])({}, options, { adapter: adapter }));
+                var wrappedEl = _react2['default'].createElement(ReactWrapperComponent, wrapperProps);
+                instance = hydrateIn ? _reactDom2['default'].hydrate(wrappedEl, domNode) : _reactDom2['default'].render(wrappedEl, domNode);
+                if (typeof callback === 'function') {
+                  callback();
+                }
+              } else {
+                instance.setChildProps(el.props, context, callback);
+              }
+            }
+
+            return render;
+          }(),
+          unmount: function () {
+            function unmount() {
+              _reactDom2['default'].unmountComponentAtNode(domNode);
+              instance = null;
+            }
+
+            return unmount;
+          }(),
+          getNode: function () {
+            function getNode() {
+              return instance ? toTree(instance._reactInternalFiber).rendered : null;
+            }
+
+            return getNode;
+          }(),
+          simulateError: function () {
+            function simulateError(nodeHierarchy, rootNode, error) {
+              var _ref = nodeHierarchy.find(function (x) {
+                return x.instance && x.instance.componentDidCatch;
+              }) || {},
+              catchingInstance = _ref.instance;
+
+              (0, require('enzyme-adapter-utils').simulateError)(error, catchingInstance, rootNode, nodeHierarchy, nodeTypeFromType, adapter.displayNameOfNode);
+            }
+
+            return simulateError;
+          }(),
+          simulateEvent: function () {
+            function simulateEvent(node, event, mock) {
+              var mappedEvent = (0, require('enzyme-adapter-utils').mapNativeEventNames)(event, eventOptions);
+              var eventFn = _testUtils2['default'].Simulate[mappedEvent];
+              if (!eventFn) {
+                throw new TypeError('ReactWrapper::simulate() event \'' + String(event) + '\' does not exist');
+              }
+              eventFn(_nodeToHostNode(node), mock);
+            }
+
+            return simulateEvent;
+          }(),
+          batchedUpdates: function () {
+            function batchedUpdates(fn) {
+              return fn();
+
+            }
+
+            return batchedUpdates;
+          }() };
+
+      }
+
+      return createMountRenderer;
+    }() },
+  {
+    key: 'createShallowRenderer',
+    value: function () {
+      function createShallowRenderer() {
+        var adapter = this;
+        var renderer = new _shallow2['default']();
+        var isDOM = false;
+        var cachedNode = null;
+        return {
+          render: function () {
+            function render(el, context) {
+              cachedNode = el;
+
+              if (typeof el.type === 'string') {
+                isDOM = true;
+              } else {
+                isDOM = false;
+                var Component = el.type;
+
+
+                var isStateful = Component.prototype && (Component.prototype.isReactComponent || Array.isArray(Component.__reactAutoBindPairs));
+
+
+                if (!isStateful && typeof Component === 'function') {
+                  var wrappedEl = (0, _object2['default'])(function () {
+                    return Component.apply(undefined, arguments);
+                  },
+                  Component);
+                  return (0, require('enzyme-adapter-utils').withSetStateAllowed)(function () {
+                    return renderer.render((0, _object2['default'])({}, el, { type: wrappedEl }), context);
+                  });
+                }
+                if (isStateful) {
+
+                  var emptyStateValue = getEmptyStateValue();
+                  if (emptyStateValue) {
+                    Object.defineProperty(Component.prototype, 'state', {
+                      configurable: true,
+                      enumerable: true,
+                      get: function () {
+                        function get() {
+                          return null;
+                        }
+
+                        return get;
+                      }(),
+                      set: function () {
+                        function set(value) {
+                          if (value !== emptyStateValue) {
+                            Object.defineProperty(this, 'state', {
+                              configurable: true,
+                              enumerable: true,
+                              value: value,
+                              writable: true });
+
+                          }
+                          return true;
+                        }
+
+                        return set;
+                      }() });
+
+                  }
+                }
+                return (0, require('enzyme-adapter-utils').withSetStateAllowed)(function () {
+                  return renderer.render(el, context);
+                });
+              }
+            }
+
+            return render;
+          }(),
+          unmount: function () {
+            function unmount() {
+              renderer.unmount();
+            }
+
+            return unmount;
+          }(),
+          getNode: function () {
+            function getNode() {
+              if (isDOM) {
+                return elementToTree(cachedNode);
+              }
+              var output = renderer.getRenderOutput();
+              return {
+                nodeType: nodeTypeFromType(cachedNode.type),
+                type: cachedNode.type,
+                props: cachedNode.props,
+                key: (0, require('enzyme-adapter-utils').ensureKeyOrUndefined)(cachedNode.key),
+                ref: cachedNode.ref,
+                instance: renderer._instance,
+                rendered: Array.isArray(output) ? flatten(output).map(function (el) {
+                  return elementToTree(el);
+                }) : elementToTree(output) };
+
+            }
+
+            return getNode;
+          }(),
+          simulateError: function () {
+            function simulateError(nodeHierarchy, rootNode, error) {
+              (0, require('enzyme-adapter-utils').simulateError)(error, renderer._instance, cachedNode, nodeHierarchy.concat(cachedNode), nodeTypeFromType, adapter.displayNameOfNode);
+            }
+
+            return simulateError;
+          }(),
+          simulateEvent: function () {
+            function simulateEvent(node, event) {
+              for (var _len = arguments.length, args = Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+                args[_key - 2] = arguments[_key];
+              }
+
+              var handler = node.props[(0, require('enzyme-adapter-utils').propFromEvent)(event, eventOptions)];
+              if (handler) {
+                (0, require('enzyme-adapter-utils').withSetStateAllowed)(function () {
+
+
+
+                  handler.apply(undefined, _toConsumableArray(args));
+
+                });
+              }
+            }
+
+            return simulateEvent;
+          }(),
+          batchedUpdates: function () {
+            function batchedUpdates(fn) {
+              return fn();
+
+            }
+
+            return batchedUpdates;
+          }() };
+
+      }
+
+      return createShallowRenderer;
+    }() },
+  {
+    key: 'createStringRenderer',
+    value: function () {
+      function createStringRenderer(options) {
+        return {
+          render: function () {
+            function render(el, context) {
+              if (options.context && (el.type.contextTypes || options.childContextTypes)) {
+                var childContextTypes = (0, _object2['default'])({}, el.type.contextTypes || {}, options.childContextTypes);
+                var ContextWrapper = (0, require('enzyme-adapter-utils').createRenderWrapper)(el, context, childContextTypes);
+                return _server2['default'].renderToStaticMarkup(_react2['default'].createElement(ContextWrapper));
+              }
+              return _server2['default'].renderToStaticMarkup(el);
+            }
+
+            return render;
+          }() };
+
+      }
+
+      return createStringRenderer;
+    }() },
+
+
+
+
+
+  {
+    key: 'createRenderer',
+    value: function () {
+      function createRenderer(options) {
+        switch (options.mode) {
+          case require('enzyme').EnzymeAdapter.MODES.MOUNT:
+            return this.createMountRenderer(options);
+          case require('enzyme').EnzymeAdapter.MODES.SHALLOW:
+            return this.createShallowRenderer(options);
+          case require('enzyme').EnzymeAdapter.MODES.STRING:
+            return this.createStringRenderer(options);
+          default:
+            throw new Error('Enzyme Internal Error: Unrecognized mode: ' + String(options.mode));}
+
+      }
+
+      return createRenderer;
+    }() },
+  {
+    key: 'wrap',
+    value: function () {
+      function wrap(element) {
+        return (0, require('enzyme-adapter-utils').wrap)(element);
+      }
+
+      return wrap;
+    }() },
+
+
+
+
+
+
+  {
+    key: 'nodeToElement',
+    value: function () {
+      function nodeToElement(node) {
+        if (!node || (typeof node === 'undefined' ? 'undefined' : _typeof(node)) !== 'object') return null;
+        return _react2['default'].createElement(node.type, (0, require('enzyme-adapter-utils').propsWithKeysAndRef)(node));
+      }
+
+      return nodeToElement;
+    }() },
+  {
+    key: 'elementToNode',
+    value: function () {
+      function elementToNode(element) {
+        return elementToTree(element);
+      }
+
+      return elementToNode;
+    }() },
+  {
+    key: 'nodeToHostNode',
+    value: function () {
+      function nodeToHostNode(node) {
+        return _nodeToHostNode(node);
+      }
+
+      return nodeToHostNode;
+    }() },
+  {
+    key: 'displayNameOfNode',
+    value: function () {
+      function displayNameOfNode(node) {
+        if (!node) return null;
+        var type = node.type,
+        $$typeof = node.$$typeof;
+
+
+        var nodeType = type || $$typeof;
+
+
+        if (nodeType) {
+          switch (nodeType) {
+            case (is166 ? require('react-is').ConcurrentMode : require('react-is').AsyncMode) || NaN:
+              return is166 ? 'ConcurrentMode' : 'AsyncMode';
+            case require('react-is').Fragment || NaN:
+              return 'Fragment';
+            case require('react-is').StrictMode || NaN:
+              return 'StrictMode';
+            case require('react-is').Profiler || NaN:
+              return 'Profiler';
+            case require('react-is').Portal || NaN:
+              return 'Portal';
+            default:}
+
+        }
+
+        var $$typeofType = type && type.$$typeof;
+
+        switch ($$typeofType) {
+          case require('react-is').ContextConsumer || NaN:
+            return 'ContextConsumer';
+          case require('react-is').ContextProvider || NaN:
+            return 'ContextProvider';
+          case require('react-is').ForwardRef || NaN:
+            {
+              if (type.displayName) {
+                return type.displayName;
+              }
+              var name = type.render.displayName || (0, _functionPrototype2['default'])(type.render);
+              return name ? 'ForwardRef(' + String(name) + ')' : 'ForwardRef';
+            }
+          default:
+            return (0, require('enzyme-adapter-utils').displayNameOfNode)(node);}
+
+      }
+
+      return displayNameOfNode;
+    }() },
+  {
+    key: 'isValidElement',
+    value: function () {
+      function isValidElement(element) {
+        return (0, require('react-is').isElement)(element);
+      }
+
+      return isValidElement;
+    }() },
+  {
+    key: 'isValidElementType',
+    value: function () {
+      function isValidElementType(object) {
+        return (0, require('react-is').isValidElementType)(object);
+      }
+
+      return isValidElementType;
+    }() },
+  {
+    key: 'isFragment',
+    value: function () {
+      function isFragment(fragment) {
+        return (0, require('enzyme/build/Utils').typeOfNode)(fragment) === require('react-is').Fragment;
+      }
+
+      return isFragment;
+    }() },
+  {
+    key: 'isCustomComponentElement',
+    value: function () {
+      function isCustomComponentElement(inst) {
+        if (!inst || !this.isValidElement(inst)) {
+          return false;
+        }
+        return typeof inst.type === 'function' || (0, require('react-is').isForwardRef)(inst);
+      }
+
+      return isCustomComponentElement;
+    }() },
+  {
+    key: 'createElement',
+    value: function () {
+      function createElement() {
+        return _react2['default'].createElement.apply(_react2['default'], arguments);
+      }
+
+      return createElement;
+    }() }]);
+
+
+  return ReactSixteenAdapter;
+}(require('enzyme').EnzymeAdapter);
+
+module.exports = ReactSixteenAdapter;

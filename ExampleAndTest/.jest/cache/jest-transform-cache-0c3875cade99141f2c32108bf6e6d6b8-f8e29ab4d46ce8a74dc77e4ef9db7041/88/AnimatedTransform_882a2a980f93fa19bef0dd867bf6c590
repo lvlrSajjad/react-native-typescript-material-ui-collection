@@ -1,0 +1,121 @@
+cccc7c2ac71968455f2d98a5bb8b87db
+
+
+
+
+
+
+
+
+
+'use strict';function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _get(target, property, receiver) {if (typeof Reflect !== "undefined" && Reflect.get) {_get = Reflect.get;} else {_get = function _get(target, property, receiver) {var base = _superPropBase(target, property);if (!base) return;var desc = Object.getOwnPropertyDescriptor(base, property);if (desc.get) {return desc.get.call(receiver);}return desc.value;};}return _get(target, property, receiver || target);}function _superPropBase(object, property) {while (!Object.prototype.hasOwnProperty.call(object, property)) {object = _getPrototypeOf(object);if (object === null) break;}return object;}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}var
+
+
+
+
+
+AnimatedTransform = function (_AnimatedWithChildren) {_inherits(AnimatedTransform, _AnimatedWithChildren);
+
+
+  function AnimatedTransform(transforms) {var _this;_classCallCheck(this, AnimatedTransform);
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(AnimatedTransform).call(this));
+    _this._transforms = transforms;return _this;
+  }_createClass(AnimatedTransform, [{ key: "__makeNative", value: function __makeNative()
+
+    {
+      this._transforms.forEach(function (transform) {
+        for (var key in transform) {
+          var value = transform[key];
+          if (value instanceof require('./AnimatedNode')) {
+            value.__makeNative();
+          }
+        }
+      });
+      _get(_getPrototypeOf(AnimatedTransform.prototype), "__makeNative", this).call(this);
+    } }, { key: "__getValue", value: function __getValue()
+
+    {
+      return this._transforms.map(function (transform) {
+        var result = {};
+        for (var key in transform) {
+          var value = transform[key];
+          if (value instanceof require('./AnimatedNode')) {
+            result[key] = value.__getValue();
+          } else {
+            result[key] = value;
+          }
+        }
+        return result;
+      });
+    } }, { key: "__getAnimatedValue", value: function __getAnimatedValue()
+
+    {
+      return this._transforms.map(function (transform) {
+        var result = {};
+        for (var key in transform) {
+          var value = transform[key];
+          if (value instanceof require('./AnimatedNode')) {
+            result[key] = value.__getAnimatedValue();
+          } else {
+
+            result[key] = value;
+          }
+        }
+        return result;
+      });
+    } }, { key: "__attach", value: function __attach()
+
+    {var _this2 = this;
+      this._transforms.forEach(function (transform) {
+        for (var key in transform) {
+          var value = transform[key];
+          if (value instanceof require('./AnimatedNode')) {
+            value.__addChild(_this2);
+          }
+        }
+      });
+    } }, { key: "__detach", value: function __detach()
+
+    {var _this3 = this;
+      this._transforms.forEach(function (transform) {
+        for (var key in transform) {
+          var value = transform[key];
+          if (value instanceof require('./AnimatedNode')) {
+            value.__removeChild(_this3);
+          }
+        }
+      });
+      _get(_getPrototypeOf(AnimatedTransform.prototype), "__detach", this).call(this);
+    } }, { key: "__getNativeConfig", value: function __getNativeConfig()
+
+    {
+      var transConfigs = [];
+
+      this._transforms.forEach(function (transform) {
+        for (var key in transform) {
+          var value = transform[key];
+          if (value instanceof require('./AnimatedNode')) {
+            transConfigs.push({
+              type: 'animated',
+              property: key,
+              nodeTag: value.__getNativeTag() });
+
+          } else {
+            transConfigs.push({
+              type: 'static',
+              property: key,
+              value: value });
+
+          }
+        }
+      });
+
+      require('../NativeAnimatedHelper').validateTransform(transConfigs);
+      return {
+        type: 'transform',
+        transforms: transConfigs };
+
+    } }]);return AnimatedTransform;}(require('./AnimatedWithChildren'));
+
+
+module.exports = AnimatedTransform;

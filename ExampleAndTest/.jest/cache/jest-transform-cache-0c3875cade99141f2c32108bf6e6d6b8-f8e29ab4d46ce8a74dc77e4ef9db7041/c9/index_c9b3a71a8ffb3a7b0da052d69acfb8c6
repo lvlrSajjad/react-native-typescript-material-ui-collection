@@ -1,0 +1,17 @@
+2ee5d2d79b86215708d93775d0698c12
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });Object.defineProperty(exports, "registerAnimation", { enumerable: true, get: function get() {return _registry.registerAnimation;} });Object.defineProperty(exports, "initializeRegistryWithDefinitions", { enumerable: true, get: function get() {return _registry.initializeRegistryWithDefinitions;} });Object.defineProperty(exports, "createAnimation", { enumerable: true, get: function get() {return _createAnimation.default;} });exports.Image = exports.Text = exports.View = exports.createAnimatableComponent = void 0;var _reactNative = require("react-native");
+
+
+
+
+var _createAnimatableComponent = _interopRequireDefault(require("./createAnimatableComponent"));
+var _registry = require("./registry");
+var ANIMATION_DEFINITIONS = _interopRequireWildcard(require("./definitions"));
+
+
+
+
+
+
+
+var _createAnimation = _interopRequireDefault(require("./createAnimation"));function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;} else {var newObj = {};if (obj != null) {for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;return newObj;}}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}(0, _registry.initializeRegistryWithDefinitions)(ANIMATION_DEFINITIONS);var createAnimatableComponent = _createAnimatableComponent.default;exports.createAnimatableComponent = createAnimatableComponent;var View = (0, _createAnimatableComponent.default)(_reactNative.View);exports.View = View;var Text = (0, _createAnimatableComponent.default)(_reactNative.Text);exports.Text = Text;var Image = (0, _createAnimatableComponent.default)(_reactNative.Image);exports.Image = Image;

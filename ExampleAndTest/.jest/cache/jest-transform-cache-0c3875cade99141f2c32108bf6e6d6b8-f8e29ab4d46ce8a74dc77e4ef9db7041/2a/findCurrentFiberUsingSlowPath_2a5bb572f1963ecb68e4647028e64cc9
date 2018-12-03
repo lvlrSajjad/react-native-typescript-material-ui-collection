@@ -1,0 +1,111 @@
+73b61cbefa2643c25e17cbb41d4a859d
+'use strict';
+
+
+function findCurrentFiberUsingSlowPath(fiber) {
+  var alternate = fiber.alternate;
+
+  if (!alternate) {
+    return fiber;
+  }
+
+
+
+  var a = fiber;
+  var b = alternate;
+  while (true) {
+
+    var parentA = a['return'];
+    var parentB = parentA ? parentA.alternate : null;
+    if (!parentA || !parentB) {
+
+      break;
+    }
+
+
+
+
+    if (parentA.child === parentB.child) {
+      var child = parentA.child;
+
+      while (child) {
+        if (child === a) {
+
+          return fiber;
+        }
+        if (child === b) {
+
+          return alternate;
+        }
+        child = child.sibling;
+      }
+
+
+      throw new Error('Unable to find node on an unmounted component.');
+    }
+
+    if (a['return'] !== b['return']) {
+
+
+
+
+      a = parentA;
+      b = parentB;
+    } else {
+
+
+
+
+
+      var didFindChild = false;
+      var _child = parentA.child;
+
+      while (_child) {
+        if (_child === a) {
+          didFindChild = true;
+          a = parentA;
+          b = parentB;
+          break;
+        }
+        if (_child === b) {
+          didFindChild = true;
+          b = parentA;
+          a = parentB;
+          break;
+        }
+        _child = _child.sibling;
+      }
+      if (!didFindChild) {
+        _child = parentB.child;
+
+
+        while (_child) {
+          if (_child === a) {
+            didFindChild = true;
+            a = parentB;
+            b = parentA;
+            break;
+          }
+          if (_child === b) {
+            didFindChild = true;
+            b = parentB;
+            a = parentA;
+            break;
+          }
+          _child = _child.sibling;
+        }
+        if (!didFindChild) {
+          throw new Error('Child was not found in either parent set. This indicates a bug ' + 'in React related to the return pointer. Please file an issue.');
+        }
+      }
+    }
+  }
+  if (a.stateNode.current === a) {
+
+    return fiber;
+  }
+
+  return alternate;
+}
+
+module.exports = findCurrentFiberUsingSlowPath;

@@ -1,0 +1,44 @@
+b46818d2b7bc150bd39bcda42614156b
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports['default'] = render;
+
+
+
+var _object2 = _interopRequireDefault(require('object.assign'));
+
+
+
+var _cheerio2 = _interopRequireDefault(require('cheerio'));
+
+
+
+var _getAdapter2 = _interopRequireDefault(require('./getAdapter'));
+
+function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { 'default': obj };}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function render(node) {
+  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+  var adapter = (0, _getAdapter2['default'])(options);
+  var renderer = adapter.createRenderer((0, _object2['default'])({ mode: 'string' }, options));
+  var html = renderer.render(node, options.context);
+  return _cheerio2['default'].load('')(html);
+}
